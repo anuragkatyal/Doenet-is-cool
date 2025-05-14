@@ -1,4 +1,4 @@
-<activity><title>KenKen Puzzle (6x6)</title>
+<activity><title hide>KenKen Puzzle (6x6)</title>
   
 <setup>
   <numberList name="sols">

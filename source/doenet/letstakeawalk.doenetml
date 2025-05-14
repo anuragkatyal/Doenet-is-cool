@@ -12,9 +12,9 @@ About the activity: An activity on a graphical approach to solving systems of li
 
 ********************************************************************** -->
 
-<title>System of Linear Equations</title>
+<title hide>System of Linear Equations</title>
 
-<section boxed><title>Let's Take a Walk</title>
+<section boxed><title hide>Let's Take a Walk</title>
 <p>Joel and Ellie can walk <m>2</m> miles on each rainy day and <m>3</m> miles on each dry day. During the summer, they experienced <m>8</m> more rainy days than dry days and walked a total of <m>36</m> miles.</p>
   <problem>What are the two variables or unknown quantities in this problem? 
       <answer maxNumAttempts="2">
