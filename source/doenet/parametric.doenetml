@@ -1,0 +1,349 @@
+<!------------- Setup Block for Definitions ------------------------ -->
+
+<setup>
+  <function name="xt" variable="t" symbolic="true">$xFormula</function>
+  <function name="yt" variable="t" symbolic="true">$yFormula</function>
+  
+  <!-- <function name="f" variable="t" symbolic="false">
+        ($xFormula,$yFormula)</function>  -->
+
+
+  <derivative name="xtPrime" derivVariables="t" symbolic="false">
+    $xFormula</derivative>
+  <derivative name="ytPrime" derivVariables="t" symbolic="false">
+    $yFormula</derivative>
+  <derivative name="xtPP" derivVariables="t t" symbolic="false">
+    $xFormula</derivative>
+  <derivative name="ytPP" derivVariables="t t" symbolic="false">
+    $yFormula</derivative>
+
+  <function name="speed" variable="t" symbolic="false">
+    sqrt($xtPrime^2 + $ytPrime^2)
+  </function>
+
+  <!-- Components for Unit Tangent / Unit Normal -->
+  <function name="xtPrimeUnit" variable="t" symbolic="false">
+    $xtPrime / $speed
+  </function>
+  <function name="ytPrimeUnit" variable="t" symbolic="false">
+    $ytPrime / $speed
+  </function>
+  
+  <!-- Compute the curvature function -->
+  <function name="k" variable="t" symbolic="false">
+    ($xtPrime * $ytPP - $ytPrime * $xtPP) / 
+    ($xtPrime^2 + $ytPrime^2)^(3/2)
+  </function>
+
+  <!-- Sign of the curvature (used to graph normal vector) -->
+  <number name="kSign"><conditionalContent>
+      <case condition="$$k($u) < 0">-1</case>
+      <else>1</else>
+    </conditionalContent></number>
+  <!-- numeric version of dx in case symbolic version slows things down -->
+  <number name="dt">($b-$a)/$n</number>
+  <!-- use $a as initial value of $t.  Can't do
+    <number name="t">$a</number>
+  because it links the value of t and a; when t changes, so does a -->
+  <copy source="a" name="u" link="false"/>
+
+  <!-- default "window" for graph -->
+  <number name="minX"> -3 </number>
+  <number name="minY"> -3 </number>
+  <number name="maxX">  3 </number>
+  <number name="maxY">  3 </number>
+
+</setup>
+
+<!-------------------------- User Interface ------------------------ -->
+
+<!--------------------- Ready-made Examples ------------------------ -->
+
+<p><alert>Quick Examples:</alert></p>
+<p>
+
+  <triggerSet>
+    <label>Circle #1</label>
+    <updateValue target="xFormula" newValue="cos(t)"/>
+    <updateValue target="yFormula" newValue="sin(t)"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="2pi"/>
+    <updateValue target="minX" newValue="-2"/>
+    <updateValue target="minY" newValue="-2"/>
+    <updateValue target="maxX" newValue="2"/>
+    <updateValue target="maxY" newValue="2"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Circle #2</label>
+    <updateValue target="xFormula" newValue="cos(t^2)"/>
+    <updateValue target="yFormula" newValue="sin(t^2)"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="sqrt(2pi)"/>
+    <updateValue target="minX" newValue="-5"/>
+    <updateValue target="minY" newValue="-5"/>
+    <updateValue target="maxX" newValue="5"/>
+    <updateValue target="maxY" newValue="5"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Ellipse</label>
+    <updateValue target="xFormula" newValue="4cos(t)"/>
+    <updateValue target="yFormula" newValue="2sin(t)"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="2pi"/>
+    <updateValue target="minX" newValue="-5"/>
+    <updateValue target="minY" newValue="-5"/>
+    <updateValue target="maxX" newValue="5"/>
+    <updateValue target="maxY" newValue="5"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Lissajous</label>
+    <updateValue target="xFormula" newValue="cos(5t)"/>
+    <updateValue target="yFormula" newValue="sin(3t)"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="2pi"/>
+    <updateValue target="minX" newValue="-2.5"/>
+    <updateValue target="minY" newValue="-2.5"/>
+    <updateValue target="maxX" newValue="2.5"/>
+    <updateValue target="maxY" newValue="2.5"/>  </triggerSet>
+
+  <triggerSet>
+    <label>Parabola</label>
+    <updateValue target="xFormula" newValue="t"/>
+    <updateValue target="yFormula" newValue="t^2"/>
+    <updateValue target="u" newValue="-2"/>
+    <updateValue target="a" newValue="-2"/>
+    <updateValue target="b" newValue="2"/>
+    <updateValue target="minX" newValue="-2.5"/>
+    <updateValue target="minY" newValue="-0.5"/>
+    <updateValue target="maxX" newValue="2.5"/>
+    <updateValue target="maxY" newValue="4.5"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Cubic</label>
+    <updateValue target="xFormula" newValue="t"/>
+    <updateValue target="yFormula" newValue="t^3"/>
+    <updateValue target="u" newValue="-5/4"/>
+    <updateValue target="a" newValue="-5/4"/>
+    <updateValue target="b" newValue="5/4"/>
+    <updateValue target="minX" newValue="-2"/>
+    <updateValue target="minY" newValue="-2"/>
+    <updateValue target="maxX" newValue="2"/>
+    <updateValue target="maxY" newValue="2"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Cubic #2</label>
+    <updateValue target="xFormula" newValue="t"/>
+    <updateValue target="yFormula" newValue="t(t^2-1)"/>
+    <updateValue target="u" newValue="-1.5"/>
+    <updateValue target="a" newValue="-1.5"/>
+    <updateValue target="b" newValue="1.5"/>
+    <updateValue target="minX" newValue="-2"/>
+    <updateValue target="minY" newValue="-2"/>
+    <updateValue target="maxX" newValue="2"/>
+    <updateValue target="maxY" newValue="2"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Quartic</label>
+    <updateValue target="xFormula" newValue="t"/>
+    <updateValue target="yFormula" newValue="t^4"/>
+    <updateValue target="u" newValue="-sqrt(2)"/>
+    <updateValue target="a" newValue="-sqrt(2)"/>
+    <updateValue target="b" newValue="sqrt(2)"/>
+    <updateValue target="minX" newValue="-2.5"/>
+    <updateValue target="minY" newValue="-0.5"/>
+    <updateValue target="maxX" newValue="2.5"/>
+    <updateValue target="maxY" newValue="4.5"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>Cusps</label>
+    <updateValue target="xFormula" newValue="cos(t)"/>
+    <updateValue target="yFormula" newValue="sin(t)^3"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="2pi"/>
+    <updateValue target="minX" newValue="-1.5"/>
+    <updateValue target="minY" newValue="-1.5"/>
+    <updateValue target="maxX" newValue="1.5"/>
+    <updateValue target="maxY" newValue="1.5"/>
+  </triggerSet>
+
+  <triggerSet>
+    <label>RESET (Figure 8)</label>
+    <updateValue target="xFormula" newValue="2cos(t)"/>
+    <updateValue target="yFormula" newValue="sin(2t)"/>
+    <updateValue target="u" newValue="0"/>
+    <updateValue target="a" newValue="0"/>
+    <updateValue target="b" newValue="2pi"/>
+    <updateValue target="minX" newValue="-3"/>
+    <updateValue target="minY" newValue="-3"/>
+    <updateValue target="maxX" newValue="3"/>
+    <updateValue target="maxY" newValue="3"/>
+  </triggerSet>
+
+
+</p>
+<!------------------- End of Ready-Made Examples ----------- -->
+
+<!--------------------- User Inputs ------------------------ -->
+
+
+<tabular valign="middle">
+    <row bottom="major"><cell/><cell/></row>
+    <row>
+      <cell halign="right">Function: <m>\vec{x}(t)=</m></cell>
+      <cell halign="left"><m>(</m>
+          <mathInput prefill="2cos(t)" name="xFormula"></mathInput>
+          <m>,</m>
+          <mathInput prefill="sin(2t)" name="yFormula"></mathInput>
+          <m>)</m></cell>
+    </row>
+    <row bottom="major">
+      <cell halign="right">Domain:</cell>
+      <cell><mathinput name="a" prefill="0"></mathinput> to 
+            <mathinput name="b" prefill="2pi"></mathinput></cell>
+    </row>
+</tabular>
+
+<tabular halign="left">
+
+  <row valign="middle">
+    <cell halign="right"><booleanInput name="tangentBool" /></cell>
+    <cell>Tangent Vector</cell>
+    <cell halign="right"><booleanInput name="unitTangentBool" /></cell>
+    <cell>Unit Tangent Vector</cell>
+  </row>
+
+  <row valign="middle">
+    <cell halign="right"><booleanInput name="normalBool" /></cell>
+    <cell>Normal Vector</cell>
+    <cell halign="right"><booleanInput name="unitNormalBool" /></cell>
+    <cell>Unit Normal Vector</cell>
+  </row>
+
+  <row valign="middle" bottom="major">
+    <cell halign="right"><booleanInput name="positionBool" /></cell>
+    <cell>Position Vector</cell>
+    <cell halign="right"><booleanInput name="oscCircleBool" /></cell>
+    <cell>Osculating Circle</cell>
+  </row>
+
+  <row valign="middle" bottom="major">
+    <cell halign="right"><booleanInput name="curvature" /></cell>
+    <cell>Curvature</cell>
+    <cell halign="right">
+      <conditionalContent condition="$curvature">
+        <m>\kappa = </m>
+      </conditionalContent>
+    </cell>
+    <cell>
+      <conditionalContent condition="$curvature">
+        <number>abs($$k($u))</number>
+      </conditionalContent>      
+    </cell>
+  </row>
+  <!--   <row bottom="minor" header><cell colspan="4" halign="center">Animation Controls</cell></row> -->
+  <row bottom="major" valign="middle">
+    <cell halign="middle" right="minor">
+        <callAction actionName="toggleAnimation" target="clock">
+          <label>Toggle Animation</label>
+        </callAction>
+    </cell>
+    <cell halign="center" right="minor"><p></p>
+       <slider name="animInterval" width="130"
+        from="0" to="100" step="1" 
+        showTicks="false" showValue="false"
+        initialValue="70">
+        <label>Animation Speed</label>
+       </slider>
+    </cell>
+    <cell halign="center" colspan="2"># Sample Points:
+      <mathinput name="n" prefill="300"></mathinput>
+    </cell>
+  </row>
+
+</tabular>
+
+<!----------------------- End User Interface ---------------------- -->
+
+
+<animateFromSequence name="clock" target="u" 
+  from="$a" to="$b" step="2pi/$n" 
+  animationMode="increase"
+  animationInterval="100-$animInterval"
+  animationOn="false"/>
+
+<graph xmin="$minX" xmax="$maxX" ymin="$minY" ymax="$maxY" size="large">
+  <curve name="parametricCurve" styleNumber="2"
+    variable="t" parMin="$a" ParMax="$b">
+    ($xt, $yt)
+  </curve>
+  <point styleNumber="5">($$xt($u), $$yt($u))</point>
+
+  <!-- Position Vector -->
+  <conditionalContent name="positionVector" condition="$positionBool">
+    <vector styleNumber="1"
+      tail="(0,0)" head="($$xt($u), $$yt($u))" />
+  </conditionalContent>
+  
+  <!-- Tangent / Velocity Vector -->
+  <conditionalContent name="tangentVector" condition="$tangentBool">
+    <vector styleNumber="4"
+      tail="($$xt($u),$$yt($u))" 
+      head="
+      ($$xt($u)+$$xtPrime($u),$$yt($u)+$$ytPrime($u))" />
+  </conditionalContent>
+
+  <!-- Unit Tangent Vector -->
+  <conditionalContent 
+    name="unitTangentVector" condition="$unitTangentBool">
+    <vector styleNumber="4"
+      tail="($$xt($u),$$yt($u))" 
+      head="
+      ($$xt($u)+$$xtPrimeUnit($u),$$yt($u)+$$ytPrimeUnit($u))" />
+  </conditionalContent>
+
+  <!-- Normal Vector -->
+  <conditionalContent name="normalVector" condition="$normalBool">
+    <vector styleNumber="3"
+      tail="($$xt($u),$$yt($u))" 
+      head="
+      ($$xt($u)-$kSign*$$ytPrime($u),$$yt($u)+$kSign*$$xtPrime($u))" />
+  </conditionalContent>
+
+
+  <!-- Unit Normal Vector -->
+  <conditionalContent condition="$unitNormalBool"> 
+    <vector styleNumber="3"
+      tail="($$xt($u),$$yt($u))" 
+      head="
+      ($$xt($u)-$kSign*$$ytPrimeUnit($u),$$yt($u)+$kSign*$$xtPrimeUnit($u))" />
+  </conditionalContent>
+
+  <!-- Osculating Circle -->
+  <conditionalContent condition="$oscCircleBool">
+    <!-- Center of Osculating Circle -->
+    <point styleNumber="6" name="oscCircleCenter" hide>
+      ($$xt($u)-$$ytPrimeUnit($u)/$$k($u),
+       $$yt($u)+$$xtPrimeUnit($u)/$$k($u))
+    </point>
+  
+    <circle center="$oscCircleCenter" radius="1/abs($$k($u))" />
+  </conditionalContent>    
+</graph>
+
+<p>
+  <slider bindValueTo="$u" initialValue="$a" 
+          showValue="true" from="$a" to="$b" step="$dt" 
+          showTicks="true" width="550px"/>
+</p>
