@@ -1,0 +1,570 @@
+<title>Parabolas: General, Standard and Graphical Forms</title>
+
+<p>Recall the standard parabola, <m>y = x^2</m></p>
+<graph grid>
+  <function name="f">x^2</function>
+  <point name="p1" fixed styleNumber="11">(0, $$f(0))
+  </point>
+  <label anchor="(0.5,-0.5)" styleNumber="18" positionFromAnchor="lowerright"><m>V = $p1.coords</m></label>
+  <point name="p2" fixed labelPosition="left">(-1, $$f(-1))
+    <label>$p2.coords</label>
+  </point>
+  <point name="p3" fixed labelPosition="upperleft">(-2, $$f(-2))
+    <label>$p3.coords</label>
+  </point>
+  <point name="p4" fixed>(1, $$f(1))
+    <label>$p4.coords</label>
+  </point>
+  <point name="p5" fixed>(2, $$f(2))
+    <label>$p5.coords</label>
+  </point>
+</graph>
+
+<p>The goal of this activity is to find the connections between the graph of any parabola, the standard form
+  <me>y = a(x-h)^2 + k</me>
+  and the general form
+  <me>y = ax^2 + bx + c.</me></p>
+
+<ol>
+<!--************************************************************************
+              Problem 1
+*************************************************************************-->
+  <li>
+    <ol>
+      <li>
+        <copy uri="doenet:doenetId=_Olbq9CHBBd2CT1DCAsurk&pageId=_F93x6rrtyGCsCx3vI8Nz2&cid=bafkreie4kqrywvx5rbk3mz4jukxh4z4jrjzny5m4ktrik7dcxnowdzbtsu"  a="2" h="3" k="-1"/>
+      </li>
+      <li><p>Given the standard form <m name="standardForm_m">y = a(x - h)^2 + k</m>, describe how to draw the graph.
+        
+    <answer name="ans_1description" type="text" handGraded forceFullCheckWorkButton expanded>
+      <textInput width="700" height="40"/>
+    </answer></p>
+      </li>
+    </ol>
+  </li>
+
+<!--************************************************************************
+              Problem 2
+*************************************************************************-->
+
+  <li><p>Given the graph, write the standard form $standardForm_m .</p>
+    <p>Hints:</p>
+    <ul>
+      <li><p>Explore the graphs shown below. In each case, you are given the coordinates of the vertex and one other point on the parabola. <alert>The vertex is black and the other point is blue</alert>.</p>
+
+<!--************************************************************************
+              Applet 1
+*************************************************************************-->
+  <p><em>Use the sliders to guide the parabola so that it passes through both the vertex and the through-point</em></p>
+
+  <math name="appletSol1" hide>2(x - 3)^2 + 1</math>
+  <updateValue target="f1.styleNumber" newValue="13" triggerWhen="$f1 = $appletSol1" type="number"/>
+  <updateValue target="f1.styleNumber" newValue="1" triggerWhen="$f1 != $appletSol1" type="number"/>
+        
+  <sideBySide margins="1%">
+        <graph name="g1" grid>
+          <label anchor="(-5,-3)" fixed styleNumber="18">$standardForm_m</label>
+          <math anchor="(-5,-5)" simplify="numbersPreserveOrder" fixed styleNumber="18">y = $a(x - $h)^2 + $k</math>
+          <function name="f1">$a(x - $h)^2 + $k</function>
+          <point name="v1" fixed styleNumber="11">(3,1)</point>
+          <label anchor="$v1+(0.5, -0.5)" positionFromAnchor="lowerright" styleNumber="18">
+            <m>V = $v1.coords</m>
+          </label>
+          <point name="tp1" fixed styleNumber="7">(2,3)
+            <label styleNumber="7"><m>(2,3)</m></label>
+          </point>
+          <rectangle vertices="(-9,-6) (-1.25,-1.5)" fixed styleNumber="18" filled/>
+        </graph>
+    
+   
+
+    
+
+<stack>
+<p><m>a = </m><mathInput name="a" bindValueTo="$needle_a.x" displayDecimals="2"/> </p> 
+<graph name="slider_a" xmin="-3.2" xmax="3.2" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_a" endpoints="(-3, 0) (3,0) "/>
+  <point name="needle_a" styleNumber="2" showCoordsWhenDragging="false" layer="2">(1,0)
+    <constraints>
+      <constrainTo>$bar_a</constrainTo>
+      <constrainToGrid dx="0.25"/>
+    </constraints>
+  </point>
+  <point name="left" fixed>(-3,0)</point>
+  <point name="right" fixed>(3,0)</point>
+  <math name="aDisplay" anchor="($needle_a.x, $needle_a.y + 3)">$needle_a.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>h = </m><mathInput name="h" bindValueTo="$needle_h.x" displayDecimals="2"/></p>
+  <graph name="slider_h" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_h" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_h" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_h</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="hDisplay" anchor="($needle_h.x, $needle_h.y + 3)">$needle_h.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>k = </m><mathInput name="k" bindValueTo="$needle_k.x" displayDecimals="2"/></p>
+  <graph name="slider_k" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_k" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_k" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_k</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="kDisplay" anchor="($needle_k.x, $needle_k.y + 3)">$needle_k.x{displayDecimals="2"}</math>
+</graph>
+</stack>
+  </sideBySide>
+
+
+
+<!--************************************************************************
+              Applet 2
+*************************************************************************-->
+<div newNameSpace>
+  <p><em>Use the sliders to guide the parabola so that it passes through both the vertex and the through-point</em></p>
+
+  <math name="appletSol1" hide>1/2 (x - 1)^2 - 1</math>
+  <updateValue target="f1.styleNumber" newValue="13" triggerWhen="$f1 = $appletSol1" type="number"/>
+  <updateValue target="f1.styleNumber" newValue="1" triggerWhen="$f1 != $appletSol1" type="number"/>
+  <sideBySide margins="1%">
+        <graph name="g1" grid>
+          <label anchor="(-5,-3)" fixed styleNumber="18">$(../standardForm_m)</label>
+          <math anchor="(-5,-5)" simplify="numbersPreserveOrder" fixed styleNumber="18">y = $a(x - $h)^2 + $k</math>
+          <function name="f1">$a(x - $h)^2 + $k</function>
+          <point name="v1" fixed styleNumber="11">(1,-1)</point>
+          <label anchor="$v1+(0.5, -0.5)" positionFromAnchor="lowerright" styleNumber="18"><m>V = (1,-1)</m></label>
+          <point name="tp1" fixed styleNumber="7">(5,7)
+            <label styleNumber="7"><m>(5,7)</m></label>
+          </point>
+          <rectangle vertices="(-9,-6) (-1.25,-1.5)" fixed styleNumber="18" filled/>
+        </graph>
+   
+
+    
+
+<stack>
+<p><m>a = </m><mathInput name="a" bindValueTo="$needle_a.x" displayDecimals="2"/></p>  
+<graph name="slider_a" xmin="-3.2" xmax="3.2" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_a" endpoints="(-3, 0) (3,0) "/>
+  <point name="needle_a" styleNumber="2" showCoordsWhenDragging="false" layer="2">(1,0)
+    <constraints>
+      <constrainTo>$bar_a</constrainTo>
+      <constrainToGrid dx="0.25"/>
+    </constraints>
+  </point>
+  <point name="left" fixed>(-3,0)</point>
+  <point name="right" fixed>(3,0)</point>
+  <math name="aDisplay" anchor="($needle_a.x, $needle_a.y + 3)">$needle_a.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>h = </m><mathInput name="h" bindValueTo="$needle_h.x" displayDecimals="2"/></p>
+  <graph name="slider_h" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_h" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_h" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_h</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="hDisplay" anchor="($needle_h.x, $needle_h.y + 3)">$needle_h.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>k = </m><mathInput name="k" bindValueTo="$needle_k.x" displayDecimals="2"/></p>
+  <graph name="slider_k" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_k" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_k" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_k</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="kDisplay" anchor="($needle_k.x, $needle_k.y + 3)">$needle_k.x{displayDecimals="2"}</math>
+</graph>
+</stack>
+  </sideBySide>
+</div>          
+      </li>
+      
+      <li><p>What does the slider bar for <m>a</m> do? 
+        <answer name="ans_sliderA" inline>
+          <choice>It shifts the entire parabola vertically</choice>
+          <choice>It shifts the entire parabola horizontally</choice>
+          <choice credit="1">It stretches or compresses the parabola</choice>
+        </answer>.</p>
+        <p>What does the slider bar for <m>h</m> do? 
+        <answer name="ans_sliderH" inline>
+          <choice>It shifts the entire parabola vertically</choice>
+          <choice credit="1">It shifts the entire parabola horizontally</choice>
+          <choice>It stretches or compresses the parabola</choice>
+        </answer>.</p>
+        <p>What does the slider bar for <m>k</m> do? 
+        <answer name="ans_sliderK" inline>
+          <choice credit="1">It shifts the entire parabola vertically</choice>
+          <choice>It shifts the entire parabola horizontally</choice>
+          <choice>It stretches or compresses the parabola</choice>
+        </answer>.</p>
+      </li>
+      
+      <li><p>In what order did you use the slider bars? (<em>Type 1, 2, 3 for the order</em>)</p>
+        <p>Slider for <m>a</m> <mathInput name="orderA"/>, <nbsp/>Slider for <m>h,</m> <mathInput name="orderH"/>, <nbsp/>Slider for <m>k</m> <mathInput name="orderK"/></p>
+      </li>
+      
+      <li><p>How can you figure out the values of <m>a</m>, <m>h</m> and <m>k</m> from the two given points?</p>
+        <p><answer name="ans_2description" type="text" handGraded forceFullCheckWorkButton expanded>
+            <textInput width="700" height="40"/>
+           </answer></p>
+      </li>
+
+      <li><p>Given the graph below, write the corresponding equation in standard form.</p>
+        <graph grid xmin="-2" ymin="-6" ymax="6" identicalAxisScales>
+          <function name="g">-2(x-4)^2 + 3</function>
+          <point fixed styleNumber="11">(4,3)</point>
+          <point fixed>(3,1)</point>
+        </graph>
+        
+      <p><m>y = </m><mathInput name="a_g"/><m> \bigg( x - </m><mathInput name="h_g"/><m> \bigg)^2 + </m><mathInput name="k_g"/>
+              <answer name="ans_2b" matchPartial>
+                <award><when>$a_g = -2 and $h_g = 4 and $k_g = 3</when>
+                </award>
+              </answer></p>
+      <p>you answered: <m>y = <math simplify="numbersPreserveOrder">$a_g(x - $h_g)^2 + $k_g</math></m></p>
+      </li>
+    </ul>
+  </li>
+
+<!--************************************************************************
+              Problem 3
+*************************************************************************-->
+
+  <li>
+        <ol>
+          <li><p>Write <m>y = 3(x+1)^2 - 2</m> in general form.</p>
+            <p><m>y = </m><mathInput name="a1"/><m>x^2 + </m><mathInput name="b1"/><m>x + </m><mathInput name="c1"/>
+              <answer name="ans_3a" matchPartial>
+                <award><when>$a1 = 3 and $b1 = 6 and $c1 = 1</when>
+                </award>
+              </answer></p>
+            <hint><p>Start by expanding <m>(x+1)(x+1)</m>, then distribute the <m>3</m>.</p>
+            </hint>
+          </li>
+          <li><p>Write <m>y = -\frac{2}{3}(x+3)^2 + 5</m> in general form.</p>
+            <p><m>y = </m><mathInput name="a2"/><m>x^2 + </m><mathInput name="b2"/><m>x + </m><mathInput name="c2"/>
+              <answer name="ans_3b" matchPartial>
+                <award><when>$a2 = -2/3 and $b2 = -4 and $c2 = -1</when>
+                </award>
+              </answer></p></li>
+          <li><p>Given the standard form <m>y = a(x - h)^2 + k</m>, describe the step-by-step process you used in 3a and 3b to convert to the general form <m>y = ax^2 + bx + c</m>.</p>
+      <p><answer name="ans_3description" type="text" handGraded forceFullCheckWorkButton expanded>
+        <textInput width="700" height="40"/>
+      </answer></p>
+          </li>
+        </ol>       
+        <ul>
+          <li><p>To prepare for future problems, you may wish to actually do this general conversion, and write out formulas for <m>a</m>, <m>b</m> and <m>c</m>, as functions of <m>a</m>, <m>h</m> and <m>k</m>. In other words, write $standardForm_m in general form.</p>
+            <p><m>a \color{lightblue}{(a, h, k)} = </m>
+              <answer name="ans_3c">
+                <mathInput name="expressionForA"/>
+                <award>a</award>
+              </answer></p>
+            <p><m>b \color{lightblue}{(a, h, k)} = </m>
+              <answer name="ans_3d">
+                <mathInput name="expressionForB"/>
+                <award>-2ah</award>
+              </answer></p>
+            <p><m>c \color{lightblue}{(a, h, k)} = </m>
+              <answer name="ans_3e">
+                <mathInput name="expressionForC"/>
+                <award>ah^2 + k</award>
+              </answer></p>
+          </li>
+          
+          <li><p>You may also wish to then solve those equations for <m>a</m>, <m>h</m> and <m>k</m> and write them as functions of <m>a</m>, <m>b</m> and <m>c</m>.</p>
+            <p><m>a \color{lightblue}{(a, b, c)} = </m>
+              <answer name="ans_3f">
+                <mathInput name="expressionForA2"/>
+                <award>a</award>
+              </answer></p>
+            <p><m>h \color{lightblue}{(a, b, c)} = </m>
+              <answer name="ans_3g">
+                <mathInput name="expressionForH"/>
+                <award>-b/(2a)</award>
+              </answer></p>
+            <p><m>k \color{lightblue}{(a, b, c)} = </m>
+              <answer name="ans_3h">
+                <mathInput name="expressionForK"/>
+                <award>c - (b^2/(4a))</award>
+              </answer></p>
+              <math name="kIncludes_h" hide>c - a h^2</math>
+              <feedback condition="$ans_3h.responseHasBeenSubmitted and $expressionForK = $kIncludes_h">Your expression for <m>k</m> is correct, but it uses the variable '<m>h</m>'. Use a substitution for '<m>h</m>' to write the expression using only <m>a,b,c</m>.
+              </feedback>
+          </li>
+        </ul>
+  </li>
+<!--************************************************************************
+              Problem 4
+*************************************************************************-->
+<li><p>Given the graph, write the general form <m name="generalForm_m">y = ax^2 +bx + c</m>.</p>
+   <p>Hints:</p>
+    <ul>
+      <li><p>Explore the graphs shown below. In each case, you are given the coordinates of the vertex and one other point on the parabola. <alert>The vertex is black and the other point is <text styleNumber="1">blue</text>.</alert></p>
+      
+<!--************************************************************************
+              Applet 3
+*************************************************************************-->
+<div newNameSpace>
+<p><em>Use the sliders to guide the parabola so that it passes through both the vertex and the through-point</em></p>
+  <math name="appletSol1" hide>3x^2 + 6x + 1</math>
+  <updateValue target="f1.styleNumber" newValue="13" triggerWhen="$f1 = $appletSol1" type="number"/>
+  <updateValue target="f1.styleNumber" newValue="1" triggerWhen="$f1 != $appletSol1" type="number"/>
+  <sideBySide margins="1%">
+        <graph name="g1" grid>
+          <label anchor="(6,-5)" fixed styleNumber="18">$(../generalForm_m)</label>
+          <math anchor="(6,-7)" simplify="numbersPreserveOrder" fixed styleNumber="18">y = $a x^2 + $b x + $c</math>
+          <function name="f1">$a x^2 + $b x + $c</function>
+          <point name="v1" fixed styleNumber="11">(-1,-2)</point>
+          <label anchor="$v1 + (-0.5, -0.5)" styleNumber="18" positionFromAnchor="lowerleft">
+            <m>V = $v1.coords</m>
+          </label>
+          <point name="tp1" fixed styleNumber="7">(-2,1)</point>
+          <label anchor="$tp1 + (-0.5,0.5)" positionFromAnchor="upperleft" styleNumber="18"><m>(-2,1)</m></label>
+          <rectangle vertices="(2,-4) (10,-8)" fixed styleNumber="18" filled/>
+        </graph>
+    
+
+    
+
+<stack>
+<p><m>a = </m><mathInput name="a" bindValueTo="$needle_a.x" displayDecimals="2"/>  </p>
+<graph name="slider_a" xmin="-3.2" xmax="3.2" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_a" endpoints="(-3, 0) (3,0) "/>
+  <point name="needle_a" styleNumber="2" showCoordsWhenDragging="false" layer="2">(1,0)
+    <constraints>
+      <constrainTo>$bar_a</constrainTo>
+      <constrainToGrid dx="0.25"/>
+    </constraints>
+  </point>
+  <point name="left" fixed>(-3,0)</point>
+  <point name="right" fixed>(3,0)</point>
+  <math name="aDisplay" anchor="($needle_a.x, $needle_a.y + 3)">$needle_a.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>b = </m><mathInput name="b" bindValueTo="$needle_b.x" displayDecimals="2"/></p>
+  <graph name="slider_b" xmin="-21" xmax="21" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_b" endpoints="(-20, 0) (20,0) "/>
+  <point name="needle_b" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_b</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-20,0)</point>
+  <point fixed>(20,0)</point>
+  <math name="bDisplay" anchor="($needle_b.x, $needle_b.y + 3)">$needle_b.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>c = </m><mathInput name="c" bindValueTo="$needle_c.x" displayDecimals="2"/></p>
+  <graph name="slider_c" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_c" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_c" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_c</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="cDisplay" anchor="($needle_c.x, $needle_c.y + 3)">$needle_c.x{displayDecimals="2"}</math>
+</graph>
+</stack>
+  </sideBySide>
+  
+</div>
+
+
+      
+<!--************************************************************************
+              Applet 4
+*************************************************************************-->
+<div newNameSpace>
+<p><em>Use the sliders to guide the parabola so that it passes through both the vertex and the through-point</em></p>
+
+    <math name="appletSol1" hide>-(1/2)x^2 + 4x - 5</math>
+    <updateValue target="f1.styleNumber" newValue="13" triggerWhen="$f1 = $appletSol1" type="number"/>
+    <updateValue target="f1.styleNumber" newValue="1" triggerWhen="$f1 != $appletSol1" type="number"/>
+  
+  <sideBySide margins="1%">
+        <graph name="g1" grid>
+          <label anchor="(-5,-3)" fixed styleNumber="18">$(../generalForm_m)</label>
+          <math anchor="(-5,-5)" simplify="numbersPreserveOrder" fixed styleNumber="18">y = $a x^2 + $b x + $c</math>
+          <function name="f1">$a x^2 + $b x + $c</function>
+          <point name="v1" fixed styleNumber="11">(4,3)</point>
+          <label anchor="$v1+(0.5,0.5)" styleNumber="18" positionFromAnchor="upperright"><m>V = (4,3)</m></label>
+          <point name="tp1" fixed styleNumber="7">(6,1)</point>
+          <label anchor="$tp1 + (0.5,0.5)" positionFromAnchor="upperright" styleNumber="18"><m>(6,1)</m></label>
+          <rectangle vertices="(-9,-6) (-1,-1.5)" fixed styleNumber="18" filled/>
+        </graph>
+  
+
+    
+<stack>
+<p><m>a = </m><mathInput name="a" bindValueTo="$needle_a.x" displayDecimals="2"/></p>  
+<graph name="slider_a" xmin="-3.2" xmax="3.2" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_a" endpoints="(-3, 0) (3,0) "/>
+  <point name="needle_a" styleNumber="2" showCoordsWhenDragging="false" layer="2">(1,0)
+    <constraints>
+      <constrainTo>$bar_a</constrainTo>
+      <constrainToGrid dx="0.25"/>
+    </constraints>
+  </point>
+  <point name="left" fixed>(-3,0)</point>
+  <point name="right" fixed>(3,0)</point>
+  <math name="aDisplay" anchor="($needle_a.x, $needle_a.y + 3)">$needle_a.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>b = </m><mathInput name="b" bindValueTo="$needle_b.x" displayDecimals="2"/></p>
+  <graph name="slider_b" xmin="-21" xmax="21" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_b" endpoints="(-20, 0) (20,0) "/>
+  <point name="needle_b" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_b</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-20,0)</point>
+  <point fixed>(20,0)</point>
+  <math name="bDisplay" anchor="($needle_b.x, $needle_b.y + 3)">$needle_b.x{displayDecimals="2"}</math>
+</graph>
+
+  <p><m>c = </m><mathInput name="c" bindValueTo="$needle_c.x" displayDecimals="2"/></p>
+  <graph name="slider_c" xmin="-10.4" xmax="10.4" aspectRatio="6" displayYAxis="false" fixAxes showBorder="false">
+  <lineSegment name="bar_c" endpoints="(-10, 0) (10,0) "/>
+  <point name="needle_c" styleNumber="2" showCoordsWhenDragging="false" layer="2">(0,0)
+    <constraints>
+      <constrainTo>$bar_c</constrainTo>
+      <constrainToGrid dx="1"/>
+    </constraints>
+  </point>
+  <point fixed>(-10,0)</point>
+  <point fixed>(10,0)</point>
+  <math name="cDisplay" anchor="($needle_c.x, $needle_c.y + 3)">$needle_c.x{displayDecimals="2"}</math>
+</graph>
+</stack>
+  </sideBySide>
+</div>
+
+      </li>
+      
+      <li><p>What does the slider bar for <m>a</m> do? 
+        <answer name="ans_sliderA2" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="20"/>
+        </answer></p>
+
+        <p>What does the slider bar for <m>b</m> do? 
+        <answer name="ans_sliderB2" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="20"/>
+        </answer></p>
+        <p>What does the slider bar for <m>c</m> do? 
+        <answer name="ans_sliderC2" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="20"/>
+        </answer></p>
+      </li>
+      
+      <li><p>In what order did you use the slider bars? (<em>Type 1, 2, 3 for the order</em>)</p>
+        <p>Slider for <m>a</m> <mathInput name="orderA2"/>, <nbsp/>Slider for <m>b,</m> <mathInput name="orderB"/>, <nbsp/>Slider for <m>c</m> <mathInput name="orderC"/></p>
+      </li>
+      
+      <li><p>How can you figure out the values of <m>a</m>, <m>b</m> and <m>c</m> from the two given points? (Do the formulas from the previous problem help you?)</p>
+        <p><answer name="ans_4description" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="40"/>
+        </answer></p></li>
+
+      <li><p>Can you answer this question by combining problems 2 and 3?</p>
+        <p><answer name="ans_5description" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="40"/>
+        </answer></p></li>
+    </ul>
+</li>
+  
+
+
+
+
+<!--************************************************************************
+              Problem 5
+*************************************************************************-->
+<li><p>Given the general form $generalForm_m, describe how to draw the graph. Hint: Use the formulas from problem 3 to get started.</p>
+        <p><answer name="ans_6description" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="40"/>
+        </answer></p></li>
+
+
+
+<!--************************************************************************
+              Problem 6
+*************************************************************************-->
+<li><p>Given the general form $generalForm_m, describe how to find the standard form $standardForm_m. (One method is called "completing the square", and will be discussed in class later. You may have some ideas based on the formulas in problem 3.)</p>
+  <p><answer name="ans_7description" type="text" handGraded forceFullCheckWorkButton expanded>
+          <textInput width="700" height="40"/>
+        </answer></p>
+  <ol>
+    <li><p>Write <m>y = x^2 + 4x + 1</m> in standard form.</p>
+      <p><m>y = </m><mathInput name="a3"/><m> \bigg( x - </m><mathInput name="h3"/><m> \bigg)^2 + </m><mathInput name="k3"/>
+              <answer name="ans_6a" matchPartial>
+                <award><when>$a3 = 1 and $h3 = -2 and $k3 = -3</when>
+                </award>
+              </answer></p>
+      <p>you answered: <m>y = <math simplify="numbersPreserveOrder">$a3(x - $h3)^2 + $k3</math></m></p>
+    </li>
+    <li><p>Write <m>y = 2x^2 - 8x + 18</m> in standard form.</p>
+      <p><m>y = </m><mathInput name="a4"/><m> \bigg( x - </m><mathInput name="h4"/><m> \bigg)^2 + </m><mathInput name="k4"/>
+              <answer name="ans_6b" matchPartial>
+                <award><when>$a4 = 2 and $h4 = 2 and $k4 = 10</when>
+                </award>
+              </answer></p>
+      <p>you answered: <m>y = <math simplify="numbersPreserveOrder">$a4(x - $h4)^2 + $k4</math></m></p>
+    </li>
+    </ol>
+</li>
+
+    
+  
+</ol>
+
+<setup>    
+<styleDefinitions>
+<!--blue, styleNumber 1 corrolary-->
+<styleDefinition styleNumber="7" fillColor="#648FFF" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#648FFF"/>
+<!--red, styleNumber 2 corrolary-->
+<styleDefinition styleNumber="8" fillColor="#D4042D" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#D4042D" lineColor="#D4042D" lineOpacity="0.7"  lineWidth="4"/>
+<!--orange, styleNumber 3 corrolary-->
+<styleDefinition styleNumber="9" fillColor="#F19143" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#F19143" lineColor="#F19143" lineOpacity="0.7"  lineWidth="4"/>
+<!--purple, styleNumber 4 corrolary-->
+<styleDefinition styleNumber="10" fillColor="#644CD6" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#644CD6" lineColor="#644CD6" lineOpacity="0.7" lineWidth="4" backgroundColor="white" />
+<!--black, styleNumber 5 corrolary-->
+<styleDefinition styleNumber="11" fillColor="black" fillColorDarkMode="white" fillOpacity="0.7" markerSize="5" markerStyle="square" markerColor="black" markerColorDarkMode="white" lineColor="black" lineColorDarkMode="white" lineOpacity="0.7" lineWidth="4"/>
+<!--gray, styleNumber 6 corrolary-->
+<styleDefinition styleNumber="12" fillColor="gray" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="gray"/>
+<!--green, styleNumber 1 but green corrolary-->
+<styleDefinition styleNumber="13" fillColor="#469152" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#469152" lineColor="#469152" lineOpacity="0.7" lineWidth="4"/>
+<!--blue, thin dotted-->
+<styleDefinition styleNumber="14" fillColor="#648FFF" fillOpacity="0.7" markerSize="6" markerStyle="circle" markerColor="#648FFF" lineColor="#648FFF" lineOpacity="0.7" lineWidth="1" lineStyle="dotted"/>
+
+<!--white, opaque fill for behind labels-->
+<styleDefinition styleNumber="18" fillColor="white" fillColorDarkMode="gray" fillOpacity="1" backgroundColor="white" backgroundColorDarkMode="gray" markerSize="3" markerStyle="circle" markerColor="white" lineColor="black" lineColorDarkMode="gray" lineOpacity="0.7" lineWidth="2"/>
+</styleDefinitions>
+</setup>
+    

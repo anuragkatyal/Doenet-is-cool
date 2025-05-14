@@ -1,0 +1,738 @@
+<!-- 
+
+Course:    Intermediate Algebra
+Chapter:   #. 
+Section:   #. Solving Linear Inequalities in One Variable
+Author:    Anurag Katyal, Spring 2025
+Contact:   anurag@whyoverhow.com 
+
+About the activity: A scaffolded introduction to solving linear inequalities in one variable.
+
+-->
+
+<setup>
+
+  <styleDefinitions>
+     <styleDefinition
+      styleNumber="10"
+      fillColor="#7b38c5"
+      fillOpacity="0.6"
+      lineColor="#7b38c5"
+      lineOpacity="1"
+      lineWidth="0"
+    > </styleDefinition>
+
+    <styleDefinition
+      styleNumber="11"
+      fillColor="red"
+      fillOpacity="0.4"
+      lineColor="red"
+      lineOpacity="0.5"
+      lineWidth="0"
+    > </styleDefinition>
+
+    <styleDefinition
+      styleNumber="12"
+      fillColor="blue"
+      fillOpacity="0.4"
+      lineColor="red"
+      lineOpacity="0.5"
+      lineWidth="0"
+    > </styleDefinition>
+  </styleDefinitions>
+
+  <selectFromSequence
+    name="a"
+    from="6"
+    to="11"
+    exclude="$b $c $d 2*$b 2*$c 2*$d 3*$b 3*$c 3*$d 4*$b 4*$c 4*$d 5*$b 5*$c 5*$d"
+  /> <selectPrimeNumbers
+    assignNames="b c d"
+    minValue="2"
+    maxValue="7"
+    numToSelect="3"
+    withReplacement="false"
+  /> <selectFromSequence
+    assignNames="e f g"
+    from="2"
+    to="5"
+    numToSelect="3"
+    withReplacement="false"
+  />
+
+  <math name="lcd" simplify>($c*$d)/<gcd>$c $d</gcd></math>
+  <math name="finalAns" simplify>
+     ($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)
+  </math>
+  <math name="leftx">$finalAns-2</math> <math name="rightx">$finalAns+2</math>
+</setup>
+
+<title>Solving Linear Inequalities in One Variable</title>
+
+<em>This activity will reveal content as you work through it.</em>
+
+<p>
+  Let's say we wish to solve the linear inequality:
+  <me><math>$a(x+$b/$c)+$c/$d < $e(x+$f)-$g</math></me>
+</p>
+
+<!-- Step 1: Use the distributive property to clear any parenthesis. -->
+
+<problem boxed>
+  <title>Step 1: Clear parenthesis, if any.</title>
+
+  <ul>
+    <li>
+      Clear parenthesis by using the distributive property,
+      <m>p(q+r)=p \cdot q+p \cdot r</m>. <aside>
+        <title>See Example(s)</title>
+        <ul>
+          <li>
+            <p>
+              <m>
+                $c($a x + $d)=$c \cdot $a x + $c \cdot $d=<math simplify>
+                  $a*$c x + $c*$d
+                </math>
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>
+                $b x ($a p + $c q)=$b x \cdot $a p + $b x \cdot $c q=<math simplify>$a*$b
+                  px + $b*$c qx</math>
+              </m>
+            </p>
+          </li>
+          <li>
+            <p>
+              <m>\displaystyle 
+                \frac{1}{$c}\left(\frac{$d}{$b} t + $e \right) =\frac{1}{$c} \cdot \frac{$d}{$b} t + \frac{1}{$c} \cdot $e =\frac{$d}{<math simplify>$c*$b</math>} t + \frac{$e}{<math simplify>$c</math>}
+              </m>
+            </p>
+          </li>
+        </ul>
+      </aside>
+    </li>
+  </ul>
+
+  <ol>
+    <li>
+      Does this problem have any parenthesis that needs to be cleared?
+      <answer name="hasParen" showCorrectness="false">
+        <choice credit="1">
+          Yes, there is at least one set of parenthesis.
+        </choice>
+        <choice>
+          No, there are no parentheses - we can move on to Step 2.
+        </choice>
+      </answer>
+    </li>
+
+    <conditionalContent condition="$hasParen.creditAchieved=1">
+      <li>
+        <p>
+          Use the distributive property to clear any parenthesis.
+          <me><math>
+               $a(x+$b/$c)+$c/$d < $e(x+$f)-$g
+            </math></me>
+        </p>
+
+        <answer name="noParen" shuffleOrder maxNumAttempts="2">
+          <choice credit="1"><m>\displaystyle $a x +<math simplify>$a*$b/$c</math>+<math>$c/$d</math> < $e x +<math simplify>$e*$f</math>-$g</m></choice>
+          <choice name="Q1ch2"><m>\displaystyle $a x +<math simplify>$a*$b/$c</math>+<math simplify>$a*$c/$d</math> < $e x +<math simplify>$e*$f</math>-<math simplify>$e*$g</math></m></choice>
+          <choice name="Q1ch3"><m>\displaystyle $a x +<math simplify>$a*$b/$c</math>+<math>$c/$d</math> > $e x +<math simplify>$e*$f</math>-$g</m></choice>
+          <choice name="Q1ch4"><m>\displaystyle $a x +<math simplify>$b/$c</math>+<math>$c/$d</math> < $e x +<math simplify>$f</math>-$g</m></choice>
+        </answer>
+        <feedback condition="$Q1ch2">Did you <em>only distribute</em> to terms <em>within</em> parenthesis?</feedback>
+        <feedback condition="$Q1ch3">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+        <feedback condition="$Q1ch4">Did you distribute to <em>all</em> terms within parenthesis?</feedback>
+      </li>
+    </conditionalContent>
+  </ol>
+
+
+</problem>
+
+<!-- Step 2: Clear any fractions by multiplying each term of the inequality by the LCD. -->
+
+<problem boxed>
+  <title>Step 2: Clear fractions, if any.</title>
+<!--   <div hide="not $noParen.creditAchieved=1"> -->
+  <ul>
+    <li>Find the LCD of all the denominators in the inequality.</li>
+    <li>
+      Multiply each term of the inequality by the LCD to clear the fractions.
+      <aside>
+        <title>See Example(s)</title>
+        <ul>
+          <li>
+            <md>
+              <mrow>\displaystyle \frac{$a}{$b}x+\frac{$c}{$a} &< \frac{$d}{$b}x + $d \quad \quad \quad (LCD=<math simplify>$b*$a</math>)</mrow>
+              <mrow>\displaystyle <math simplify>$b*$a</math> \cdot \frac{$a}{$b}x+<math simplify>$b*$a</math> \cdot \frac{$c}{$a} &< <math simplify>$b*$a</math> \cdot \frac{$d}{$b}x + <math simplify>$b*$a</math> \cdot $d</mrow>
+              <mrow>\displaystyle \require{cancel} \cancel{<math simplify>$b*$a</math>}^{$a} \cdot \frac{$a}{\cancel{$b}^1}x+\cancel{<math simplify>$b*$a</math>}^{$b} \cdot \frac{$c}{\cancel{$a}^1} &< \cancel{<math simplify>$b*$a</math>}^{$a} \cdot \frac{$d}{\cancel{$b}^1}x + <math simplify>$b*$a</math> \cdot $d</mrow>
+              <mrow>\displaystyle $a \cdot $a x + $a \cdot $c &< $a \cdot $d x + <math simplify>$b*$a</math> \cdot $d</mrow>
+              <mrow>\displaystyle <math simplify>$a * $a</math> x + <math simplify>$a * $c</math> &< <math simplify>$a * $d</math> x + <math simplify>$b*$a*$d</math></mrow>
+            </md>
+          </li>
+        </ul>
+      </aside>
+    </li>
+  </ul>
+
+  <ol>
+    <li>
+      Does this problem have any fractions that need to be cleared?
+      <answer name="hasFrac" showCorrectness="false">
+        <choice credit="1">Yes, there is at least one fraction.</choice>
+        <choice>No, there are no fractions - we can move on to Step 3. </choice>
+      </answer>
+    </li>
+
+    <conditionalContent condition="$hasFrac.creditAchieved=1">
+      <li>
+        <p>
+          For
+          <m>\displaystyle 
+             $a x +<math simplify>$a*$b/$c</math>+<math>$c/$d</math> < $e x +
+            <math simplify>$e*$f</math>-$g
+          </m>, the LCD is <answer name="studentLCD" symbolicEquality>$lcd</answer>
+        </p>
+      </li>
+
+      <p hide="not $studentLCD.creditAchieved=1">
+        <li>
+          Clear any fractions by multiplying each term of the inequality by the
+          LCD. <em>Do not move or rearrange any terms at this stage! Reduce any fractions to simplest terms.</em><me>
+            $a x + <math simplify>$a*$b/$c</math>+<math>$c/$d</math> < $e x + <math simplify>$e*$f</math>- $g
+          </me>
+
+          <answer name="noFrac" shuffleOrder maxNumAttempts="2">
+             <choice credit="1"><m>\displaystyle <math simplify>$a*$lcd</math> x +<math simplify>$lcd*$a*$b/$c</math>+<math simplify>$lcd*$c/$d</math> < <math simplify>$lcd*$e</math> x +<math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math></m></choice>
+             <choice name="Q2ch2"><m>\displaystyle <math simplify>$a*$lcd</math> x +<math simplify>$lcd*$a*$b/$c</math>+<math simplify>$lcd*$c/$d</math> > <math simplify>$lcd*$e</math> x +<math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math></m></choice>
+             <choice name="Q2ch3"><m>\displaystyle 
+               <math simplify>$a*$lcd</math> x +
+               \frac{<math simplify>$lcd*$a*$b</math>}{<math simplify>$lcd*$c</math>}+
+               \frac{<math simplify>$lcd*$c</math>}{<math simplify>$lcd*$d</math>}
+               < 
+               <math simplify>$lcd*$e</math> x +
+               <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math></m>
+             </choice>
+            <choice name="Q2ch4"><m>\displaystyle 
+               <math simplify>$a</math> x +
+               <math simplify>$lcd*$a*$b/$c</math>+
+               <math simplify>$lcd*$c/$d</math>
+               > 
+               <math simplify>$e</math> x +
+               <math simplify>$e*$f</math>-<math simplify>$g</math></m>
+             </choice>
+          </answer>
+          <feedback condition="$Q2ch2">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+          <feedback condition="$Q2ch3">When multiplying a fraction by an integer, do you multiply the integer by both the numerator and the denominator or just the numerator?</feedback>
+          <feedback condition="$Q2ch4">Did you multiply the LCD by <em>all</em> the terms in the inequality?</feedback>
+        </li>
+      </p>
+
+
+    </conditionalContent>
+  </ol>
+<!--   </div> -->
+
+</problem>
+
+<!-- Step 3: Move all the terms containing the variable to one side of the inequality and all the terms not containing the variable to the other side of the inequality. Remember to use inverse operations when moving terms from one side to another! -->
+
+<problem boxed>
+  <title>Step 3: Using inverse operations, move all the terms containing the variable to the left-hand side of the inequality and all the constants to the right.</title>
+<!--   <div hide="not $noFrac.creditAchieved=1"> -->
+    <ul>
+    <li>Addition and subtraction are inverse operations. If a quantity is being added on one side, it must be subtracted from the other side. Similarly, if a quantity is being subtracted on one side, it must be added to the other side
+      <aside>
+        <title>See Example(s)</title>
+        <ul>
+          <li><m>x+$a=$b \implies x=$b-$a</m></li>
+          <li><m>$a x-$b=$c x+$d \implies $a x-$c x=$d+$b</m></li>
+            
+        </ul>
+      </aside>
+    </li>
+  </ul>
+
+  <ol>
+    <li>
+      Are terms containing the variable on both sides of the inequality?
+      <answer name="hasX" showCorrectness="false">
+        <choice credit="1">
+          Yes, terms containing <m>x</m> are on both sides.
+        </choice>
+        <choice>
+          No, all terms containing <m>x</m> are already on the left hand side -
+          we can move on to Step 4.
+        </choice>
+      </answer>
+    </li>
+
+    <conditionalContent condition="$hasX.creditAchieved=1">
+
+
+      <li>
+        <p>
+          Move all the terms containing the variable to one side of the inequality
+          and all the terms not containing the variable to the other side of the
+          inequality. Remember to use inverse operations when moving terms from
+          one side to another!
+        </p>
+          <me><math simplify>$a*$lcd</math> x +<math simplify>$lcd*$a*$b/$c</math>+<math simplify>$lcd*$c/$d</math> < <math simplify>$lcd*$e</math> x +<math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math></me>
+        <answer name="likeTermsIsolated" shuffleOrder maxNumAttempts="2">
+          <choice credit="1">
+             <m>
+               <math simplify>$a*$lcd</math> x - <math simplify>$lcd*$e</math> x
+              < <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>-<math
+                simplify
+              >$lcd*$a*$b/$c</math>-<math simplify>$lcd*$c/$d</math>
+            </m>
+          </choice>
+          <choice name="Q3ch2">
+             <m>
+               <math simplify>$a*$lcd</math> x - <math simplify>$lcd*$e</math> x
+              > <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>-<math
+                simplify
+              >$lcd*$a*$b/$c</math>-<math simplify>$lcd*$c/$d</math>
+            </m>
+          </choice>
+          <choice name="Q3ch3">
+             <m>
+               <math simplify>$a*$lcd</math> x + <math simplify>$lcd*$e</math> x
+              < <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>+<math
+                simplify
+              >$lcd*$a*$b/$c</math>+<math simplify>$lcd*$c/$d</math>
+            </m>
+          </choice>
+          <choice name="Q3ch4">
+             <m>
+               <math simplify>$a*$lcd</math> x + <math simplify>$lcd*$e</math> x
+              > <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>+<math
+                simplify
+              >$lcd*$a*$b/$c</math>+<math simplify>$lcd*$c/$d</math>
+            </m>
+          </choice>
+        </answer>
+        <feedback condition="$Q3ch2">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+        <feedback condition="$Q3ch3">Did you use inverse operations when moving terms from one side to the other?</feedback>
+        <feedback condition="$Q3ch4">Did you use inverse operations when moving terms from one side to the other?</feedback>
+      </li>
+    </conditionalContent>
+  </ol>
+
+<!--   </div> -->
+</problem>
+
+<!-- Step 4: Combine like terms. -->
+
+<problem boxed>
+  <title>Step 4: Combine like terms.</title>
+<!--   <div hide="not $likeTermsIsolated.creditAchieved=1"> -->
+  <ul>
+    <li>Add or subtract the terms on the left-hand side and the right-hand side of the inequality. 
+      <aside>
+        <title>See Example(s)</title>
+        <ul>
+          <li><m>x=$b-$a \implies x=<math simplify>$b-$a</math></m></li>
+          <li><m>$a x-$c x=$d+$b \implies <math simplify>$a -$c</math> x=<math simplify>$d+$b</math></m></li>
+        </ul>
+      </aside>
+    </li>
+  </ul>
+
+  <ol>
+    <li>
+      Are there terms that could be combined?
+      <answer name="hasLikeTerms" showCorrectness="false">
+        <choice credit="1">
+          Yes, there are multiple terms on at least one side of the inequality.
+        </choice>
+        <choice>
+          No, there is only one term on each side of the inequality - we can
+          move on to Step 5.
+        </choice>
+      </answer>
+    </li>
+
+    <conditionalContent condition="$hasLikeTerms.creditAchieved=1">
+
+
+      <li>
+        <p>
+          Combine like terms. <em>Do not move or rearrange any terms at this stage!</em>
+          <me>
+             <math simplify>$a*$lcd</math> x - <math simplify>$lcd*$e</math> x <
+            <math simplify>$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>-<math
+              simplify
+            >$lcd*$a*$b/$c</math>-<math simplify>$lcd*$c/$d</math>
+          </me>
+        </p>
+
+        <answer name="combineLikeTerms" shuffleOrder maxNumAttempts="2">
+          <choice credit="1"><m><math simplify>$a*$lcd-$lcd*$e</math> x < <math simplify>$lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d</math></m></choice>
+          <choice name="Q4ch2"><m><math simplify>$a*$lcd-$lcd*$e</math> < <math simplify>$lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d</math></m></choice>
+          <choice name="Q4ch3"><m><math simplify>$a*$lcd-$lcd*$e</math> x > <math simplify>$lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d</math></m></choice>
+          <choice name="Q4ch4"><m><math simplify>$a*$lcd-$lcd*$e</math> > <math simplify>$lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d</math></m></choice>
+        </answer>
+        <feedback condition="$Q4ch2">When combining like terms with variables in them, what happens to the variable?</feedback>
+        <feedback condition="$Q4ch3">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+        <feedback condition="$Q4ch4">When combining like terms with variables in them, what happens to the variable?</feedback>
+      </li>
+    </conditionalContent>
+  </ol>
+
+<!--   </div> -->
+</problem>
+
+<!-- Step 5: Use inverse operations to solve for the variable. -->
+
+<problem boxed>
+  <title>Step 5: Solve for the variable.</title>
+<!--   <div hide="not $combineLikeTerms.creditAchieved=1"> -->
+  <ul>
+    <li>Divide both sides of the inequality by the variable's coefficient.</li>
+    <li>Remember to change the direction of the inequality if you divide both
+          sides of the inequality by a negative number.
+        <aside>
+          <title>See Example(s)</title>
+          <ul>
+            <li><m>\displaystyle $a x < $b \implies x < <math simplify>$b/$a</math></m></li>
+            <li><m>\displaystyle -$c x < $d \implies x > <math simplify>-$d/$c</math></m></li>
+          </ul>
+        </aside>
+      </li>
+    </ul>
+  <ol>
+    <li>
+      Does the variable have a coefficient besides <m>1</m>? <answer
+        name="hasCoeff"
+        showCorrectness="false"
+      >
+        <choice credit="1">
+          Yes, there is a coefficient besides <m>1</m>.
+        </choice>
+        <choice>
+          No, the variable is by itself - we can move on to Step 6.
+        </choice>
+      </answer>
+    </li>
+
+    <conditionalContent condition="$hasCoeff.creditAchieved=1">
+      <li>
+        <p>
+          Divide both sides of the inequality by the variable's coefficient.
+        </p>
+
+        <me>
+          <math simplify>$a*$lcd-$lcd*$e</math> x <
+          <math simplify> $lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d </math>
+        </me>
+
+        <answer name="isolateVariable" shuffleOrder maxNumAttempts="2">
+           <choice credit="1"><m>\displaystyle x < <math simplify>($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)</math></m></choice>
+          <choice name="Q5ch2"><m>\displaystyle x > <math simplify>($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)</math></m></choice>
+          <choice name="Q5ch3"><m>\displaystyle x < <math simplify>-($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)</math></m></choice>
+          <choice name="Q5ch4"><m>\displaystyle x > <math simplify>-($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)</math></m></choice>
+        </answer>
+        <feedback condition="$Q5ch2">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+        <feedback condition="$Q5ch3">Did you divide by a positive or a negative number?</feedback>
+        <feedback condition="$Q5ch4">Did you multiply or divide both sides of the inequality by a negative number?</feedback>
+        <p>
+          
+        </p>
+      </li>
+    </conditionalContent>
+  </ol>
+
+<!--   </div> -->
+</problem>
+
+<!-- Step 6: Graph the solutions on a number line. -->
+
+<problem boxed>
+  <title>Step 6: Graph the solutions on a number line.</title>
+<!--   <div hide="not $isolateVariable.creditAchieved=1"> -->
+  <ul>
+      <li>We use hollow circles when graphing solutions to inequalities with <m> < </m> or <m> > </m> and filled in circles when graphing solutions to inequalities with <m> \leq </m> or <m> \geq </m>.</li>
+      <li>We draw an arrow in the direction that contains solutions or numbers that make the inequality true. 
+          <aside>
+            <title>See Example(s)</title>
+            <ul>
+              <li><p>Graph of solutions to <m>x < 1</m></p>
+                <graph displayYAxis="false" aspectRatio="8" showNavigation="false" showBorder="false" ymax="1" ymin="-1" xmin="-1" xmax="3">
+                  <endpoint fixLocation switchable="false" open > (1,0) </endpoint>
+                  <vector fixLocation head="(-1,0)" tail="(1,0)" />
+                </graph>
+              </li>
+              
+              <li><p>Graph of solutions to <m>x \geq 1</m></p>
+              <graph displayYAxis="false" aspectRatio="8" showNavigation="false" showBorder="false" ymax="1" ymin="-1" xmin="-1" xmax="3">
+                  <endpoint fixLocation switchable="false" open="false"> (1,0) </endpoint>
+                  <vector fixLocation head="(3,0)" tail="(1,0)"/>
+                </graph>
+              </li>
+            </ul>
+          </aside>
+        </li>
+      </ul>
+  <ol>
+    <li>
+      <p>
+        Graph the solutions to <m>x < $finalAns</m> on the number line below.
+      </p>
+
+      <sideBySide widths="35% 65%">
+         <div>
+          <p>
+<booleanInput name="openCircle">
+<label>Hollow circle at $finalAns</label>
+</booleanInput>
+<updateValue triggerWhen="$openCircle" target="closedCircle" newValue="false" type="boolean" />
+</p>
+<p>
+<booleanInput name="closedCircle">
+<label>Filled in circle at $finalAns</label>
+</booleanInput>
+<updateValue triggerWhen="$closedCircle" target="openCircle" newValue="false" type="boolean" />
+</p>
+           <p>
+            <booleanInput name="showLeft">
+               <label>Draw to the left of $finalAns</label>
+            </booleanInput>
+          </p>
+          <p>
+            <booleaninput name="showRight">
+               <label>Draw to the right of $finalAns</label>
+            </booleaninput>
+          </p>
+
+
+        </div>
+
+        <div>
+          <graph
+            name="stuGraph"
+            displayYAxis="false"
+            aspectRatio="4"
+            showNavigation="false"
+            showBorder="false"
+            ymax="2"
+            ymin="-1"
+            xmin="$leftx"
+            xmax="$rightx"
+          >
+            <endpoint
+              hide="not $closedCircle"
+              fixLocation
+              switchable="false"
+              open="false"
+            >
+               <label>$finalAns</label>($finalAns,<number fixed>0</number>)
+            </endpoint>
+            <endpoint hide="not $openCircle" fixLocation switchable="false" open>
+               <label>$finalAns</label>($finalAns,<number fixed>0</number>)
+            </endpoint>
+            <vector
+              fixLocation
+              hide="not $showLeft"
+              head="($leftx,0)"
+              tail="($finalAns,0)"
+            />
+            <vector
+              fixLocation
+              hide="not $showRight"
+              head="($rightx,0)"
+              tail="($finalAns,0)"
+            />
+          </graph>
+        </div>
+
+
+      </sideBySide>
+
+      <answer name="graphSol" maxNumAttempts="2">
+         <award>
+           <when>
+             $openCircle.value=true and $closedCircle.value=false and $showLeft.value=true
+            and $showRight.value=false
+          </when>
+        </award>
+      </answer>
+      <feedback condition="$graphSol.creditAchieved!=1 and $graphSol.responseHasBeenSubmitted=true">When graphing solutions to an inequality with < or > , do we use a hollow or filled in circle? Additionally, do the numbers on the side you selected satisfy the inequality?</feedback>
+    </li>
+  </ol>
+<!--   </div> -->
+</problem>
+
+<!-- Step 7: Write the solutions in interval notation. -->
+
+<problem boxed>
+  <title>Step 7: Write the solutions in interval notation.</title>
+<!--   <div hide="not $graphSol.creditAchieved=1"> -->
+  <ul>
+    <li>We read graphs from left to right and use parenthesis to indicate exclusion and square brackets to indicate inclusion of a number.</li>
+    <li>We write the left endpoint first and then the right endpoint.</li>
+    <li>We only use parenthesis around <m>-\infty</m> and <m>\infty</m>.
+        <aside>
+          <title>See Example(s)</title>
+          <ul>
+            <li><p>The interval, <m>(-\infty, -1)</m>, represents the same solutions as the graph below.</p>
+              <graph displayYAxis="false" aspectRatio="8" showNavigation="false" showBorder="false" ymax="1" ymin="-1" xmin="-1" xmax="3">
+                <endpoint switchable="false" fixLocation open > (1,0) </endpoint>
+                <vector fixLocation head="(-1,0)" tail="(1,0)" />
+              </graph>
+            </li>
+            
+            <li><p>The interval, <m>[-1, \infty)</m>, represents the same solutions as the graph below.</p>
+            <graph displayYAxis="false" aspectRatio="8" showNavigation="false" showBorder="false" ymax="1" ymin="-1" xmin="-1" xmax="3">
+                <endpoint fixLocation switchable="false" open="false"> (1,0) </endpoint>
+                <vector fixLocation head="(3,0)" tail="(1,0)"/>
+              </graph>
+            </li>
+
+            <li><p>The interval, <m>[0, 2)</m>, represents the same solutions as the graph below.</p>
+            <graph displayYAxis="false" aspectRatio="8" showNavigation="false" showBorder="false" ymax="1" ymin="-1" xmin="-1" xmax="3">
+                <endpoint fixLocation switchable="false" open="false"> (0,0) </endpoint>
+                <endpoint fixLocation switchable="false" open> (2,0) </endpoint>
+                <lineSegment fixLocation endpoints="(0,0) (2,0)"/>
+              </graph>
+            </li>
+          </ul>
+        </aside>
+      </li>
+    </ul>
+  <ol>
+    <li>
+      <p>Write the solutions to <m>x < $finalAns</m> in interval notation.</p>
+
+      <answer name="intervalAns">
+         <award><subsetOfReals>-infinity < x < $finalAns</subsetOfReals></award>
+
+
+      </answer>
+    </li>
+  </ol>
+<!--   </div> -->
+
+</problem>
+
+<!-- Step 8: Classify the inequality -->
+
+<problem boxed>
+  <title>Step 8: Classify the inequality.</title>
+<!--   <div hide="not $intervalAns.creditAchieved=1"> -->
+  <ul>
+    <li>Recall that linear equations in one variable could be classified as either a conditional, an inconsistency or an identity. We can similarly classify linear inequalities in one variable as well.</li>
+    <li>An inequality that simplifies to a variable on one side and a number on the other is called a conditional.  
+      <aside>
+        <title>See Example(s)</title>
+          The following are all examples of conditionals.
+            <ul>
+              <li><m>x < $a</m> </li>
+              <li><m>x > $b</m> </li>
+              <li><m>x \leq $c</m> </li>
+              <li><m>x \geq $d</m> </li>
+            </ul>
+      </aside>
+    </li>
+      
+    <li>An inequality that simplifies to a false statement with numbers on both sides is called an identity.  
+      <aside>
+        The following are all examples of inconsistencies.
+          <title>See Example(s)</title>
+          <ul>
+            <li><m>$a < <math simplify>$a-$b</math></m> </li>
+            <li><m>$b > <math simplify>$b+$c</math></m> </li>
+            <li><m>$c \leq <math simplify>$c-$b</math></m> </li>
+            <li><m>$d \geq <math simplify>$d+$a+$b</math></m> </li>
+          </ul>
+        </aside>
+    </li>    
+      
+    <li>An inequality that simplifies to a true statement with numbers on both sides is called an identity.  
+      <aside>
+        The following are all examples of identities.
+          <title>See Example(s)</title>
+          <ul>
+            <li><m>$a < <math simplify>$a+$b</math></m> </li>
+            <li><m>$b > <math simplify>$b-$c</math></m> </li>
+            <li><m>$c \leq <math simplify>$c+$b</math></m> </li>
+            <li><m>$d \geq <math simplify>$d-$a-$b</math></m> </li>
+          </ul>
+        </aside>
+      </li>    
+      
+        
+    </ul>
+  <ol>
+    <li>
+      Classify <math>$a(x+$b/$c)+$c/$d < $e(x+$f)-$g</math>. Note that the inequality simplifies to <m>x < $finalAns</m>.
+      <answer name="classifyIneq" shuffleOrder maxNumAttempts="2">
+        <choice credit="1">Conditional</choice>
+        <choice>Inconsistency</choice>
+        <choice>Identity</choice>
+      </answer>
+    </li>
+  </ol>
+<!--   </div> -->
+
+</problem>
+
+<!-- <div hide="not $intervalAns.creditAchieved=1"> -->
+  
+<problem boxed>
+  <title>Solution Summary</title>
+
+  <p>
+    <em>Question:</em> Solve <math>$a(x+$b/$c)+$c/$d < $e(x+$f)-$g</math> for
+    <m>x</m> and graph the solutions and write them in interval notation.
+  </p>
+  <em>Solution:</em><mdn>
+     <mrow>$a\left(x+\frac{$b}{$c}\right)+\frac{$c}{$d} &< $e(x+$f)-$g</mrow> <mrow>
+       $a x +<math simplify>$a*$b/$c</math>+<math>$c/$d</math> &< $e x +
+      <math simplify>$e*$f</math>-$g
+    </mrow> <mrow>
+       \color{red}{$lcd} \cdot $a x +\color{red}{$lcd} \cdot <math simplify>
+        $a*$b/$c
+      </math>+\color{red}{$lcd} \cdot <math>$c/$d</math> &< \color{red}{$lcd}
+      \cdot $e x +\color{red}{$lcd} \cdot <math simplify> $e*$f </math>- \color{red}{$lcd}
+      \cdot $g
+    </mrow> <mrow>
+       <math simplify>$a*$lcd</math> x +<math simplify>$lcd*$a*$b/$c</math>+<math
+        simplify
+      >$lcd*$c/$d</math>
+      &< <math simplify>$lcd*$e</math> x +<math simplify> $lcd*$e*$f </math>-<math
+        simplify
+      >$lcd*$g</math>
+    </mrow> <mrow>
+       <math simplify>$a*$lcd</math> x - <math simplify>$lcd*$e</math> x &< <math
+        simplify
+      >$lcd*$e*$f</math>-<math simplify>$lcd*$g</math>-<math simplify>
+        $lcd*$a*$b/$c
+      </math>-<math simplify>$lcd*$c/$d</math>
+    </mrow> <mrow>
+       <math simplify>$a*$lcd-$lcd*$e</math> x &< <math simplify>
+        $lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d
+      </math>
+    </mrow> <mrow>
+       x &< <math simplify>
+         ($lcd*$e*$f-$lcd*$g-$lcd*$a*$b/$c-$lcd*$c/$d)/($a*$lcd-$lcd*$e)
+      </math>
+    </mrow>
+  </mdn>
+
+  
+    We can graph the solutions to the inequality <m>x < $finalAns</m>. $stuGraph
+  
+
+  <p>
+    or represent them as an interval, <m>\left(-\infty, $finalAns \right)</m>.
+  </p>
+
+
+</problem>
+<!-- </div> -->
