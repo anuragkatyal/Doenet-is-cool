@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-solvinglinearinequalities" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Solving Linear Inequalities in One Variable</title>
+
+<interactive label="solvinglinearinequalities-interactive-label" platform="doenetml" width="100%" aspect="2:8">
+  <slate surface="doenetml">
+    <xi:include parse="text" href="doenet/solvinglinearequations.doenetml"/> 
+  </slate>
+</interactive>
+</section>
