@@ -1,0 +1,160 @@
+<!-- This project was written during the Developing Online Learning Experiments Using Doenet Workshop in Summer 2023. Thanks to those who helped troubleshoot. Any bugs that remain are my own. 
+
+Testing and Feedback offered by -
+
+Alexa Patino (FSU)
+
+-->
+
+
+<title>A (potentially) Productive Product Probing Products</title>
+
+<!-- "The Zero Product Property, presented in plain parlance,
+posits a potent principle in mathematics. Primarily, it propounds that
+if the product of paired or possibly more parameters equals zero, then
+at least one participant in this partnership must be zero."~ ChatGPT by way of Jim Fowler, OSU.  -->
+
+<!-- Problem 1 - Students move two sliders with integers between -10 and 10 to answer questions about the products of the two numbers.  -->
+
+
+
+<problem>
+  
+  <sideBySide>
+    <p>Move the slider to select a value for <m>A</m>: <slider from="-10" to="10" initialValue="-10" name="A"/></p>
+    <p>Move the slider to select a value for <m>B</m>:<slider from="-10" to="10" initialValue="-10" name="B"/></p>
+  </sideBySide>
+
+  <p>You've chosen <m>A</m> = <m>$A</m> and <m>B</m> = <m>$B</m> which multiply to <math simplify> $A*$B </math>.</p>
+    
+    <ol>
+      <li>What is the largest possible product of <m> A </m> and <m> B </m>? </li><answer>100</answer>
+      <li>What is the smallest possible product of <m> A </m> and <m> B </m>? </li><answer>-100</answer>
+      <li>What is the largest possible <em>product</em> of <m> A </m> and <m> B </m> if the two numbers differ by 6? </li><answer>40</answer>
+      <li>What is the smallest possible product of <m> A </m> and <m> B </m> if the two numbers differ by 6? </li><answer>-9</answer>
+      <li><p>What strategies did you or your group use to come up with the answers above? <answer type="text" handGraded expanded forceFullCheckworkButton /></p></li>
+    </ol>
+  
+</problem>
+
+
+<!-- Problem 2 - Students move two sliders with integers between 0 and 10 to answer questions about the area of a rectangle with the dimensions coming from the sliders.  -->
+
+
+<problem>
+    Let's say you'd like to find the area of a rectangle with length, <m> l </m> and width, <m> w </m>.
+      <graph name="rect" xmin="-1" xmax="11" ymin="-1" ymax="11" showNavigation="false"> <polygon vertices="(0,0) ($w,0) ($w,$l) (0, $l)" filled/> <point>(0,0)</point><point>($w,0)</point><point>($w,$l)</point><point>(0,$l)</point></graph>
+ 
+    <sideBySide>
+        <p>Move the slider to select a value for the length, <m>l</m>: <slider from="0" to="10" initialValue="2" name="l"/></p>
+        <p>Move the slider to select a value for the width, <m>w</m>:<slider from="0" to="10" initialValue="3" name="w"/></p>
+      </sideBySide>
+
+    <ol>
+      <li>Select values for <m> l </m> and <m> w </m> such that the area of the rectangle is <m>24</m> square units. 
+         <answer><award>
+           <when>$l*$w=24</when>
+         </award> </answer>  </li>
+      <li>Select values for <m> l </m> and <m> w </m> such that the area of the rectangle is <m>81</m> square units. 
+         <answer><award>
+           <when>$l*$w=81</when>
+         </award> </answer>  </li>
+      <li>Select values for <m> l </m> and <m> w </m> such that the area of the rectangle is <m>0</m> square units. 
+         <answer><award>
+           <when>$l*$w=0</when>
+         </award> </answer>  </li>
+      <li>Select a different set of values for <m> l </m> and <m> w </m> such that the area of the rectangle is <em>zero</em> square units. 
+         <answer><award>
+           <when>$l*$w=0</when>
+           </award> </answer>  </li>
+      <li>What do you or your group notice about the values of <m> l </m> and <m> w </m> that yield an area of <m>0</m> square units?  
+        <answer type="text" handGraded expanded forceFullCheckworkButton /> </li>
+    </ol>
+  </problem>
+
+
+
+<problem>
+A rectangular box's <em>volume</em> is computed by multiplying its length, width, and height.
+
+
+<p>Move the slider to select a value for the length, <m>l</m>: <slider from="0" to="10" initialValue="5" name="l1"/></p>
+<p>Move the slider to select a value for the width, <m>w</m>:<slider from="0" to="10" initialValue="5" name="w1"/></p>
+<p>Move the slider to select a value for the height, <m>h</m>:<slider from="0" to="10" initialValue="5" name="h"/></p>
+<p>The volume of the box is <math simplify> $l1*$w1*$h </math> cubic units. </p>
+
+  <ol>
+    <li>What conclusion(s) can you or your group draw regarding the values of <m> l </m>, <m> w </m>, and <m> h </m> if the box has a volume of <m> 0</m> cubic units?   <answer type="text" handGraded expanded forceFullCheckworkButton /></li>
+    <li> A neighboring group shares that they set their length slider to <m>x-8</m>, and their width slider to <m>x-5</m> to get an area of <em>0</em> square units. How could you determine what value(s) of <m>x</m> they chose to get an area of <em>0</em> square units?<answer type="text" handGraded expanded forceFullCheckworkButton /></li>
+    <li> 
+
+    <setup>
+      <function name="eq1"> (x-8)*(x-5) </function>.
+    </setup>
+      
+      
+      What values of <m>x</m> could the group have chosen?
+     <p><m>x=</m> <mathInput name = "factor1"> </mathInput> and <m>x=</m> <mathInput name = "factor2"> </mathInput></p>
+     <answer matchPartial><award>
+       <when>$$eq1($factor1)=0</when>
+     </award> </answer>
+
+    </li>
+    
+    
+    <li> The same group later shares that they set their length slider to <m>x-4</m>, their width slider to <m>x-7</m>, and finally, their height slider to <m>x-1</m> to get a volume of <m> 0 </m> cubic units. How could you determine what value(s) of <m>x</m> they chose to get a volume of <m> 0 </m> cubic units?<answer type="text" handGraded expanded forceFullCheckworkButton /></li>
+    <li> What values of <m>x</m> could the group have chosen?
+     <p><m>x=</m> <mathInput name = "factor3"> </mathInput>, <m>x=</m> <mathInput name = "factor4"> </mathInput> and <m>x=</m> <mathInput name = "factor5"> </mathInput></p>
+     <answer matchPartial><award>
+       <when>$factor3=4 or $factor5=4 or $factor6=4 or $factor3=7 or $factor5=7 or $factor6=7 or$factor3=1 or $factor5=1 or $factor6=1 or</when>
+     </award> </answer>
+    </li>
+  </ol>
+
+
+
+
+  
+</problem>
+    <setup>
+    <selectFromSequence assignNames="a b c d e f g" from="0" to="10" step="1" numberToSelect="7"/>
+    </setup>
+<problem>
+
+  Solve the following equations for <m>x</m>:
+<ol>
+  <li>
+    <setup><function name="f1"> (x-$a)(x-$b) </function></setup>
+    <m>$f1=0</m>
+   <p><m>x</m>= <mathInput name="u1"></mathInput> and <m>x</m>= <mathInput name="u2"></mathInput></p>
+ <answer matchPartial><award>
+     <when>$$f1($u1)=0 and $$f1($u2)=0</when>
+   </award> </answer>  </li>
+
+  <li>
+    <setup><function name="f2"> (x-$c)(x-$d) </function></setup>
+    <m>$f2=0</m>
+     <p><m>x</m>= <mathInput name="u3"></mathInput> and <m>x</m>= <mathInput name="u4"></mathInput></p>
+     <answer matchPartial><award>
+       <when>$$f2($u3)=0 and $$f2($u4)=0</when>
+     </award> </answer>  
+  </li>
+  
+   <li><setup><function name="f3"> (x-$e)(x-$f)(x-$g) </function></setup>
+<!--      <m>(x-$e)(x-$f)(x-$g)=0</m> -->
+     <m>$f3=0</m>
+   <p><m>x</m>= <mathInput name="u5"></mathInput>, <m>x</m>= <mathInput name="u6"></mathInput> and <m>x</m>= <mathInput name="u7"></mathInput></p>
+ <answer matchPartial><award>
+        <when>$$f3($u5)=0 and $$f3($u6)=0 and $$f3($u7)=0</when>
+   </award> </answer>  </li> 
+</ol>
+</problem>
+
+
+
+
+
+  <problem>
+Is there a <em>property</em> that you see emerging? What summary statements can you or your group make? 
+<answer type="text" handGraded expanded forceFullCheckworkButton />
+</problem>

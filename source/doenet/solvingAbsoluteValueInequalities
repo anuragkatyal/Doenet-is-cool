@@ -1,0 +1,643 @@
+<!-- 
+
+Course:    Intermediate Algebra
+Chapter:   #. Absolute Value Equations and Inequalities
+Section:   #. Absolute Value Inequalities
+Author:    Anurag Katyal, Spring 2025
+Contact:   anurag@whyoverhow.com 
+
+About the activity: A scaffolded introduction to solving absolute value inequalities.
+
+-->
+
+<setup>
+
+  <styleDefinitions>
+    <styleDefinition styleNumber="10"
+      fillColor="#7b38c5" 
+      fillOpacity="0.6" 
+      lineColor="#7b38c5" 
+      lineOpacity="1"  
+      lineWidth="0">
+    </styleDefinition>
+  
+    <styleDefinition styleNumber="11"
+      fillColor="red" 
+      fillOpacity="0.4" 
+      lineColor="red" 
+      lineOpacity="0.5"  
+      lineWidth="0">
+    </styleDefinition>
+
+    <styleDefinition styleNumber="12"
+      fillColor="blue" 
+      fillOpacity="0.4" 
+      lineColor="red" 
+      lineOpacity="0.5"  
+      lineWidth="0">
+    </styleDefinition>
+  </styleDefinitions>
+  
+  <selectFromSequence name="a" from="2" to="5" exclude="$b $c $d $e $f"></selectFromSequence>
+  <selectFromSequence name="b" from="-9" to="9" exclude="0"></selectFromSequence>
+  <selectFromSequence name="c" from="1" to="9"></selectFromSequence>
+  <selectFromSequence name="fudge" from="2" to="9" exclude="$c $f"></selectFromSequence>
+  <selectFromSequence name="e" from="2" to="9"></selectFromSequence>
+  <selectFromSequence name="f" from="-9" to="9" exclude="0"></selectFromSequence>
+
+  <math name="d" simplify>$fudge+$c+$f</math>
+  <math name="absValueExpIsolated" simplify>($d-$c-$f)/$e</math>
+  <math name="positiveIneq" simplify>($d-$c-$f)/$e</math>
+  <math name="negativeIneq" simplify>-$positiveIneq</math>
+  <math name="positiveSoln" simplify>($d-$c-$f)/($e*$a)-$b/$a</math>
+  <math name="negativeSoln" simplify>-($d-$c-$f)/($e*$a)-$b/$a</math>
+
+  <point name="firstLeftEnd">(-100,2)</point>
+  <point name="secondLeftEnd">(-100,4)</point>
+  <point name="firstRightEnd">(100,2)</point>
+  <point name="secondRightEnd">(100,4)</point> 
+
+  <number name="leftx"><math>$negativeSoln-1.1*($positiveSoln-$negativeSoln)</math></number>
+  <number name="rightx"><math>$positiveSoln+1.25*($positiveSoln-$negativeSoln)</math></number>
+
+</setup>
+
+<title>Solving Absolute Value Inequalities</title>
+
+<em>This activity will reveal content as you work through it.</em>
+
+  <p>Let's say we wish to solve the absolute value inequality: 
+    <me><math><math simplify>$f</math>+<math simplify>$e</math><abs><math simplify>$a</math> x+<math simplify>$b</math></abs>+<math simplify>$c</math> < <math simplify>$d</math> </math></me>
+  </p>
+
+<!-- Step 1: Isolate the inequality's absolute value expression on the left-hand side. -->
+
+<problem boxed><title>Step 1: Isolate the inequality's absolute value expression on the left-hand side.</title>
+  
+  <ul>
+    <li>Use inverse operations to isolate the absolute value expression on the left-hand side of the inequality.
+      <aside><title>Further Explanation and Example(s)</title>  
+        <ul>
+          <li>In <m>|x-4| < 3</m>, since the absolute value expression is already isolated, we can move on to Step 2.</li>
+          <li>In <m>|x-4|-2 < 3</m>, the absolute value expression is not by itself, so we must add 2 to both sides of the inequality to isolate it.</li>
+        </ul>
+      </aside>
+    </li>
+    <li>If combining like terms on the same side of the inequality, be sure to follow the order of operations!
+      <aside><title>Example(s)</title>  
+        <ul>
+          <li>For instance, in <m>2-4|x+1| < 5</m>, we must subtract 2 from both sides and <em>then</em> divide both sides by <m>-4</m> to give
+      
+            <md>
+              <mrow>2-4|x+1| &< 5</mrow>
+              <mrow>-4|x+1| &< 5-2</mrow>
+              <mrow>-4|x+1| &< 3</mrow>
+              <mrow>|x+1| &> -\frac{3}{4}</mrow>        
+            </md>
+          </li>  
+          <li>A very common mistake in Step 1 is subtracting <m>2-4</m> to get <m>-2|x+1| < 5</m>, however, this is incorrect since <m>-4</m> is being multiplied by <m>|x+1|</m>. When simplifying expressions, subtraction cannot be performed before multiplication (order of operations).
+          </li>
+        </ul>
+      </aside>
+    </li>
+    <li>We solve inequalities in one variable the same way we solve equation in one variable with one key difference - whenever we multiply or divide <em>both</em> sides of the inequality by a negative number, we must change the direction of the inequality.
+      <aside><title>Example(s)</title>
+        To isolate the absolute value expression in <m>-2|x-4| < 10</m>, we must divide both sides of the inequality by <m>-2</m> and change the <m> < </m> to <m> > </m>. 
+
+        <md>
+          <mrow>-2|x-4| &< 10</mrow>
+          <mrow>|x-4| &> -5</mrow>     
+        </md>
+      </aside>
+    </li>
+  </ul> 
+
+  <ol>
+    <li><p>Isolate the inequality's absolute value expression on the left-hand side: <me><math><math simplify>$f</math>+<math simplify>$e</math><abs><math simplify>$a</math> x+<math simplify>$b</math></abs>+<math simplify>$c</math> < <math simplify>$d</math> </math></me></p>
+
+      <answer name="isolatedIneq" symbolicEquality>
+        <award>$absValueExpIsolated > |$a x+$b|</award>
+        <award>|$a x+$b| < $absValueExpIsolated</award>
+      </answer>
+      
+    </li>
+  </ol>    
+  
+</problem>
+
+
+<!-- Step 2: Determine if the inequality can be solved. -->
+
+<problem boxed><title>Step 2: Determine if the inequality can be solved.</title>
+
+  <div hide="$isolatedIneq.creditAchieved != 1">
+  
+  <ul>
+    <li>Recall that the absolute value of an expression must always be non-negative - it cannot be negative, but it may be zero or positive. </li>
+  </ul>
+  
+  <ol>
+    <li>Which of the following equations <em>cannot</em> be solved and therefore does not have solutions?
+      
+      <answer name="absValueEq">
+        <choiceInput shuffleOrder>
+          <choice><m>|<math simplify>$a x + $b</math>| = <abs>$f</abs></m></choice>
+          <choice><m>|<math simplify>$f x + $b</math>| = <abs>$e</abs></m></choice>
+          <choice credit="1"><m>|<math simplify>$f x + $c</math>| = -<abs>$d</abs></m></choice>
+          <choice><m>|<math simplify>$c x + $a</math>| = <abs>$b</abs></m></choice>
+          <choice><m>|<math simplify>$b x + $d</math>| = <abs>$fudge</abs></m></choice>
+        </choiceInput>
+      </answer>
+    
+    </li> 
+  </ol>
+  </div>
+  
+    
+  <div hide="$absValueEq.creditAchieved != 1">
+    <ul>
+    <li>Since we are dealing with inequalities here, we can only continue to solve the problem if the absolute value expression is never less than zero or less than or equal to a negative number.</li>
+      <ul>
+        <li>For instance, <m>|x+2| > -3</m> can be solved because it is possible for the absolute value of something to be greater than a negative number (it could be zero or positive). However, <m>|x-4| < -4</m> cannot be solved and has no solutions since the absolute value of something can never be less than a negative number (other negative numbers).</li> 
+        
+        <li><aside><title>Some review questions</title>
+            <ol>
+              <li>Which of the following numbers are <em>less than</em> zero?
+                
+                <answer>
+                  <choiceInput shuffleOrder>
+                    <choice>Positive numbers only</choice>
+                    <choice credit="1">Negative numbers only</choice>
+                    <choice>Zero and positive numbers only</choice>
+                    <choice>Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice>Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+              
+              </li> 
+              
+              <li>Which of the following numbers are <em>less than or equal to</em> zero?
+               
+                <answer>
+                  <choiceInput shuffleOrder>
+                    <choice>Positive numbers only</choice>
+                    <choice>Negative numbers only</choice>
+                    <choice>Zero and positive numbers only</choice>
+                    <choice credit="1">Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice credit="1">Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+          
+              </li> 
+              
+              <li>Which of the following numbers are <em>less than or equal to</em> negative numbers?
+                
+                <answer>
+                  <choiceInput shuffleOrder>
+                    <choice>Positive numbers only</choice>
+                    <choice credit="1">Negative numbers only</choice>
+                    <choice>Zero and positive numbers only</choice>
+                    <choice>Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice>Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+             
+              </li> 
+              
+              <li>Which of the following numbers are <em>less than or equal to</em> positive numbers?
+               
+                <answer>
+                  <choiceInput shuffleOrder>
+                    <choice>Positive numbers only</choice>
+                    <choice>Negative numbers only</choice>
+                    <choice>Zero and positive numbers only</choice>
+                    <choice>Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice credit="1">Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+              
+              </li> 
+          
+              <li>Which of the following numbers are <em>greater than</em> positive numbers? 
+              
+                <answer>
+                  <choiceInput shuffleOrder>
+                    <choice credit="1">Positive numbers only</choice>
+                    <choice>Negative numbers only</choice>
+                    <choice>Zero and positive numbers only</choice>
+                    <choice>Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice>Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+             
+              </li> 
+          
+              <li>Which of the following numbers are <em>greater than or equal to</em> zero?
+              
+                <answer name="lastQ">
+                  <choiceInput shuffleOrder>
+                    <choice>Positive numbers only</choice>
+                    <choice>Negative numbers only</choice>
+                    <choice credit="1">Zero and positive numbers only</choice>
+                    <choice>Zero and negative numbers only</choice>
+                    <choice>Zero only</choice>
+                    <choice>Zero, positive and negative numbers</choice>
+                  </choiceInput>
+                </answer>
+           
+              </li> 
+            </ol>
+          </aside>
+        </li>
+      </ul>
+    </ul>
+  <div hide="$isolatedIneq.creditAchieved != 1"> 
+
+    <ol>
+      <li><p>The absolute value inequality, $isolatedIneq</p>
+    
+        <answer name="canBeSolved">
+          <choiceInput shuffleOrder>
+            <choice><em>cannot</em> be solved because the absolute value expression is <em>less than</em> a negative number</choice>
+            <choice><em>cannot</em> be solved because the absolute value expression is <em>less than or equal to</em> a negative number</choice>
+            <choice credit="1"><em>can</em> be solved because the absolute value expression is <em>not less than</em>, or <em>less than or equal to</em> a negative number</choice>
+            <choice><em>can</em> be solved because the absolute value expression is <em>less than</em> a negative number</choice>
+            <choice><em>can</em> be solved because the absolute value expression is <em>less than or equal to</em> a negative number</choice>
+            <choice><em>cannot</em> be solved because the absolute value expression is <em>not less than</em>, or <em>less than or equal to</em> a negative number</choice>
+          </choiceInput>
+        </answer>
+      </li>
+    </ol>
+    
+    </div>  
+  </div>
+
+
+  
+
+<!--     <div hide="$canBeSolved.creditAchieved != 1"> 
+    
+    <li><p>Since the absolute value inequality, $isolatedIneq, cannot be solved, the solution set is</p></li>
+      
+      <answer name="solCanBeSolved">
+        <choiceInput shuffleOrder>
+          <choice credit="1">Empty Set: <m>\varnothing</m></choice>
+          <choice><m>(-\infty, -$absValueExpIsolated)</m></choice>
+          <choice><m>(-\infty, \infty)</m></choice>
+          <choice><m>($absValueExpIsolated, \infty)</m></choice>
+          <choice><m>(-$absValueExpIsolated, $absValueExpIsolated)</m></choice>
+        </choiceInput>
+      </answer>
+    </p> -->
+
+ 
+<!-- </div> -->
+
+</problem>
+
+<!-- Step 3: Set up a compound inequality by identifying the type ('and' vs. 'or'). -->
+
+<problem boxed sectionWideCheckWork="$canBeSolved.creditAchieved = 1"><title>Step 3: Set up a compound inequality by identifying the type ('and' vs. 'or').</title>
+
+  <div hide="$canBeSolved.creditAchieved != 1">
+  
+    <ul>
+      
+      <li>Once the absolute value expression is isolated on the left-hand side of the inequality, we write two inequalities without the absolute value bars. 
+        <p>The first is the same as the answer to Step 1 but without the absolute value bars.</p>
+        <p>In writing the second inequality, we keep the left-hand side the same, change the direction of the inequality and change the sign of the expression on the right-hand side.</p></li>
+      <li>For instance, <m>|x-4| < 3</m> would yield <m>x-4 < 3</m> for the first inequality and <m>x-4 > - 3</m> for the second inequality.</li>
+      <li>If the answer in Step 1 has a <em>less than</em> or <em>less than or equal to</em> sign, we set up an <em>'and'</em> compound inequality. Hint: Think less th<alert>AND</alert>.</li>
+      <li>If the answer in Step 1 has a <em>greater than</em> or <em>greater than or equal to</em> sign, we set up an <em>'or'</em> compound inequality. Hint: Think great<alert>OR</alert>.</li>
+
+    </ul>
+  
+    <ol>
+      
+      <li><p>Set up a compound inequality for <m>$isolatedIneq</m>.</p>
+  
+        <sideBySide widths="30% 35% 35%"> 
+          <div>
+            <p>First Inequality:</p> <answer name="firstIneq" symbolicEquality>
+              <award>$a x+$b < $positiveIneq</award>
+              <award>$positiveIneq > $a x+$b</award>
+              <award>$a x+$b < -$negativeIneq</award>
+              <award>-$negativeIneq > $a x+$b</award>
+            </answer>
+          </div>
+          <div>
+            <p>Type:</p> <answer name="type" inline>
+              <choice>Select one:</choice>
+              <choice>or</choice>
+              <choice credit="1">and</choice>
+            </answer>
+          </div>
+          <div>
+            <p>Second Inequality:</p> <answer name="secondIneq" symbolicEquality>
+              <award>$a x+$b > $negativeIneq</award>
+              <award>$negativeIneq < $a x+$b</award>
+              <award>$a x+$b > -$positiveIneq</award>
+              <award>-$positiveIneq < $a x+$b</award>
+            </answer>
+          </div>
+        </sideBySide>
+      </li>
+    </ol>
+    
+    </div>
+
+</problem>
+
+
+<!-- Step 4:  -->
+
+<problem boxed sectionWideCheckWork="$firstIneq.creditAchieved != 0"><title>Step 4: Solve the compound inequality.</title>
+  <div hide="$firstIneq.creditAchieved != 1">
+
+  <ul>
+    
+    <li>Solve each inequality separately.</li>
+    <li>Graph the solution of each inequality.</li>
+    <li>Graph the solution to the compound inequality.</li>
+  
+  </ul>
+  
+  <ol>
+    <li>Solve each inequality separately.
+      <sbsGroup widths="37.5% 27.5% 35%">
+        
+        <sideBySide>
+          <p><math>$a x+$b < $positiveIneq</math></p>
+          <p>$type</p>
+          <p><math>$a x+$b > $negativeIneq</math></p>
+        </sideBySide>
+        
+        <sideBySide>
+        
+          <p>Step 1: 
+            <answer name="firstIneqStep1" symbolicEquality>
+              <award>$a x < <math simplify>$positiveIneq-$b</math></award>
+              <award><math simplify>$positiveIneq-$b</math> > $a x</award>
+            </answer></p>
+          
+          <p>$type</p>
+          
+          <p>Step 1: 
+            <answer name="secondIneqStep1" symbolicEquality>
+              <award>$a x > <math simplify>$negativeIneq - $b</math></award>
+              <award><math simplify>$negativeIneq - $b</math> < $a x</award>
+            </answer></p>
+        
+        </sideBySide>
+        
+        <sideBySide>
+        
+            <p>Step 2: 
+              <answer name="firstIneqStep2" symbolicEquality>
+                <award>x < <math simplify>($positiveIneq-$b)/$a</math></award>
+                <award><math simplify>($positiveIneq-$b)/$a</math> > x</award>
+              </answer></p>
+          
+          <p>$type</p>
+        
+          <p>Step 2: 
+            <answer name="secondIneqStep2" symbolicEquality>
+              <award>x > <math simplify>($negativeIneq - $b)/$a</math></award>
+              <award><math simplify>($negativeIneq - $b)/$a</math> < x</award>
+            </answer></p>
+          
+        </sideBySide>
+        
+      </sbsGroup>
+    </li>
+  </ol>
+
+</div>
+</problem>
+  
+<!-- Step 5: Graph the solutions to the individual inequalities. -->
+
+<problem boxed><title>Step 5: Graph the solutions to the individual inequalities.</title>
+  <div hide="$firstIneqStep1.creditAchieved!=1 or $firstIneqStep2.creditAchieved!=1 or $secondIneqStep1.creditAchieved!=1 or $secondIneqStep2.creditAchieved!=1">
+    
+<!--   <ul>
+    <li></li>
+  </ul>   -->
+  
+  <ol>
+    <li>Graph the solutions to the individual inequalities, <m>x < $positiveSoln</m> and <m>x > $negativeSoln</m>, below.
+
+      <sideBySide widths="35% 65%">
+        <div>
+          <p>Click on the dots to switch between open and closed.</p>
+
+          <p><booleanInput name="firstShowLeft"><label>Draw to the left of $positiveSoln</label></booleanInput></p>
+          <p><booleaninput name="firstShowRight"><label>Draw to the right of $positiveSoln</label></booleaninput></p>
+          <p><booleanInput name="secondShowLeft"><label>Draw to the left of $negativeSoln</label></booleanInput></p>
+          <p><booleaninput name="secondShowRight"><label>Draw to the right of $negativeSoln</label></booleaninput></p>
+        </div>
+        
+        <div>
+          <graph fixed displayYAxis="false" aspectRatio="6/3" showNavigation="false" showBorder ="false" ymax="5" ymin="-2" xmin="$leftx" xmax="$rightx">
+
+<!-- Above the x axis -->
+
+            <endpoint fixLocation switchable open name="firstSolAboveX" labelPosition="upperright"><label>$positiveSoln</label>($positiveSoln,<number fixed>1.5</number>)</endpoint>
+            <endpoint fixLocation switchable open name="secondSolAboveX" labelPosition="upperright"><label>$negativeSoln</label>($negativeSoln,<number fixed>2.8</number>)</endpoint>
+            <vector hide="not $firstShowRight" styleNumber="2" head="($rightx,1.5)" tail="($positiveSoln,1.5)"/>
+            <vector hide="not $firstShowLeft" styleNumber="2" head="($leftx,1.5)" tail="($positiveSoln,1.5)"/>
+            <vector hide="not $secondShowRight" styleNumber="4" head="($rightx,2.8)" tail="($negativeSoln,2.8)"/>
+            <vector hide="not $secondShowLeft" styleNumber="4" head="($leftx,2.8)" tail="($negativeSoln,2.8)"/>
+
+
+<!-- On the x axis -->
+            <endpoint fixLocation switchable open="$firstSolAboveX.open" name="firstSolOnX">($positiveSoln,<number fixed>0</number>)</endpoint>
+            <endpoint fixLocation switchable open="$secondSolAboveX.open" name="secondSolOnX">($negativeSoln,<number fixed>0</number>)</endpoint>
+            
+
+            <polygon hide="not $firstShowRight" filled vertices="($positiveSoln,0.25) ($positiveSoln,-0.25) ($rightx,-0.25) ($rightx, 0.25)" styleNumber="11"  />
+            <polygon hide="not $firstShowLeft" filled vertices="($positiveSoln,0.25) ($positiveSoln,-0.25) ($leftx,-0.25) ($leftx, 0.25)" fixed styleNumber="11"/>
+            <polygon hide="not $secondShowRight" filled vertices="($negativeSoln,0.25) ($negativeSoln,-0.25) ($rightx,-0.25) ($rightx,0.25)" fixed styleNumber="12"/>
+            <polygon hide="not $secondShowLeft" filled vertices="($negativeSoln,0.25) ($negativeSoln,-0.25) ($leftx,-0.25) ($leftx,0.25)" fixed styleNumber="12"/>
+            
+          </graph>
+        </div>
+      </sideBySide>
+  
+      <answer name="indiIneqGraph">
+        <award>
+          <when>
+            $firstSolOnX.open=true and 
+            $secondSolOnX.open=true and 
+            $firstSolAboveX.open=true and 
+            $secondSolAboveX.open=true and 
+            $firstShowLeft.value=true and
+            $firstShowRight.value=false and
+            $secondShowLeft.value=false and
+            $secondShowRight.value=true
+          </when>
+        </award>
+      </answer>
+    </li>
+  </ol>
+
+</div>
+</problem>
+
+<!-- Step 6: Graph the solutions to the compound inequality. -->
+
+<problem boxed><title>Step 6: Graph the solutions to the compound inequality.</title>
+  <div hide="$indiIneqGraph.creditAchieved!=1">
+
+    <ul>
+      <li>When you have an <alert>OR</alert> compound inequality, look for where you are cov<alert>OR</alert>ed from the rain. That's where the solutions to the compound inequality lie.</li>
+      <li>When you have an <alert>AND</alert> compound inequality, look for where you have a s<alert>AND</alert>wich or where the two lines overlap. That's where the solutions to the compound inequality lie.</li>
+    </ul>
+  
+    <ol>
+      <li><p>Graph the solutions to the compound inequality, <m>x < $positiveSoln</m> and <m>x > $negativeSoln</m>, below. </p>
+
+    <sideBySide widths="35% 65%">
+      
+      <div>
+        <p>Click on the dots to switch between open and closed.</p>
+        <p><booleanInput name="finalFirstShowLeft"><label>Draw to the left of $positiveSoln</label></booleanInput></p>
+        <p><booleaninput name="finalFirstShowRight"><label>Draw to the right of $positiveSoln</label></booleaninput></p>
+        <p><booleanInput name="finalSecondShowLeft"><label>Draw to the left of $negativeSoln</label></booleanInput></p>
+        <p><booleaninput name="finalSecondShowRight"><label>Draw to the right of $negativeSoln</label></booleaninput></p>
+        <p><booleanInput name="lineBetween"><label>Draw between $negativeSoln and $positiveSoln</label></booleanInput></p>
+      </div>
+      
+      <div>
+        <graph fixed displayYAxis="false" aspectRatio="6/3" showNavigation="false" showBorder ="false" ymax="5" ymin="-2" xmin="$leftx" xmax="$rightx" displayXAxisTickLabels="false">
+          <endpoint fixLocation switchable open name="finalfirstSolOnX" labelPosition="bottom"><label>$positiveSoln</label>($positiveSoln,<number fixed>0</number>)</endpoint>
+          <polygon name="leftOfPosSol" hide="not $finalFirstShowRight" filled vertices="($finalfirstSolOnX.x,0.25) ($finalfirstSolOnX.x,-0.25) ($rightx,-0.25) ($rightx, 0.25)" fixed styleNumber="11"/>
+          <polygon name="rightOfPosSol" hide="not $finalFirstShowLeft" filled vertices="($finalfirstSolOnX.x,0.25) ($finalfirstSolOnX.x,-0.25) ($leftx,-0.25) ($leftx, 0.25)" fixed styleNumber="11"/>  
+  
+          <endpoint fixLocation switchable open name="finalsecondSolAboveX" labelPosition="bottom"><label>$negativeSoln</label>($negativeSoln,<number fixed>0</number>)</endpoint>
+          <polygon name="rightOfNegSol" hide="not $finalSecondShowRight" filled vertices="($finalsecondSolAboveX.x,0.25) ($finalsecondSolAboveX.x,-0.25) ($rightx,-0.25) ($rightx,0.25)" fixed styleNumber="12"/>
+          <polygon name="leftOfNegSol" hide="not $finalSecondShowLeft" filled vertices="($finalsecondSolAboveX.x,0.25) ($finalsecondSolAboveX.x,-0.25) ($leftx,-0.25) ($leftx,0.25)" fixed styleNumber="12"/>
+          
+          <polygon name="betweenSol" hide="not $lineBetween" filled vertices="($positiveSoln,0.25) ($positiveSoln,-0.25) ($negativeSoln,-0.25) ($negativeSoln,0.25)" fixed styleNumber="10"/>  
+        </graph>
+      </div>
+    </sideBySide>
+      
+  <answer name="compoundIneqGraph">
+    <award>
+      <when>
+        $finalfirstSolOnX.open=true and 
+        $finalsecondSolAboveX.open=true and 
+        $finalFirstShowLeft.value=false and
+        $finalFirstShowRight.value=false and
+        $finalSecondShowLeft.value=false and
+        $finalSecondShowRight.value=false and
+        $lineBetween=true
+      </when>
+    </award>
+  </answer>
+      </li>
+    </ol>
+    
+  </div>    
+</problem>
+  
+<!-- Step 7: Represent the solutions to the compound inequality in multiple ways. -->
+
+<problem boxed><title>Step 7: Represent the solutions to the compound inequality in multiple ways.</title>
+  <div hide="$compoundIneqGraph.creditAchieved!=1">
+
+  <ul>
+    <li>We have already represented the solutions to the inequality <em>as a graph</em> above: 
+      <graph name="finalGraph" fixed displayYAxis="false" aspectRatio="6/1.5" showNavigation="false" showBorder ="false" ymax="3" ymin="-2.5" xmin="$leftx" xmax="$rightx" displayXAxisTickLabels="false">
+        $finalfirstSolOnX
+        $finalsecondSolAboveX
+        $leftOfPosSol
+        $rightOfPosSol
+        $leftOfNegSol
+        $rightOfNegSol
+        $betweenSol
+      </graph>
+    </li>
+  
+    <li>We can also represent the solutions <em>as an interval.</em>
+      <ul>
+        <li>Recall that we indicate inclusion in an interval using square brackets - [ ], and exclusion using parentheses - ( ).</li>
+        <li>For instance, we can represent the interval of numbers between <m>-4</m> and <m>5</m> <em>excluding</em> <m>-4</m> but <em>including</em> <m>5</m> as the interval, <m>(-4,5]</m>.</li>
+        <li><m>-\infty</m> and <m>\infty</m> are not finite numbers and cannot be included in an interval. We use parenthesis around <m>\pm \infty</m>.</li>
+        <li>For instance, we can represent the numbers less than or equal to <m>5</m> as the interval, <m>(-\infty,5]</m>.</li>
+        <li> Similarly, we can represent the numbers greater than <m>-4</m> as the interval, <m>(-4, \infty)</m>.</li>
+      </ul></li>
+  </ul>
+  
+  <ol>
+    <li><p>What interval represents solutions to the compound inequality (and therefore, the absolute value inequality)?</p>
+      <answer symbolicEquality name="finalInterval">
+        <award>($negativeSoln,$positiveSoln)</award>
+        <award>(<number>$negativeSoln</number>,<number>$positiveSoln</number>)</award>
+      </answer></li>
+  </ol>
+    
+</div>
+</problem>
+
+<div hide="$finalInterval.creditAchieved!=1">
+  <solution>
+
+    <p><em>Question:</em> Solve <math><math simplify>$f</math>+<math simplify>$e</math><abs><math simplify>$a</math> x+<math simplify>$b</math></abs>+<math simplify>$c</math> < <math simplify>$d</math> </math>.</p>
+    <p> We start by first isolating absolute value expression.</p>
+      <md>
+        <mrow><math simplify>$f</math>+<math simplify>$e</math><abs><math simplify>$a</math> x+<math simplify>$b</math></abs>+<math simplify>$c</math> &< <math simplify>$d</math></mrow>
+        <mrow><abs><math simplify>$a</math> x+<math simplify>$b</math></abs> &< \frac{<math simplify>$d</math>-(<math simplify>$f</math>)-(<math simplify>$c</math>)}{<math simplify>$e</math>}</mrow>
+        <mrow><abs><math simplify>$a</math> x+<math simplify>$b</math></abs> &< $absValueExpIsolated</mrow>       
+      </md>
+    <p>Since the absolute value expression is not <em>less than</em> or <em>less than or equal to</em> a negative number, we can continue solving this problem by creating a system of inequalities. Since the inequality above has a <em>less-than</em> (<m> < </m>) symbol, we split it into an AND (less th<alert>AND</alert>) compound inequality.</p>
+      <sbsGroup widths="33% 33% 34%" margins="20%">
+        <sideBySide>
+          <p><m><math simplify>$a x+$b </math> < <math simplify>$positiveIneq</math></m></p>
+          <p>and</p>
+          <p><m><math simplify>$a x+$b</math> > <math simplify>$negativeIneq</math></m></p>
+        </sideBySide>
+        
+        <sideBySide>
+          <p><m><math simplify>$a x</math> < <math simplify>$positiveIneq - $b</math></m></p>
+          <p>and</p>
+          <p><m><math simplify>$a x</math> > <math simplify>$negativeIneq - $b</math></m></p>
+        </sideBySide>
+             
+        <sideBySide>
+          <p><m>x < $positiveSoln</m></p>
+          <p>and</p>
+          <p><m>x > $negativeSoln</m></p>
+        </sideBySide>
+      </sbsGroup>  
+    <p>Next, we graph the solutions to the individual inequalities, <m>x < $positiveSoln</m> and <m>x > $negativeSoln</m>.</p>
+    <graph fixed displayYAxis="false" aspectRatio="6/2" showNavigation="false" showBorder ="false" ymax="4" ymin="-2" xmin="$leftx" xmax="$rightx">
+
+      $firstSolAboveX
+      $secondSolAboveX
+      <vector hide="not $firstShowRight" styleNumber="2" head="($rightx,1.5)" tail="($positiveSoln,1.5)"/>
+      <vector hide="not $firstShowLeft" styleNumber="2" head="($leftx,1.5)" tail="($positiveSoln,1.5)"/>
+      <vector hide="not $secondShowRight" styleNumber="4" head="($rightx,2.8)" tail="($negativeSoln,2.8)"/>
+      <vector hide="not $secondShowLeft" styleNumber="4" head="($leftx,2.8)" tail="($negativeSoln,2.8)"/>
+      $firstSolOnX
+      $secondSolOnX
+      <polygon hide="not $firstShowRight" filled vertices="($positiveSoln,0.25) ($positiveSoln,-0.25) ($rightx,-0.25) ($rightx, 0.25)" styleNumber="11"  />
+      <polygon hide="not $firstShowLeft" filled vertices="($positiveSoln,0.25) ($positiveSoln,-0.25) ($leftx,-0.25) ($leftx, 0.25)" fixed styleNumber="11"/>
+      <polygon hide="not $secondShowRight" filled vertices="($negativeSoln,0.25) ($negativeSoln,-0.25) ($rightx,-0.25) ($rightx,0.25)" fixed styleNumber="12"/>
+      <polygon hide="not $secondShowLeft" filled vertices="($negativeSoln,0.25) ($negativeSoln,-0.25) ($leftx,-0.25) ($leftx,0.25)" fixed styleNumber="12"/>
+    </graph>
+
+    <p>Since we have an <alert>AND</alert> compound inequality, we are looking for an overlap of the two individual graphs or a s<alert>AND</alert>wich.</p>
+
+    $finalGraph    
+
+    <p>We can represent the answer to the original question as a graph above or as an interval, <m>\left($negativeSoln, $positiveSoln \right)</m>.</p>
+    
+  </solution>
+</div>
