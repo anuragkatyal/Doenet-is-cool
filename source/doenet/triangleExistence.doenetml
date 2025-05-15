@@ -1,0 +1,353 @@
+<activity><title>Can you make a triangle?</title>
+
+<paginator name="pgn">
+
+<!--*************************************************************
+          Page 1 - 3,4,5
+**************************************************************-->
+  
+<div>
+<graph xmin="-1" xmax="20" ymin="-1" ymax="20" size="large" displayXAxis="false" displayYAxis="false">
+<group name="sideAGroup">
+  <point name="p1" styleNumber="5" showCoordsWhenDragging="false">(3,3)
+    <constraints>
+      <attractTo>$p3</attractTo>
+      <attractTo>$p4</attractTo>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p2" styleNumber="2" showCoordsWhenDragging="false">(8,3) 
+    <constraints>
+      <constrainTo>$lengthConstraintA</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintA" center="$p1" radius="3" styleNumber="6"/>
+  <lineSegment name="sideA" endpoints="$p1 $p2" applyStyleToLabel>
+    <label><m>A</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideBGroup">
+  <point name="p3" styleNumber="5" showCoordsWhenDragging="false">(15,6)
+    <constraints>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p4" styleNumber="3" showCoordsWhenDragging="false">(15,10) 
+    <constraints>
+      <constrainTo>$lengthConstraintB</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintB" center="$p3" radius="4" styleNumber="6"/>
+  <lineSegment name="sideB" endpoints="$p3 $p4" styleNumber="3" applyStyleToLabel>
+    <label><m>B</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideCGroup">
+  <point name="p5" styleNumber="5" showCoordsWhenDragging="false">(8,14)</point>
+  <point name="p6" styleNumber="4" showCoordsWhenDragging="false">(13,14) 
+    <constraints>
+      <constrainTo>$lengthConstraintC</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintC" center="$p5" radius="5" styleNumber="6"/>
+  <lineSegment name="sideC" endpoints="$p5 $p6" styleNumber="4" applyStyleToLabel>
+    <label><m>C</m></label>
+  </lineSegment>
+</group>
+
+<legend>
+  <label forObject="$sideA"><m>A = $sideA.length</m></label>
+  <label forObject="$sideB"><m>B = $sideB.length</m></label>
+  <label forObject="$sideC"><m>C = $sideC.length</m></label>
+</legend>
+</graph>
+
+<p>How can you tell?</p>
+<answer  handGraded expanded type="text" forceFullCheckworkButton/>
+
+</div>
+
+<!--*************************************************************
+          Page 2 - 6,2,5
+**************************************************************-->
+
+  
+<div newNamespace>
+<graph grid xmin="-1" xmax="20" ymin="-1" ymax="20" size="large" displayXAxis="false" displayYAxis="false">
+<group name="sideAGroup">
+  <point name="p1" styleNumber="5" showCoordsWhenDragging="false">(7,7)
+    <constraints>
+      <attractTo>$p3</attractTo>
+      <attractTo>$p4</attractTo>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p2" styleNumber="2" showCoordsWhenDragging="false">(7,1) 
+    <constraints>
+      <constrainTo>$lengthConstraintA</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintA" center="$p1" radius="6" styleNumber="6"/>
+  <lineSegment name="sideA" endpoints="$p1 $p2" applyStyleToLabel>
+    <label><m>A</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideBGroup">
+  <point name="p3" styleNumber="5" showCoordsWhenDragging="false">(17,6)
+    <constraints>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p4" styleNumber="3" showCoordsWhenDragging="false">(17,8) 
+    <constraints>
+      <constrainTo>$lengthConstraintB</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintB" center="$p3" radius="2" styleNumber="6"/>
+  <lineSegment name="sideB" endpoints="$p3 $p4" styleNumber="3" applyStyleToLabel>
+    <label><m>B</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideCGroup">
+  <point name="p5" styleNumber="5" showCoordsWhenDragging="false">(13,13)</point>
+  <point name="p6" styleNumber="4" showCoordsWhenDragging="false">(18,13) 
+    <constraints>
+      <constrainTo>$lengthConstraintC</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintC" center="$p5" radius="5" styleNumber="6"/>
+  <lineSegment name="sideC" endpoints="$p5 $p6" styleNumber="4" applyStyleToLabel>
+    <label><m>C</m></label>
+  </lineSegment>
+</group>
+
+<legend>
+  <label forObject="$sideA"><m>A = $sideA.length</m></label>
+  <label forObject="$sideB"><m>B = $sideB.length</m></label>
+  <label forObject="$sideC"><m>C = $sideC.length</m></label>
+</legend>
+</graph>
+
+<p>How can you tell?</p>
+<answer  handGraded expanded type="text" forceFullCheckworkButton/>
+
+</div>
+
+
+
+<!--*************************************************************
+          Page 3 - 7,3,11
+**************************************************************-->
+
+  
+<div newNamespace>
+<graph grid xmin="-1" xmax="20" ymin="-1" ymax="20" size="large" displayXAxis="false" displayYAxis="false">
+<group name="sideAGroup">
+  <point name="p1" styleNumber="5" showCoordsWhenDragging="false">(8,10)
+    <constraints>
+      <attractTo>$p3</attractTo>
+      <attractTo>$p4</attractTo>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p2" styleNumber="2" showCoordsWhenDragging="false">(1,10) 
+    <constraints>
+      <constrainTo>$lengthConstraintA</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintA" center="$p1" radius="7" styleNumber="6"/>
+  <lineSegment name="sideA" endpoints="$p1 $p2" applyStyleToLabel>
+    <label><m>A</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideBGroup">
+  <point name="p3" styleNumber="5" showCoordsWhenDragging="false">(5,5)
+    <constraints>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p4" styleNumber="3" showCoordsWhenDragging="false">(5,2) 
+    <constraints>
+      <constrainTo>$lengthConstraintB</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintB" center="$p3" radius="3" styleNumber="6"/>
+  <lineSegment name="sideB" endpoints="$p3 $p4" styleNumber="3" applyStyleToLabel>
+    <label><m>B</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideCGroup">
+  <point name="p5" styleNumber="5" showCoordsWhenDragging="false">(13,8)</point>
+  <point name="p6" styleNumber="4" showCoordsWhenDragging="false">(13,19) 
+    <constraints>
+      <constrainTo>$lengthConstraintC</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintC" center="$p5" radius="11" styleNumber="6"/>
+  <lineSegment name="sideC" endpoints="$p5 $p6" styleNumber="4" applyStyleToLabel>
+    <label><m>C</m></label>
+  </lineSegment>
+</group>
+
+<legend>
+  <label forObject="$sideA"><m>A = $sideA.length</m></label>
+  <label forObject="$sideB"><m>B = $sideB.length</m></label>
+  <label forObject="$sideC"><m>C = $sideC.length</m></label>
+</legend>
+</graph>
+
+<p>How can you tell?</p>
+<answer  handGraded expanded type="text" forceFullCheckworkButton/>
+
+</div>  
+
+
+
+
+<!--*************************************************************
+          Page 4 - 5,8,3
+**************************************************************-->
+
+  
+<div newNamespace>
+<graph grid xmin="-1" xmax="20" ymin="-1" ymax="20" size="large" displayXAxis="false" displayYAxis="false">
+<group name="sideAGroup">
+  <point name="p1" styleNumber="5" showCoordsWhenDragging="false">(7,4)
+    <constraints>
+      <attractTo>$p3</attractTo>
+      <attractTo>$p4</attractTo>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p2" styleNumber="2" showCoordsWhenDragging="false">(7,9) 
+    <constraints>
+      <constrainTo>$lengthConstraintA</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintA" center="$p1" radius="5" styleNumber="6"/>
+  <lineSegment name="sideA" endpoints="$p1 $p2" applyStyleToLabel>
+    <label><m>A</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideBGroup">
+  <point name="p3" styleNumber="5" showCoordsWhenDragging="false">(10,10)
+    <constraints>
+      <attractTo>$p5</attractTo>
+      <attractTo>$p6</attractTo>
+    </constraints>
+  </point>
+  <point name="p4" styleNumber="3" showCoordsWhenDragging="false">(10,18) 
+    <constraints>
+      <constrainTo>$lengthConstraintB</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintB" center="$p3" radius="8" styleNumber="6"/>
+  <lineSegment name="sideB" endpoints="$p3 $p4" styleNumber="3" applyStyleToLabel>
+    <label><m>B</m></label>
+  </lineSegment>
+</group>
+
+
+<group name="sideCGroup">
+  <point name="p5" styleNumber="5" showCoordsWhenDragging="false">(16,13)</point>
+  <point name="p6" styleNumber="4" showCoordsWhenDragging="false">(19,13) 
+    <constraints>
+      <constrainTo>$lengthConstraintC</constrainTo>
+    </constraints>
+  </point>
+  <circle name="lengthConstraintC" center="$p5" radius="3" styleNumber="6"/>
+  <lineSegment name="sideC" endpoints="$p5 $p6" styleNumber="4" applyStyleToLabel>
+    <label><m>C</m></label>
+  </lineSegment>
+</group>
+
+<legend>
+  <label forObject="$sideA"><m>A = $sideA.length</m></label>
+  <label forObject="$sideB"><m>B = $sideB.length</m></label>
+  <label forObject="$sideC"><m>C = $sideC.length</m></label>
+</legend>
+</graph>
+
+<p>How can you tell?</p>
+<answer  handGraded expanded type="text" forceFullCheckworkButton/>
+
+</div>  
+
+
+
+
+<!--*************************************************************
+          Page 5 - answer questions given triples
+**************************************************************-->
+<div newNamespace>
+
+<p>What about the side lengths given below?</p>
+
+<ul>
+  <li> <!--a true triangle-->
+    <p><m>3, 6, 7</m>
+    <booleanInput name="biT1" disabled="$biF1"><label>T</label></booleanInput>
+    <booleanInput name="biF1" disabled="$biT1"><label>F</label></booleanInput>
+    </p>
+  </li>
+  <li>
+    <p><m>1, 4, 2</m> <!--a false triangle-->
+    <booleanInput name="biT2" disabled="$biF2"><label>T</label></booleanInput>
+    <booleanInput name="biF2" disabled="$biT2"><label>F</label></booleanInput>
+    </p>
+  </li>
+  <li>
+    <p><m>9, 4, 6</m> <!--a true triangle-->
+    <booleanInput name="biT3" disabled="$biF3"><label>T</label></booleanInput>
+    <booleanInput name="biF3" disabled="$biT3"><label>F</label></booleanInput>
+    </p>
+  </li>
+  <li>
+    <p><m>3, 3, 1</m> <!--a true triangle-->
+    <booleanInput name="biT4" disabled="$biF4"><label>T</label></booleanInput>
+    <booleanInput name="biF4" disabled="$biT4"><label>F</label></booleanInput>
+    </p>
+  </li>
+  <li>
+    <p><m>3, 2, 1</m> <!--a false triangle-->
+    <booleanInput name="biT5" disabled="$biF5"><label>T</label></booleanInput>
+    <booleanInput name="biF5" disabled="$biT5"><label>F</label></booleanInput>
+    </p>
+  </li>
+</ul>
+
+<p><booleanList name="responses">$biT1 $biT2 $biT3 $biT4 $biT5</booleanList></p>
+<p><booleanList name="solutions">true false true true false</booleanList></p>
+  
+<answer matchPartial matchByExactPositions>
+  <award><when>$responses = $solutions</when></award>
+</answer>
+</div>
+</paginator>
+
+<paginatorControls paginator="$pgn"/>
+</activity>
+
+
+

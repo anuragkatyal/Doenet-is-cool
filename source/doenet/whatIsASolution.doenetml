@@ -1,0 +1,317 @@
+<!-- **********************************************************************
+
+Course:    Intermediate Algebra/Algebra I
+Chapter:   1. Linear Equations
+Section:   1. What is a solution?
+Author:    Anurag Katyal, Summer 2023
+Contact:   katyala@palmbeachstate.edu
+
+I'd love feedback on the activity or suggestions for improving the activity. 
+
+About the activity: Students often learn to solve various equations in Algebra courses without necessarily knowing what they are finding or what it means for some mathematical object to be a solution. The goal of this activity is to develop students' understanding of solutions in a mathematical setting by having them check potential solutions in linear equations and inequalities. All the problems, through hopefully a happy coincidence, are previews of the remaining sections in this Chapter. 
+
+********************************************************************** -->
+
+<section boxed><title>What is a solution?</title>
+        <video name="fitvideo" youtube="Xvr-6jIGXpw"/>
+      <p>Video credit achieved: <number displayDecimals="1">$fitvideo.fractionWatched*100</number>%</p>
+    
+    <p>Imagine you are trying to unlock a locked door.</p>
+        <ol>
+          <li>A <em>solution</em> is a key that not only fits the lock but actually opens the door as well.</li>
+          <li>A master key will fit and unlock any door and represents <em>all solutions</em>. </li>      
+          <li>An incorrect key will not fit nor unlock the door and represents <em>no solution</em>.</li>
+          <li><em>Extraneous solutions</em> are keys that fit but are missing the groves to turn the tumblers in the lock. We will see these later in the course.</li>
+        </ol>
+
+      <p>Let's take a look at the key that fits <em>and</em> opens the door as well.</p>
+
+      <p>We say, <m>3</m> <em>is</em> a solution to <m>x+1=4</m> because if we replace <m>3</m> in for <m>x</m> in the equation, we can simplify to a <em>true statement</em>.</p>        
+  
+        <p>   
+          <md>
+            <mrow>x+1 \amp=4</mrow>
+            <mrow>3+1 \amp=4</mrow>
+            <mrow>4 \amp=4 ~(\checkmark~True)</mrow>
+          </md>
+        </p>
+    
+      <p>However, <m>1</m> is <em>not</em> a solution to <m>x+1=4</m>, because if we replace <m>1</m> in for <m>x</m>, we can simplify to a <em>false statement</em>.</p> 
+  
+        <p>   
+          <md>
+            <mrow>x+1 \amp=4</mrow>
+            <mrow>1+1 \amp=4</mrow>
+            <mrow>2 \amp=4 ~(\chi~False)</mrow>
+          </md>
+        </p>
+
+  <p>Next, let's look at some equations and inequalities we will cross paths with in this course.</p>
+
+
+</section>
+
+<setup><function name="p1To3Function">2x+1</function></setup>
+          
+<section boxed includeAutoNumber><title>Linear Equations in One Variable</title>
+
+
+<!--**********************************************************************
+              Problem 2.1
+***********************************************************************-->
+
+  <problem includeParentNumber>
+    Is <m>4</m> a solution to <m>$p1To3Function=-4</m>?
+              <answer>
+                <choiceInput name="p1menu" inline>
+                  <choice>Yes.</choice>
+                  <choice credit="1">No. </choice>
+                </choiceInput>
+              </answer>
+           
+
+            
+              <hint>
+                If you substitute the given value into the variable, do you get a true or a false statement?
+              </hint>
+             
+              <solution>
+                
+                <md>
+                  <mrow>$p1To3Function=-4</mrow>
+                  <mrow>2(4)+1=-4</mrow>
+                  <mrow>8+1=-4</mrow>
+                  <mrow>9=-4</mrow>
+                  <mrow>False</mrow>
+                </md>
+                
+                <p>
+                  <m>4</m> is not a solution to <m>$p1To3Function=-4</m> because if we replace <m>4</m> in for <m>x</m>, we can simplify to a <em>false statement</em>.
+                </p>
+              
+              </solution>
+  </problem>
+
+
+<!--**********************************************************************
+              Problem 2.2
+***********************************************************************-->
+      
+<problem includeParentNumber>
+    Is <m>-\frac{5}{2}</m> a solution to <m>$p1To3Function=-4</m>?
+
+           
+          <p>Step 1: <nbsp/><nbsp/>
+            <m>2 \bigg( </m><mathinput name="p2entry1"/><m>\bigg) + 1 = -4</m></p>
+
+          <p>Step 2: <nbsp/><nbsp/><mathinput name="p2entry2"/><m> + 1 = -4</m></p>
+              
+          <p>Step 3: <nbsp/><nbsp/><mathinput name="p2entry3"/><m> = -4</m></p>
+
+          <p>The above solution results in a              
+                    <choiceInput name="tf" inline>
+                      <choice>True</choice>
+                      <choice>False</choice>
+                    </choiceInput>
+                  statement.</p>
+
+  <answer>
+            <award>
+              <when>
+                $p2entry1= (-5/2) and 
+                $p2entry2= (-5) and 
+                $p2entry3 = (-4) and 
+                $tf.selectedIndex = 1
+              </when>
+            </award>
+          </answer>
+              
+</problem>
+
+
+<!--**********************************************************************
+              Problem 2.3
+***********************************************************************-->
+      
+<problem includeParentNumber>Write a full sentence to answer Problem 2.2 giving a reason to support your claim. You may want to revisit the solution to Problem 2.1 if you'd like a hint. 
+              <p>
+                <answer name="linearEquationSolutionCheck" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+                <textInput width="700" height="40"/>
+                </answer>
+              </p>                
+            </problem>
+  </section>
+
+
+  
+  <section boxed includeAutoNumber><title>Linear Inequality in One Variable</title> 
+            
+         
+
+<!--**********************************************************************
+              Problem 3.1
+***********************************************************************-->
+<problem includeParentNumber>Is <m>\frac{1}{2}</m> a solution to <m>$p1To3Function>-4</m>?
+              <answer>
+                <choiceInput name="p3menu" inline>
+                  <choice credit="1">Yes.</choice>
+                  <choice>No. </choice>
+                </choiceInput>
+              </answer>
+</problem>
+
+<!--**********************************************************************
+              Problem 3.2
+***********************************************************************-->
+              
+<problem includeParentNumber>Write a full sentence to answer Problem 3.1 giving a reason to support your claim.
+              <p>
+                <answer name="linearInequalitySolutionCheck" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+                <textInput width="700" height="40"/>
+                </answer>
+              </p>                
+            </problem>
+</section>
+
+
+      
+<section boxed includeAutoNumber><title>Linear Inequality in Two Variables</title> 
+
+<!--**********************************************************************
+              Problem 4.1
+***********************************************************************-->
+<problem includeParentNumber>  
+Is <m>x=1, y=3</m> or <m>(1,3)</m> a solution to <m>2x+y \leq -4</m>?
+    <answer name = "somethingSilly" weight="0">
+      <choiceInput name="p4menu" inline>
+        <choice>Yes.</choice>
+        <choice credit="1">No. </choice>
+        </choiceInput>
+    </answer>
+</problem>
+
+
+<!--**********************************************************************
+              Problem 4.2
+***********************************************************************-->
+              
+<problem includeParentNumber>Write a full sentence to answer Problem 4.1 giving a reason to support your claim.
+              <p>
+                <answer name="linearInequalityTwoVarSolutionCheck" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+                <textInput width="700" height="40"/>
+                </answer>
+              </p>                
+            </problem>
+
+</section>
+
+<section boxed includeAutoNumber><title>Systems of Linear Equations in Two Variables</title>  
+          
+  <p>A <em>system of linear equations</em> (or <em>linear system</em>) is a collection of one or more linear equations involving the same variables. A <em>solution</em> to a linear system is satisfies <em>all</em> the equations simultaneously.</p> 
+  <p>For instance, for a system of two equations with two variables, <m>x</m> and <m>y</m>, <m>(x,y)</m> must be a solution to both equations in order to be a solution to the system.</p>
+
+<!-- *** 
+        
+Q - How do I make this question a self check but not worth any credit? Use the weight="0" attribute on the <answer> tag
+        
+*** --> 
+
+<!--**********************************************************************
+              Problem 5.1
+***********************************************************************-->            
+    <problem includeParentNumber>Is <m>(3,-2)</m> a solution to the system
+              <m>
+                \begin{cases}
+                  2x+y =4\\
+                  x-y=5
+                \end{cases}
+              </m>?
+              
+              <answer weight="0">
+                <choiceInput name="p5menu" inline>
+                  <choice credit="1">Yes.</choice>
+                  <choice>No. </choice>
+                </choiceInput>
+              </answer>
+    </problem>
+
+<!--**********************************************************************
+              Problem 5.2
+***********************************************************************-->
+
+    <problem includeParentNumber>Write a full sentence to answer Problem 1 giving a reason to support your claim.
+      <p>
+        <answer name="linearSystemSolutionCheck1" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+            <textInput width="700" height="40"/>
+        </answer>
+      </p>                
+    </problem>   
+
+<!--**********************************************************************
+              Problem 5.3
+***********************************************************************-->
+     
+    <problem includeParentNumber>Is <m>(0,4)</m> a solution to the system
+              <m>
+                \begin{cases}
+                  2x+y=4\\
+                  x-y=5
+                \end{cases}
+              </m>?
+
+              <answer>
+                <choiceInput name="p6menu" inline>
+                  <choice>Yes.</choice>
+                  <choice credit="1">No. </choice>
+                </choiceInput>
+              </answer>
+    </problem>
+
+<!--**********************************************************************
+              Problem 5.4
+***********************************************************************-->
+
+    <problem includeParentNumber>Write a full sentence to answer Problem 3 giving a reason to support your claim.
+              <p>
+                <answer name="linearSystemSolutionCheck2" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+                <textInput width="700" height="40"/>
+                </answer>
+              </p>                
+    </problem>  
+
+            
+            <p>The graphs of <m>2x+y =4</m> and <m>x-y=5</m> are shown below.</p>
+
+           
+    <graph name="g" grid  size="medium" xmin="-1" xmax="11" ymin="-9" ymax="3" fixed="true">
+          <line name = "eq1" styleNumber="4" labelPosition="upper left">
+            2x+y=4
+          </line>
+          <!--I removed the label that was nested inside the line component-->
+
+          <!--I redefined it as an independent label below-->
+          <label styleNumber="4" anchor="(3,0.5)">$eq1.equation</label>
+          
+          <line name = "eq2" styleNumber="2">x-y=5</line>
+          <label anchor="(4.5, -1.5)" styleNumber="2">$eq2.equation</label>
+  
+          <!--created a github issue for your recommendation about the separate legend, it's #2254-->
+          <legend position="lowerright">
+                  <label styleNumber="4">$eq1.equation</label>
+                  <label styleNumber="2">$eq2.equation</label>
+          </legend>
+        </graph>
+
+<!--**********************************************************************
+              Problem 5.5
+***********************************************************************-->
+    <problem includeParentNumber> Geometrically, what can you say about <m>(3,-2)</m> and <m>(5, 0)</m> in relation to the graphs and the solution to the system?
+              <answer name="pointIsSolutionToSystem" type="text" handGraded forceFullCheckWorkButton expanded weight="0">
+                <textInput width="700" height="60"/>
+              </answer>
+    </problem>
+
+</section>    
+
+      
+
