@@ -3,10 +3,21 @@
 <section xml:id="sec-parabolas" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Parabolas: General, Standard and Graphical Forms</title>
 
+<objectives>
+  <ul>
+    <li>Practice constructing graphs of parabolas using different equation formats</li>
+    <li>Gain intuition for what each parameter in the equations <em>does</em> to the graph</li>
+    <li>Practice converting between different equation formats that represent the
+      same parabola.</li>
+  </ul>
+</objectives>
+
+<activity>
 <interactive label="parabolas-interactive-label" platform="doenetml" width="100%" aspect="2:8">
   <slate surface="doenetml">
     <xi:include parse="text" href="doenet/parabolas.doenetml"/> 
   </slate>
 </interactive>
+</activity>
 
 </section>

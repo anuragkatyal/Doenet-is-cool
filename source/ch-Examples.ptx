@@ -8,18 +8,18 @@
   </introduction> -->
 
   <!-- include sections -->
+   <xi:include href="sec-conwaysIris.ptx" />
+   <xi:include href="sec-sketchDerivativeCubic.ptx" />
+   <xi:include href="sec-kenken.ptx" />
+   <xi:include href="sec-mutilatedChessboard.ptx" />
+   <xi:include href="sec-parabolas.ptx" />
    <xi:include href="sec-triangleExistence.ptx" />
    <xi:include href="sec-pascalsTriangle.ptx" />
    <xi:include href="sec-inequalities.ptx" />
    <xi:include href="sec-interactiveVenn.ptx" />
-   <xi:include href="sec-kenken.ptx" />
    <xi:include href="sec-letstakeawalk.ptx" />
-   <xi:include href="sec-parabolas.ptx" />
    <xi:include href="sec-parametric.ptx" />
-   <xi:include href="sec-sketchDerivativeCubic.ptx" />
    <xi:include href="sec-solvinglinearinequalities.ptx" />
-   <xi:include href="sec-conwaysIris.ptx" />
-   <xi:include href="sec-mutilatedChessboard.ptx" />
    <xi:include href="sec-sketchRiemannSums.ptx" />
    <xi:include href="sec-squareofsum.ptx" />
    <xi:include href="sec-watchPuzzle.ptx" />

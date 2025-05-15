@@ -54,7 +54,7 @@ For what values of <m>x</m> is the derivative zero?  Move point(s) to make the g
 
 
 <solution>
-The derivative is zero at <m>x=3</m> and <m>x=-3</m>.  It is positive for <m>-3 \lt  x \lt  3</m>.  The slope is maximally positive <m>x=0</m>.
+The derivative is zero at <m>x=3</m> and <m>x=-3</m>.  It is positive for <m>-3 \lt  x \lt  3</m>.  The slope is maximally positive at <m>x=0</m>.
 
 <graph size="large" aspectRatio="2" xmin="-5.5" xmax='5.5' ymin='-3' ymax='3' >
   $f
