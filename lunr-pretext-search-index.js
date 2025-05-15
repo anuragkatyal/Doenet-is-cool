@@ -64,11 +64,20 @@ var ptx_lunr_docs = [
   "body": " The Mutilated Chessboard   "
 },
 {
+  "id": "sec-gaussian",
+  "level": "1",
+  "url": "sec-gaussian.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "Sketch the Derivative of a Gaussian Step-by-Step",
+  "body": " Sketch the Derivative of a Gaussian Step-by-Step   "
+},
+{
   "id": "sec-triangleExistence",
   "level": "1",
   "url": "sec-triangleExistence.html",
   "type": "Section",
-  "number": "1.5",
+  "number": "1.6",
   "title": "Triangle Existence",
   "body": " Triangle Existence   "
 },
@@ -77,7 +86,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-inequalities.html",
   "type": "Section",
-  "number": "1.6",
+  "number": "1.7",
   "title": "An Introduction to Inequalities",
   "body": " An Introduction to Inequalities   "
 },
@@ -86,7 +95,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-interactiveVenn.html",
   "type": "Section",
-  "number": "1.7",
+  "number": "1.8",
   "title": "An Interactive Venn Diagram for Classifying Numbers",
   "body": " An Interactive Venn Diagram for Classifying Numbers     "
 },
@@ -95,7 +104,7 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-interactiveVenn.html#sec-interactiveVenn-2",
   "type": "Activity",
-  "number": "1.7.1",
+  "number": "1.8.1",
   "title": "",
   "body": "  "
 },
@@ -104,7 +113,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-letstakeawalk.html",
   "type": "Section",
-  "number": "1.8",
+  "number": "1.9",
   "title": "Systems of Linear Equations",
   "body": " Systems of Linear Equations   "
 },
@@ -113,7 +122,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-parametric.html",
   "type": "Section",
-  "number": "1.9",
+  "number": "1.10",
   "title": "Parametric Curve Plotter",
   "body": " Parametric Curve Plotter   "
 },
@@ -122,7 +131,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-solvinglinearinequalities.html",
   "type": "Section",
-  "number": "1.10",
+  "number": "1.11",
   "title": "Solving Linear Inequalities in One Variable",
   "body": " Solving Linear Inequalities in One Variable   "
 },
@@ -131,7 +140,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-sketchRiemannSums.html",
   "type": "Section",
-  "number": "1.11",
+  "number": "1.12",
   "title": "Sketching Riemann Sums",
   "body": " Sketching Riemann Sums   "
 },
@@ -140,7 +149,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-squareofsum.html",
   "type": "Section",
-  "number": "1.12",
+  "number": "1.13",
   "title": "Square+ception",
   "body": " Square+ception   "
 },
@@ -149,7 +158,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-watchPuzzle.html",
   "type": "Section",
-  "number": "1.13",
+  "number": "1.14",
   "title": "The Watch Face Puzzle",
   "body": " The Watch Face Puzzle   "
 },
@@ -158,7 +167,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-absValueInequalities.html",
   "type": "Section",
-  "number": "1.14",
+  "number": "1.15",
   "title": "Solving Absolute Value Inequalities",
   "body": " Solving Absolute Value Inequalities   "
 },
@@ -167,7 +176,7 @@ var ptx_lunr_docs = [
   "level": "1",
   "url": "sec-pascalsTriangle.html",
   "type": "Section",
-  "number": "1.15",
+  "number": "1.16",
   "title": "Pascal’s Triangle",
   "body": " Pascal's Triangle   "
 }
