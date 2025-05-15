@@ -1,6 +1,5 @@
-<activity><title>Puzzle: A Watch Face</title>
 
-<section includeParentNumber="false">
+<aside startOpen><title>Part 1</title>
 <p>Can you divide the watch face with <m>2</m> straight lines so that the sums of the numbers in each part are equal?</p>
 
 
@@ -62,10 +61,9 @@
   
 <p>Describe your thought process and your conclusion.</p>
 <p><answer name="ans1" handGraded expanded type="text"/></p>
-</section>
+</aside>
 
-
-<section includeParentNumber="false">
+<aside><title>Part 2</title>
 <p>Can you divide it into <m>6</m> parts so that each part contains <m>2</m> numbers and the six sums of <m>2</m> numbers are equal?</p>
   
 <graph copySource="g1" name="g2" link="false" newNamespace>
@@ -107,11 +105,7 @@
   
 <p>Describe your thought process and your conclusion.</p>
 <p><answer name="ans2" handGraded expanded type="text"/></p>
-</section>
+</aside>
 
-
-<solution>
-</solution>
 <aside><title>Attribution</title>
 <p>Kordemsky, Boris A. The Moscow Puzzles: 359 Mathematical Recreations. Dover Publications, 1992.</p></aside>
-</activity>

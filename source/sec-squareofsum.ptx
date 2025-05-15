@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-squareofsum" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Sum of Squares</title>
+  <title>Square+ception</title>
 
 <interactive label="sumOfSquares-interactive-label" platform="doenetml" width="100%" aspect="2:8">
   <slate surface="doenetml">

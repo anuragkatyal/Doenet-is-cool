@@ -1,4 +1,4 @@
-<problem><title hide>Venn Diagram for Classifying Numbers</title>
+
 <section><title>Part 1: Label the Diagram</title>
 <p>First, label the classification regions on the graph with the following <alert>bold</alert> terms. You can move the test numbers around the graph for a clue.</p>
   <ul>
@@ -22,7 +22,7 @@
 <p>imagLabel @ $imagLabel.anchor</p> -->
 <!--/testing-->
  
-<graph name="g1" size="full" displayXAxis="false" displayYAxis="false" fixAxes xmin="-20" xmax="20" ymin="-22" ymax="18" aspectRatio="3/2">
+<graph name="g1" size="full" displayXAxis="false" displayYAxis="false" fixAxes xmin="-24" xmax="20" ymin="-22" ymax="18" aspectRatio="3/2">
     
 <group name="background">
   <rectangle name="numberBank" vertices="(-24,-24) (24,-18)" filled styleNumber="3" fixed/>
@@ -196,12 +196,13 @@
     </when></award>    
   </answer></p>
 
-<p><updateValue target="part2.hide" newValue="false" type="boolean" disabled="$ans1.creditAchieved != 1 or $part2.hide = false">
+<!-- <p><updateValue target="part2.hide" newValue="false" type="boolean" disabled="$ans1.creditAchieved != 1 or $part2.hide = false">
   <label>Go to Part 2</label>
-</updateValue></p>
+</updateValue></p> -->
 </section>
 
-<section name="part2" hide="true"><title>Part 2: Sort Numbers</title>
+<conditionalContent condition="$ans1.creditAchieved = 1">
+<section name="part2" ><title>Part 2: Sort Numbers</title>
 <p>Now, drag each number on the diagram below into the smallest possible set to which it belongs. When you have sorted all the numbers into their correct spots, click "Check Work"</p>
 <p>If you want to practice again with a new set of numbers, you can click the "Get numbers" button below.</p>
 <setup>
@@ -436,8 +437,9 @@ $background
     </award>
   </answer></p>
 </section>
+ 
+</conditionalContent>
   
-
 
 
 <!--******************************************************
@@ -473,7 +475,3 @@ $background
 
 </styleDefinitions>
 </setup>
-
-
-  
-</problem>

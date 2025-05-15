@@ -12,9 +12,8 @@
    <xi:include href="sec-sketchDerivativeCubic.ptx" />
    <xi:include href="sec-kenken.ptx" />
    <xi:include href="sec-mutilatedChessboard.ptx" />
-   <xi:include href="sec-parabolas.ptx" />
+   <!-- <xi:include href="sec-parabolas.ptx" /> -->
    <xi:include href="sec-triangleExistence.ptx" />
-   <xi:include href="sec-pascalsTriangle.ptx" />
    <xi:include href="sec-inequalities.ptx" />
    <xi:include href="sec-interactiveVenn.ptx" />
    <xi:include href="sec-letstakeawalk.ptx" />
@@ -24,5 +23,6 @@
    <xi:include href="sec-squareofsum.ptx" />
    <xi:include href="sec-watchPuzzle.ptx" />
    <xi:include href="sec-absoluteValueInequalities.ptx" />
+   <xi:include href="sec-pascalsTriangle.ptx" />
 
 </chapter>
