@@ -1,0 +1,117 @@
+<activity><title>Puzzle: A Watch Face</title>
+
+<section includeParentNumber="false">
+<p>Can you divide the watch face with <m>2</m> straight lines so that the sums of the numbers in each part are equal?</p>
+
+
+<graph name="g1" displayXAxis="false" displayYAxis="false" showBorder="true" showNavigation="false" xmax="16" size="large" identicalAxisScales newNamespace>
+  <group name="g1Group">
+  <circle radius="8" fixed styleNumber="6"/>
+  <circle radius="8.5" fixed styleNumber="5"/>
+  <regularPolygon name="hours" numSides="12" center="(0,0)" vertices="(7,0)" fixed hide/>
+  <label anchor="$hours.vertices[1]"><m>\huge{3}</m></label>
+  <label anchor="$hours.vertices[2]"><m>\huge{2}</m></label>
+  <label anchor="$hours.vertices[3]"><m>\huge{1}</m></label>
+  <label anchor="$hours.vertices[4]"><m>\huge{12}</m></label>
+  <label anchor="$hours.vertices[5]"><m>\huge{11}</m></label>
+  <label anchor="$hours.vertices[6]"><m>\huge{10}</m></label>
+  <label anchor="$hours.vertices[7]"><m>\huge{9}</m></label>
+  <label anchor="$hours.vertices[8]"><m>\huge{8}</m></label>
+  <label anchor="$hours.vertices[9]"><m>\huge{7}</m></label>
+  <label anchor="$hours.vertices[10]"><m>\huge{6}</m></label>
+  <label anchor="$hours.vertices[11]"><m>\huge{5}</m></label>
+  <label anchor="$hours.vertices[12]"><m>\huge{4}</m></label>
+  <lineSegment name="vert" endpoints="(10,-16) (10,16)" styleNumber="6" fixed/>
+
+  <map>
+    <template>
+      <lineSegment name="seg1" 
+        endpoints="(11, $i{link='false'}) (15, $i{link='false'})" 
+        layer="2" showCoordsWhenDragging="false"/>
+      <point 
+        layer="3" showCoordsWhenDragging="false">
+        $seg1.endpoints[1]
+      </point>
+      <point 
+        layer="3" showCoordsWhenDragging="false">
+        $seg1.endpoints[2]
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="6" to="8" step="2"/>
+    </sources>
+  </map>
+  </group>
+</graph>
+  
+
+<p>If there is a solution, take a snapshot of it. (Or if no solution, can you use a snapshot to illustrate why this is the case...?)</p> 
+<callAction name="snap1Action" actionName="addChildren"  target="snap1">
+<!-- $(aside1/applet1Group{link='false'}) -->
+<!--   <group copySource="g1Stuff" link="false"/> -->
+  $(g1/g1Group{link='false'})
+  <label>Take Snapshot</label>
+</callAction>
+
+<updateValue target="snap1.hide" newValue="false" type="boolean" triggerWith="$snap1Action"/>
+
+<graph name="snap1" displayXAxis="false" displayYAxis="false" showBorder="true" showNavigation="false" xmax="16" size="large" identicalAxisScales hide/>
+
+
+
+  
+<p>Describe your thought process and your conclusion.</p>
+<p><answer name="ans1" handGraded expanded type="text"/></p>
+</section>
+
+
+<section includeParentNumber="false">
+<p>Can you divide it into <m>6</m> parts so that each part contains <m>2</m> numbers and the six sums of <m>2</m> numbers are equal?</p>
+  
+<graph copySource="g1" name="g2" link="false" newNamespace>
+  <group name="g2Group">
+  <map>
+    <template>
+      <lineSegment name="seg1" 
+        endpoints="(11, $i{link='false'}) (15, $i{link='false'})" 
+        layer="2" showCoordsWhenDragging="false"/>
+      <point 
+        layer="3" showCoordsWhenDragging="false">
+        $seg1.endpoints[1]
+      </point>
+      <point 
+        layer="3" showCoordsWhenDragging="false">
+        $seg1.endpoints[2]
+      </point>
+    </template>
+    <sources alias="i">
+      <sequence from="0" to="4" step="2"/>
+    </sources>
+  </map>
+  </group>
+</graph>
+
+
+<p>If there is a solution, take a snapshot of it. (Or if no solution, can you use a snapshot to illustrate why this is the case...?)</p> 
+<callAction name="snap2Action" actionName="addChildren"  target="snap2">
+  $(g2/g2Group{link='false'})
+  <label>Take Snapshot</label>
+</callAction>
+
+<updateValue target="snap2.hide" newValue="false" type="boolean" triggerWith="$snap2Action"/>
+
+<graph name="snap2" displayXAxis="false" displayYAxis="false" showBorder="true" showNavigation="false" xmax="16" size="large" identicalAxisScales hide/>
+
+
+
+  
+<p>Describe your thought process and your conclusion.</p>
+<p><answer name="ans2" handGraded expanded type="text"/></p>
+</section>
+
+
+<solution>
+</solution>
+<aside><title>Attribution</title>
+<p>Kordemsky, Boris A. The Moscow Puzzles: 359 Mathematical Recreations. Dover Publications, 1992.</p></aside>
+</activity>
