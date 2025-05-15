@@ -12,6 +12,7 @@
    <xi:include href="sec-sketchDerivativeCubic.ptx" />
    <xi:include href="sec-kenken.ptx" />
    <xi:include href="sec-mutilatedChessboard.ptx" />
+   <xi:include href="sec-sketchGaussian.ptx" />
    <!-- <xi:include href="sec-parabolas.ptx" /> -->
    <xi:include href="sec-triangleExistence.ptx" />
    <xi:include href="sec-inequalities.ptx" />
