@@ -1,4 +1,4 @@
-<exercise><title hide>Pascal's Triangle</title>
+
 <p><alert>Instructions:</alert> Complete Pascal's Triangle below by filling in each cell with the sum of the two adjacent cells in the row above. If there is only one adjacent cell in the row above, imagine that the hidden cell is equal to zero.</p> 
 
 <graph size="full" identicalAxisScales ymax="20" ymin="-10" xmax="20" xmin="-20" displayXAxis="false" displayYAxis="false" showNavigation="false">
@@ -143,4 +143,3 @@
     <label anchor="$row6bottom.endpoints[2]" positionFromAnchor="upperleft">Row 6</label>
   </group>
 </graph>
-</exercise>

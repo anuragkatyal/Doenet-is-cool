@@ -3,10 +3,11 @@
 <section xml:id="sec-interactiveVenn" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>An Interactive Venn Diagram for Classifying Numbers</title>
 
+<activity>
 <interactive label="venn-interactive-label" platform="doenetml" width="100%" aspect="2:8">
   <slate surface="doenetml">
     <xi:include parse="text" href="doenet/interactiveVenn.doenetml"/> 
   </slate>
 </interactive>
-
+</activity>
 </section>

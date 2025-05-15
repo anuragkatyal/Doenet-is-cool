@@ -1,6 +1,4 @@
-
-<title>Sketching Riemann sums  </title>
-
+<!-- <title>Sketching Riemann sums  </title> -->
 
 <p>Select a function to graph: 
   <choiceInput name="functionSelect" preselectChoice="1">
@@ -291,7 +289,7 @@
 
 <stack>
 
-  <copy source="module1" assignNames="module2" sideString="Right" />
+  <module copySource="module1" name="module2" sideString="Right" />
 
 <p>
 <answer name="RSR10" allowedErrorInNumbers="$tol" allowedErrorIsAbsolute>
