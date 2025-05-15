@@ -11,7 +11,8 @@ https://www.geogebra.org/geometry/tyaxbw3c
 
 
 
-<activity><title>Construct Conway's Iris</title>
+<activity><title/>
+<!-- <title hide>Construct Conway's Iris</title> -->
 <paginator name="pgn">
 
 <!--************************************************************
@@ -72,14 +73,14 @@ https://www.geogebra.org/geometry/tyaxbw3c
       <attractTo>$A</attractTo>
     </constraints>
   </point>
-  <point name="whiskerA12" styleNumber="6" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,1)
+  <point name="whiskerA12" styleNumber="11" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,1)
     <constraints>
       <attractTo>$constLineAB $constLineAC</attractTo>
       <constrainTo>$circBC</constrainTo>
     </constraints>
   </point>
  
-  <point name="whiskerA22" styleNumber="6" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,-1)
+  <point name="whiskerA22" styleNumber="11" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,-1)
     <constraints>
       <attractTo>$constLineAB $constLineAC</attractTo>
       <constrainTo>$circBC</constrainTo>
@@ -120,14 +121,14 @@ https://www.geogebra.org/geometry/tyaxbw3c
       <attractTo>$B</attractTo>
     </constraints>
   </point>
-  <point name="whiskerB12" styleNumber="6" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,1)
+  <point name="whiskerB12" styleNumber="11" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,1)
     <constraints>
       <attractTo>$constLineAB $constLineBC</attractTo>
       <constrainTo>$circAC</constrainTo>
     </constraints>
   </point>
  
-  <point name="whiskerB22" styleNumber="6" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,-1)
+  <point name="whiskerB22" styleNumber="11" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,-1)
     <constraints>
       <attractTo>$constLineAB $constLineBC</attractTo>
       <constrainTo>$circAC</constrainTo>
@@ -167,14 +168,14 @@ https://www.geogebra.org/geometry/tyaxbw3c
       <attractTo>$C</attractTo>
     </constraints>
   </point>
-  <point name="whiskerC12" styleNumber="6" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,1)
+  <point name="whiskerC12" styleNumber="11" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,1)
     <constraints>
       <attractTo>$constLineAC $constLineBC</attractTo>
       <constrainTo>$circAB</constrainTo>
     </constraints>
   </point>
  
-  <point name="whiskerC22" styleNumber="6" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,-1)
+  <point name="whiskerC22" styleNumber="11" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,-1)
     <constraints>
       <attractTo>$constLineAC $constLineBC</attractTo>
       <constrainTo>$circAB</constrainTo>
