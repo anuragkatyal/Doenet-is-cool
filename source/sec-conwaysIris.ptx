@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-conwaysIris" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Conway's Iris</title>
+  <title>Construct Conway's Iris</title>
+
+<objectives>
+  <ul>
+    <li>
+      <p>
+        Recall when two triangles are congruent
+      </p>
+    </li>
+    <li>
+      <p>
+        Review the three centers of a triangle
+      </p>
+    </li>
+    <li>
+      <p>
+        Practice contstructing the proof of an adorable and
+        happily useless
+        fact about triangles!
+      </p>
+    </li>
+  </ul>
+</objectives>
 
 <interactive label="conwaysIris-interactive-label" platform="doenetml" width="100%" aspect="2:8">
   <slate surface="doenetml">
