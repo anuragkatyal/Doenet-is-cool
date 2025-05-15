@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/doenet-standalone.min.js"></script><script>function onLoad() {window.renderDoenetToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    <!-- 
+
+Course:    Intermediate Algebra
+Chapter:   #. 
+Section:   #. Square of Sum
+Author:    Anurag Katyal, Spring 2025
+Contact:   anurag@whyoverhow.com 
+
+About the activity: A geometric introduction to the square of sum and square of difference formulas.
+
+Note: If doing this in person, one will need a square sheet of paper and a ruler/notecard.    
+
+-->
+
+<setup>
+  <styleDefinitions>
+    <styleDefinition styleNumber="10"
+      lineColor="black" 
+      lineOpacity="1"  
+      lineWidth="1.5"
+      lineStyle="dashed">
+    </styleDefinition>
+    
+    <styleDefinition styleNumber="11"
+      fillColor="blue"
+      lineColor="blue" 
+      lineOpacity="1"  
+      lineWidth="0.155"
+      >
+    </styleDefinition>
+
+    <styleDefinition styleNumber="15"
+      fillColor="red"
+      lineColor="red" 
+      lineOpacity="1"  
+      lineWidth="0.155"
+      >
+    </styleDefinition>
+      
+      <styleDefinition styleNumber="12"
+      fillColor="orange"
+        fillOpacity="0.7"
+      lineColor="orange" 
+      lineOpacity="1"  
+      lineWidth="0.155"
+      >
+    </styleDefinition>
+        
+        <styleDefinition styleNumber="13"
+      fillColor="green"
+      lineColor="green" 
+      lineOpacity="1"  
+      lineWidth="0.155"
+      >
+    </styleDefinition>
+
+        <styleDefinition styleNumber="16"
+      fillColor="purple"
+      lineColor="purple" 
+      lineOpacity="1"  
+      lineWidth="0.155"
+      >
+    </styleDefinition>
+    
+    <styleDefinition styleNumber="14"
+      lineColor="black" 
+      lineOpacity="1"  
+      lineWidth="1"
+      lineStyle="dotted">
+    </styleDefinition>
+
+  </styleDefinitions>
+  
+  <graph displayXAxis="false" displayYAxis="false" showBorder="true" showNavigation="false">
+    <rectangle fixLocation name="bigSq" filled center="(0,0)" width="14" height="14" styleNumber="16"/>
+    <rectangle fixLocation name="leftSq" filled center="(-2,2)" width="10" height="10" styleNumber="11"/>
+    <rectangle fixLocation name="horRect" filled center="(-2,-5)" width="10" height="4" styleNumber="15"/>
+    <rectangle fixLocation name="verRect" filled center="(5,2)" width="4" height="10" styleNumber="12"/>
+    <rectangle fixLocation name="rightSq" filled center="(5,-5)" width="4" height="4" styleNumber="13"/>
+
+  </graph>
+
+
+</setup>
+
+
+
+<section boxed><title>Let's start with a square</title>
+
+Let's say we have a square with side length <m>a+b</m> units. 
+
+  <graph fixed displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    $bigSq
+    <m anchor="(0,7.5)">a+b</m>
+    <m anchor="(-8,0)">a+b</m>
+  </graph>
+
+<ol><li><p>What is the area of the square?</p> 
+  <answer name="areaOfSquare" shuffleOrder>
+    <choice credit="1"><m>(a+b)^2</m></choice>
+    <choice><m>2(a+b)</m></choice>
+    <choice><m>4(a+b)</m></choice>
+    <choice><m>4(a+b)^2</m></choice>
+  </answer></li></ol>
+
+</section>
+  
+
+<section boxed><title>Step 1: Split the square into four smaller regions.</title>
+  
+ <graph displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    
+    $leftSq
+    $horRect
+    $verRect
+    $rightSq
+    <m anchor="(-2, 2)">\require{enclose}\enclose{circle}{\kern .1em 1 \kern .1em}</m>
+    <m anchor="(5, 2)">\enclose{circle}{\kern .1em 2 \kern .1em}</m>
+    <m anchor="(-2, -5)">\enclose{circle}{\kern .1em 3 \kern .1em}</m>
+    <m anchor="(5, -5)">\enclose{circle}{\kern .1em 4 \kern .1em}</m>
+    <m anchor="(-2, 7.5)">a</m>
+    <m anchor="(5, 7.5)">b</m>
+
+  </graph>
+
+</section>
+
+<section boxed><title>Step 2: Label the missing dimensions.</title>
+
+  <graph displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    $leftSq
+    $horRect
+    $verRect
+    $rightSq
+    <m anchor="(-2, 2)">\require{enclose}\enclose{circle}{\kern .1em 1 \kern .1em}</m>
+    <m anchor="(5, 2)">\enclose{circle}{\kern .1em 2 \kern .1em}</m>
+    <m anchor="(-2, -5)">\enclose{circle}{\kern .1em 3 \kern .1em}</m>
+    <m anchor="(5, -5)">\enclose{circle}{\kern .1em 4 \kern .1em}</m>
+    <m anchor="(-2, 7.5)">a</m>
+    <m anchor="(5, 7.5)">b</m>
+    
+    <textInput anchor="(5, -3)" width="7" name="side8"></textInput>
+    <textInput anchor="(5, -7)" width="7" name="side3"></textInput>
+    <textInput anchor="(-2, -7)" width="7" name="side4"></textInput>
+    <textInput anchor="(-2, -3)" width="7" name="side10"></textInput>
+    <textInput anchor="(3, -5)" width="7" name="side9"></textInput>
+    <textInput anchor="(3, 2)" width="7" name="side7"></textInput>
+    <textInput anchor="(7, -5)" width="7" name="side2"></textInput>
+    <textInput anchor="(-7, -5)" width="7" name="side5"></textInput>
+    <textInput anchor="(-7, 2)" width="7" name="side6"></textInput>
+    <textInput anchor="(7, 2)" width="7" name="side1"></textInput>
+
+  </graph>
+
+    <answer name="firstDim" matchPartial>
+      <award>
+        <when>
+          $side1 = a and 
+          $side2 = b and 
+          $side3 = b and 
+          $side4 = a and 
+          $side5 = b and 
+          $side6 = a and 
+          $side7 = a and 
+          $side8 = b and 
+          $side9 = b and 
+          $side10 = a
+        </when>
+      </award>
+    </answer>
+  
+</section>
+
+
+<section boxed><title>Step 3: Find the areas of the smaller regions.</title> 
+
+  
+  <graph displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    
+    $leftSq
+    $horRect
+    $verRect
+    $rightSq
+    
+    <m anchor="(-2, 2)">\require{enclose}\enclose{circle}{\kern .1em 1 \kern .1em}</m>
+    <m anchor="(5, 2)">\enclose{circle}{\kern .1em 2 \kern .1em}</m>
+    <m anchor="(-2, -5)">\enclose{circle}{\kern .1em 3 \kern .1em}</m>
+    <m anchor="(5, -5)">\enclose{circle}{\kern .1em 4 \kern .1em}</m>
+    
+    <m anchor="(-2, 7.5)">a</m>
+    <m anchor="(5, 7.5)">b</m>
+    <m anchor="(5, -7.5)">b</m>
+    <m anchor="(-2, -7.5)">a</m>
+    <m anchor="(7.5, -5)">b</m>
+    <m anchor="(-7.5, -5)">b</m>
+    <m anchor="(-7.5, 2)">a</m>
+    <m anchor="(7.5, 2)">a</m>
+
+  </graph>
+
+  <ol>
+<sideBySide>
+  
+<p><li>What is the area of region <m>1</m>?
+  <answer name="region1Area" shuffleOrder>
+    <choice credit="1"><m>a^2</m></choice>    
+    <choice><m>ab</m></choice>    
+    <choice><m>b^2</m></choice>    
+    <choice><m>a^2+ab</m></choice>    
+    <choice><m>a^2+ab+ab</m></choice>  
+    <choice><m>a^2+ab+b^2</m></choice>    
+    <choice><m>a^2+ab+ab+b^2</m></choice>     
+  </answer></li>
+</p>
+
+<p><li>What is the area of region <m>1</m> and <m>2</m>?
+  <answer name="region1And2Area" shuffleOrder>
+    <choice><m>a^2</m></choice>    
+    <choice><m>ab</m></choice>    
+    <choice><m>b^2</m></choice>    
+    <choice credit="1"><m>a^2+ab</m></choice>    
+    <choice><m>a^2+ab+ab</m></choice>  
+    <choice><m>a^2+ab+b^2</m></choice>    
+    <choice><m>a^2+ab+ab+b^2</m></choice>     
+  </answer></li>
+</p>
+
+</sideBySide>  
+  
+  <sideBySide>
+
+
+<p><li>What is the area of region <m>1</m>, <m>2</m> and <m>3</m>?
+  <answer name="region1And2And3Area" shuffleOrder>
+    <choice><m>a^2</m></choice>    
+    <choice><m>ab</m></choice>    
+    <choice><m>b^2</m></choice>    
+    <choice><m>a^2+ab</m></choice>    
+    <choice credit="1"><m>a^2+ab+ab</m></choice>  
+    <choice><m>a^2+ab+b^2</m></choice>    
+    <choice><m>a^2+ab+ab+b^2</m></choice>     
+  </answer></li>
+</p>
+
+<p><li>What is the area of region <m>1</m>, <m>2</m>, <m>3</m> and <m>4</m>?
+  <answer name="region1And2And3And4Area" shuffleOrder>
+    <choice><m>a^2</m></choice>    
+    <choice><m>ab</m></choice>    
+    <choice><m>b^2</m></choice>    
+    <choice><m>a^2+ab</m></choice>    
+    <choice><m>a^2+ab+ab</m></choice>  
+    <choice><m>a^2+ab+b^2</m></choice>    
+    <choice credit="1"><m>a^2+ab+ab+b^2</m></choice>   
+  </answer></li>
+</p>    
+    
+  </sideBySide>
+
+    <p><li>What does the area of all the regions <m>a^2+ab+ab+b^2</m>, simplify to?
+      <answer name="region1And2And3And4AreaSimplified" shuffleOrder>
+        <choice><m>a^2+a^2b^2+b^2</m></choice>    
+        <choice credit="1"><m>a^2+2ab+b^2</m></choice>    
+        <choice><m>a^2+2a^2b^2+b^2</m></choice>    
+        <choice><m>a^2+b^2</m></choice>    
+        <choice><m>(a^2+b^2)^2</m></choice>  
+      </answer></li>
+    </p>
+
+  </ol>
+</section>
+
+
+
+<section boxed><title>Step 4: Let's compare.</title>
+
+<graph fixed displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    $bigSq
+    <m anchor="(0,7.5)">a+b</m>
+    <m anchor="(-8,0)">a+b</m>
+  </graph>
+
+<p>The area of the original square is <m>(a+b)^2</m>.</p>
+
+<graph displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false">
+    
+    $leftSq
+    $horRect
+    $verRect
+    $rightSq
+    
+    <m anchor="(-2, 2)">\require{enclose}\enclose{circle}{\kern .1em 1 \kern .1em}</m>
+    <m anchor="(5, 2)">\enclose{circle}{\kern .1em 2 \kern .1em}</m>
+    <m anchor="(-2, -5)">\enclose{circle}{\kern .1em 3 \kern .1em}</m>
+    <m anchor="(5, -5)">\enclose{circle}{\kern .1em 4 \kern .1em}</m>
+    
+    <m anchor="(-2, 7.5)">a</m>
+    <m anchor="(5, 7.5)">b</m>
+    <m anchor="(5, -7.5)">b</m>
+    <m anchor="(-2, -7.5)">a</m>
+    <m anchor="(7.5, -5)">b</m>
+    <m anchor="(-7.5, -5)">b</m>
+    <m anchor="(-7.5, 2)">a</m>
+    <m anchor="(7.5, 2)">a</m>
+
+  </graph>  
+
+<p>The area of the split up square is <m>a^2+2ab+b^2</m>.</p> 
+
+
+  <ol>
+    <li>
+      <p> Which of the following must be true?<answer name="sameSize" shuffleOrder>
+    <choice credit="1">The original square is the same size as the split-up square.</choice>
+    <choice>The original square is smaller than the split-up square.</choice>
+    <choice>The original square is larger than the split-up square.</choice>
+  </answer></p>
+    </li>
+    <li><p>If the squares are the same size, write an equation that equates the areas from both squares. <answer  name="areaEquality" symbolicEquality>
+    <award>(a+b)^2=a^2+2ab+b^2</award>
+    <award>a^2+2ab+b^2=(a+b)^2</award>
+  </answer></p></li>
+  </ol>
+  
+</section>
+
+
+
+<section boxed><title>The View from the Mountaintop</title>
+<p>The formula you've just discovered is the square of sum formula: <me>(a+b)^2=a^2+2ab+b^2</me></p>
+  
+  <p>We can use this formula to quickly multiply factors of a certain type. In fact, this is much faster than FOILing or term-by-term multiplication. </p>
+    
+  <p>For instance, when multiplying <m>(x+4)</m> and <m>(x+4)</m> or <m>(x+4)^2</m>, we only need to square the first term, <m>(x)</m>, add <m>2</m> times the first term, <m>(x)</m>, times the second term, <m>(4)</m> and then add the square of the second term, <m>(4)</m>.</p>
+
+  <p><m>(x+4)^2=(x)^2+2(x)(4)+(4)^2=x^2+8x+16</m>.</p>
+
+  <p>Similarly, <m>(3b+5c)^2=(3b)^2+2(3b)(5c)+(5c)^2=9b^2+30bc+25c^2</m>.</p>
+
+<p>Which of the following can be multiplied with the square of sum formula? Select all that apply.</p>
+  <answer name="formulaApplies" shuffleOrder selectMultiple>
+    <choice credit="1"><m>(v+$a)(v+$a)</m></choice>
+    <choice credit="1"><m>(a+$b r)(a+$b r)</m></choice>
+    <choice credit="1"><m>($c h+$d e)($c h+$d e)</m></choice>
+    <choice><m>($e q+$f w)($e q-$f w)</m></choice>
+    <choice><m>($a y+$b t)($b y+$a t)</m></choice>
+  </answer>
+  
+</section>
+
+  
+<section boxed><title>Check your Understanding</title>
+
+<setup>
+  <selectFromSequence assignNames="a b c d e f" from="2" to="12" numToSelect="6"/>
+</setup>
+  
+  <problem>Multiply all of the following: 
+    <shuffle>
+    <p><m>(v+$a)(v+$a)=</m>
+      <answer symbolicEquality><mathInput prefillLatex="{()}^2+2{()}{()}+{()}^2"></mathInput>
+        <award>(v)^2+2(v)($a)+($a)^2</award>
+        <award>(v)^2+2($a)(v)+($a)^2</award>
+      </answer><m>=</m>
+      <answer symbolicEquality><math simplify>v^2+2*$a v+$a*$a</math></answer>
+    </p>
+      
+    <p><m>(a+$b r)(a+$b r)=</m>
+      <answer symbolicEquality><mathInput prefillLatex="{()}^2+2{()}{()}+{()}^2"></mathInput>
+        <award>(a)^2+2(a)($b r)+($b r)^2</award>
+        <award>(a)^2+2($b r)(a)+($b r)^2</award>
+      </answer><m>=</m>
+      <answer><math simplify>a^2+2*$b*a*r+$b^2 r^2</math></answer>
+    </p>
+      
+    <p><m>($c h+$d e)($c h+$d e)=</m>
+      <answer symbolicEquality><mathInput prefillLatex="{()}^2+2{()}{()}+{()}^2"></mathInput>
+        <award>($c h)^2 + 2($c h)($d e)+($d e)^2</award>
+        <award>($c h)^2 + 2($d e)($c h)+($d e)^2</award>
+      </answer><m>=</m>
+      <answer symbolicEquality>
+        <award><math simplify>$c^2</math> h^2 + <math simplify>2 $c $d</math> h e+ <math simplify>$d^2 e^2</math></award>
+        <award><math simplify>$d^2 e^2</math> + <math simplify>2 $c $d</math> h e+ <math simplify>$c^2</math> h^2</award>
+        <award><math simplify>$c^2</math> h^2 + <math simplify>2 $c $d</math> e h+ <math simplify>$d^2 e^2</math></award>
+        <award><math simplify>$d^2 e^2</math> + <math simplify>2 $c $d</math> e h+ <math simplify>$c^2</math> h^2</award>
+      </answer></p>
+      
+    <p><m>($e q+$f w)($e q+$f w)=</m>
+      <answer symbolicEquality><mathInput prefillLatex="{()}^2+2{()}{()}+{()}^2"></mathInput>
+        <award>($e q)^2+2($e q)($f w)+($f w)^2</award>
+        <award>($e q)^2+2($f w)($e q)+($f w)^2</award>
+      </answer><m>=</m>
+      <answer symbolicEquality>
+        <award><math simplify>$e^2</math> q^2 + <math simplify>2 $e $f</math> q w+ <math simplify>$f^2 w^2</math></award>
+        <award><math simplify>$e^2</math> q^2 + <math simplify>2 $e $f</math> w q+ <math simplify>$f^2 w^2</math></award>
+        <award><math simplify>$f^2 w^2</math>+ <math simplify>2 $e $f</math> w q+ <math simplify>$e^2</math> q^2 </award>
+        <award><math simplify>$f^2 w^2</math>+ <math simplify>2 $e $f</math> q w+ <math simplify>$e^2</math> q^2 </award>
+      </answer>
+    </p>
+      
+    <p><m>($b y+$d t)($b y+$d t)=</m>
+      <answer symbolicEquality><mathInput prefillLatex="{()}^2+2{()}{()}+{()}^2"></mathInput>
+        <award>($b y)^2+2($b y)($d t)+($d t)^2</award>
+        <award>($b y)^2+2($d t)($b y)+($d t)^2</award>
+      </answer><m>=</m>
+      <answer symbolicEquality>
+        <award><math simplify>$b^2</math> y^2 + <math simplify>2 $b $d</math> y t+ <math simplify>$d^2 t^2</math></award>
+        <award><math simplify>$b^2</math> y^2 + <math simplify>2 $b $d</math> t y+ <math simplify>$d^2 t^2</math></award>
+        <award><math simplify>$d^2 t^2</math> + <math simplify>2 $b $d</math> y t+ <math simplify>$b^2</math> y^2</award>
+        <award><math simplify>$d^2 t^2</math> + <math simplify>2 $b $d</math> t y+ <math simplify>$b^2</math> y^2</award>
+      </answer>
+    </p>
+    </shuffle>
+  </problem>
+
+<problem> What factors would have been multiplied to result in the following?
+  <shuffle>
+  <p><m><math simplify>$a^2 t^2 +2 $a $f t u + $f^2 u^2</math>=</m>
+    <answer symbolicEquality>
+      <award>($a t + $f u)($a t + $f u)</award>
+      <award>($a t + $f u)^2</award>
+    </answer></p>
+  <p><m><math simplify>$b^2 a^2 +2 $b $d ab + $d^2 b^2</math>=</m>
+    <answer symbolicEquality>
+      <award>($b a + $d b)($b a + $d b)</award>
+      <award>($b a + $d b)^2</award>
+    </answer></p>
+  <p><m><math simplify>$c^2 m^2 + 4 $c $e mn + 4* $e^2 n^2</math>=</m>
+    <answer symbolicEquality>
+      <award>($c m + <math simplify>2*$e</math> n)($c m + <math simplify>2*$e</math> n)</award>
+      <award>($c m + <math simplify>2*$e</math> n)^2</award>
+    </answer></p>
+  <p><m><math simplify>$f^2 p^2 +2 $f $c pq + $c^2 q^2</math>=</m>
+    <answer symbolicEquality>
+      <award>($f p+ $c q)($f p + $c q)</award>
+      <award>($f p+ $c q)^2</award>
+    </answer></p>
+  <p><m><math simplify>$d^2 x^2 + 2 $d $a xy+ $a^2 y^2</math>=</m>
+    <answer symbolicEquality>
+      <award>($d x + $a y)($d x + $a y)</award>
+      <award>($d x + $a y)^2</award>
+  </answer></p>
+  </shuffle>
+</problem>
+
+  <problem>
+    Find the area and perimeter of the following shapes. Multiply out anything that can be multiplied and then combine like terms. 
+
+    <graph fixed size="small" showBorder="false" displayXAxis="false" displayYAxis="false" showNavigation="false">
+      <rectangle filled center="(0,0)" width="18" height="18"></rectangle>
+      <m anchor="(-6.75,0)">$a x + $c</m>
+      <m anchor="(0, 7.75)">$a x + $c</m>
+    </graph>
+
+    <p>Area of rectangle = <answer symbolicEquality><math simplify>$a^2 x^2 +2 $a $c x + $c^2</math></answer></p>
+    <p>Perimeter of rectangle = <answer symbolicEquality><math simplify>4 $a x + 4 $c</math></answer></p>
+
+    <graph fixed size="small" showBorder="false" displayXAxis="false" displayYAxis="false" showNavigation="false">
+      <triangle filled vertices="(-9,-8) (9,-8) (4,8)"></triangle>
+      <lineSegment endpoints="(4,8) (4,-8)"></lineSegment>
+      <m anchor="(0,-9)"><math simplify>2*$b p + 2*$d</math></m>
+      <m anchor="(-5,0)"><math simplify>$d p - $b</math></m>
+      <m anchor="(7.5,0)"><math simplify>$f p </math></m>
+      <m anchor="(1.5, -1)"><math simplify>2*$b p + 2*$d</math></m>
+    </graph>
+    <p>Area of triangle = <answer symbolicEquality><math simplify>2*$b^2 p^2 + 4 $b $d p + 2*$d^2</math></answer></p>
+    <p>Perimeter of triangle = <answer symbolicEquality><math simplify>2*$b p + 2*$d+$d p - $b+$f p</math></answer></p>
+  </problem>
+  
+  <problem>
+    If the area of a rectangle is <m><math simplify>$f^2 k^2 + 2 $f $e k g +$e^2 g^2</math></m> and the length of the rectangle is <m>$f k + $e g</m>, what would be the width of the rectangle? <answer symbolicEquality><award>$e g+$f k</award><award>$f k + $e g</award></answer>
+  </problem>
+</section>
+
+
+
+
+
+
+ 
+  </script>
+</div></div>
+</body>
+</html>

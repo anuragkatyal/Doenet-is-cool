@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/doenet-standalone.min.js"></script><script>function onLoad() {window.renderDoenetToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    <!-- <title>Sketching Riemann sums  </title> -->
+
+<p>Select a function to graph: 
+  <choiceInput name="functionSelect" preselectChoice="1">
+  <choice>Cubic</choice>
+  <choice>Linear</choice>
+  <choice>Trigonometric</choice>
+  <choice>Quadratic</choice>
+  <choice>Exponential</choice>
+</choiceInput></p>
+
+
+<setup>
+<function name="rate_func" styleNumber="8">
+  <conditionalContent condition="$functionSelect.selectedIndices=1">
+    (x+1)(x-3)(x-8)/14 + 5
+  </conditionalContent>
+  <conditionalContent condition="$functionSelect.selectedIndices=2">
+    16 - 2x
+  </conditionalContent>
+  <conditionalContent condition="$functionSelect.selectedIndices=3">
+    9 sin(x/3 - 2)+ 6
+  </conditionalContent>
+  <conditionalContent condition="$functionSelect.selectedIndices=4">
+    1/5 x^2 + 1
+  </conditionalContent>
+  <conditionalContent condition="$functionSelect.selectedIndices=5">
+    50*x*e^(-x)+1
+  </conditionalContent>  
+</function>
+<number name='lh_ten'>($$rate_func(0)+$$rate_func(2)+$$rate_func(4)+$$rate_func(6)+$$rate_func(8)+$$rate_func(1)+$$rate_func(3)+$$rate_func(5)+$$rate_func(7)+$$rate_func(9))*1</number>
+<number name='rh_ten'>($$rate_func(1)+$$rate_func(2)+$$rate_func(3)+$$rate_func(4)+$$rate_func(5)+$$rate_func(6)+$$rate_func(7)+$$rate_func(8)+$$rate_func(9)+$$rate_func(10))*1</number>
+<number name='all_five'>($$rate_func(0)+$$rate_func(2)+$$rate_func(4)+$$rate_func(6)+$$rate_func(8)+$$rate_func(10))*2</number>
+<number name='all_ten'>($$rate_func(0)+$$rate_func(2)+$$rate_func(4)+$$rate_func(6)+$$rate_func(8)+$$rate_func(1)+$$rate_func(3)+$$rate_func(5)+$$rate_func(7)+$$rate_func(9)+$$rate_func(10))*1</number>
+<evaluate name="f0" function="$rate_func" input="0" />
+<evaluate name="f1" function="$rate_func" input="1" />
+<evaluate name="f2" function="$rate_func" input="2" />
+<evaluate name="f3" function="$rate_func" input="3" />
+<evaluate name="f4" function="$rate_func" input="4" />
+<evaluate name="f5" function="$rate_func" input="5" />
+<evaluate name="f6" function="$rate_func" input="6" />
+<evaluate name="f7" function="$rate_func" input="7" />
+<evaluate name="f8" function="$rate_func" input="8" />
+<evaluate name="f9" function="$rate_func" input="9" />
+<evaluate name="f10" function="$rate_func" input="10" />
+<number name='one'>1</number>
+<number name='five'>5</number>
+<number name='ten'>10</number>
+<number name="tol">0.25</number>
+</setup>
+
+<exercise includeAutoNumber>
+<p>Given the function <me>f(x) = $rate_func</me> sketch the left-hand and right-hand Riemann sums with 10 intervals in the region <m>0 < x < 10</m>. Below the graph, use the Riemann sums to approximate the net area bounded by the function and the <m>x-</m>axis in each case.</p>
+
+
+<setup>
+  <map name="vlines">
+    <template><line equation="x=$v" /></template>
+    <sources alias="v">
+      <sequence from="0" to="10" />
+    </sources>
+  </map>
+
+  <group name="ptsOnFunc">
+    <point>(0, $f0)</point>
+    <point>(1, $f1)</point>
+    <point>(2, $f2)</point>
+    <point>(3, $f3)</point>
+    <point>(4, $f4)</point>
+    <point>(5, $f5)</point>
+    <point>(6, $f6)</point>
+    <point>(7, $f7)</point>
+    <point>(8, $f8)</point>
+    <point>(9, $f9)</point>
+    <point>(10, $f10)</point>
+  </group>
+
+
+  <number name="f0_if_f1_different">
+    <conditionalContent condition="abs($f1-$f0) > $tol">$f0</conditionalContent>
+  </number>
+  <number name="f1_if_f0_different">
+    <conditionalContent condition="abs($f1-$f0) > $tol">$f1</conditionalContent>
+  </number>
+  <number name="f1_if_f2_different">
+    <conditionalContent condition="abs($f2-$f1) > $tol">$f1</conditionalContent>
+  </number>
+  <number name="f2_if_f1_different">
+    <conditionalContent condition="abs($f2-$f1) > $tol">$f2</conditionalContent>
+  </number>
+  <number name="f2_if_f3_different">
+    <conditionalContent condition="abs($f3-$f2) > $tol">$f2</conditionalContent>
+  </number>
+  <number name="f3_if_f2_different">
+    <conditionalContent condition="abs($f3-$f2) > $tol">$f3</conditionalContent>
+  </number>
+  <number name="f3_if_f4_different">
+    <conditionalContent condition="abs($f4-$f3) > $tol">$f3</conditionalContent>
+  </number>
+  <number name="f4_if_f3_different">
+    <conditionalContent condition="abs($f4-$f3) > $tol">$f4</conditionalContent>
+  </number>
+  <number name="f4_if_f5_different">
+    <conditionalContent condition="abs($f5-$f4) > $tol">$f4</conditionalContent>
+  </number>
+  <number name="f5_if_f4_different">
+    <conditionalContent condition="abs($f5-$f4) > $tol">$f5</conditionalContent>
+  </number>
+  <number name="f5_if_f6_different">
+    <conditionalContent condition="abs($f6-$f5) > $tol">$f5</conditionalContent>
+  </number>
+  <number name="f6_if_f5_different">
+    <conditionalContent condition="abs($f6-$f5) > $tol">$f6</conditionalContent>
+  </number>
+  <number name="f6_if_f7_different">
+    <conditionalContent condition="abs($f7-$f6) > $tol">$f6</conditionalContent>
+  </number>
+  <number name="f7_if_f6_different">
+    <conditionalContent condition="abs($f7-$f6) > $tol">$f7</conditionalContent>
+  </number>
+  <number name="f7_if_f8_different">
+    <conditionalContent condition="abs($f8-$f7) > $tol">$f7</conditionalContent>
+  </number>
+  <number name="f8_if_f7_different">
+    <conditionalContent condition="abs($f8-$f7) > $tol">$f8</conditionalContent>
+  </number>
+  <number name="f8_if_f9_different">
+    <conditionalContent condition="abs($f9-$f8) > $tol">$f8</conditionalContent>
+  </number>
+  <number name="f9_if_f8_different">
+    <conditionalContent condition="abs($f9-$f8) > $tol">$f9</conditionalContent>
+  </number>
+  <number name="f9_if_f10_different">
+    <conditionalContent condition="abs($f10-$f9) > $tol">$f9</conditionalContent>
+  </number>
+  <number name="f10_if_f9_different">
+    <conditionalContent condition="abs($f10-$f9) > $tol">$f10</conditionalContent>
+  </number>
+  
+  <number name="zeroFixed" fixed>0</number>
+</setup>
+
+  <sideBySide margins="2%">
+
+<!--************************************************************        LHS interval Riemann sums sketch
+*********************************************************-->
+  
+<stack>
+<module name="module1">
+  <setup>
+  <number name="nRect2">0</number>
+  <customAttribute attribute="f" assignNames="f" defaultValue="$rate_func" componentType="function" />
+  <customAttribute attribute="sideString" assignNames="sideString" defaultValue="Left" componentType="text" />
+  </setup>
+
+<updateValue target="nRect2" newValue="$nRect2+1" disabled="$nRect2 >= 10">
+  <label>Add rectangle</label>
+</updateValue><nbsp/><nbsp/><nbsp/><nbsp/>
+<updateValue  target="nRect2" newValue="$nRect2-1" disabled="$nRect2 <= 0" >
+  <label>Remove rectangle</label>
+</updateValue>
+
+  
+<figure>
+<graph width='500' height='300' xmin='-2' xmax='12' ymin='-5' ymax='20' name="graph2">
+  <xlabel><m>x</m></xlabel>
+  $f{styleNumber="8"}
+
+  <map>
+    <template>
+      <setup>
+        <number name="xA">$(v{fixed='false' link='false'})+0.5</number>
+        <number name="xB">$(v{fixed='false' link='false'})-2.5</number>
+        <number name="h">3</number>
+        <boolean name="attractA"/>
+        
+        <triggerSet triggerWhenObjectsFocused="Ah">
+          <updateValue target="attractA" newValue="true" type="boolean" />
+          <updateValue target="h" newValue="$Ah.y" />
+        </triggerSet>
+        <triggerSet triggerWhenObjectsFocused="Bh">
+          <updateValue target="attractA" newValue="false" type="boolean" />
+          <updateValue target="h" newValue="$Bh.y" />
+        </triggerSet>
+        <number name="styleForAh">
+          <conditionalContent>
+            <case condition="abs($Ah.y - $$f($Ah.x)) < $tol">11</case>
+            <else>10</else>
+          </conditionalContent>
+        </number>
+        <number name="styleForBh">
+          <conditionalContent>
+            <case condition="abs($Bh.y - $$f($Bh.x)) < $tol">11</case>
+            <else>10</else>
+          </conditionalContent>
+        </number>
+        <number name="styleForRectangle">
+          <conditionalContent>
+            <case condition="$nRect2 = $i">7</case>
+            <else>1</else>
+          </conditionalContent>
+        </number>
+      </setup>
+      <point name="A0" x="$xA" y="0" hide />
+      <point name="B0" x="$xB" y="0" hide />
+
+      <point name="Ah" x="$xA" y="$h" fixed="$nRect2 != $i" hide="$nRect2 != $i" layer="2" styleNumber="$styleForAh">
+        <constraints>
+          <attractTo relativeToGraphScales threshold="0.02">$vlines</attractTo>
+          <conditionalContent condition="$attractA">
+            <attractTo relativeToGraphScales threshold="0.02">$ptsOnFunc</attractTo>
+          </conditionalContent>
+        </constraints>
+      </point>
+      <point name="Bh" x="$xB" y="$h" fixed="$nRect2 != $i" hide="$nRect2 != $i" layer="2" styleNumber="$styleForBh">
+        <constraints>
+          <attractTo relativeToGraphScales threshold="0.02">$vlines</attractTo>
+          <conditionalContent condition="not $attractA">
+            <attractTo relativeToGraphScales threshold="0.04">$ptsOnFunc</attractTo>
+          </conditionalContent>
+        </constraints>
+      </point>
+        
+      
+      <rectangle name="rect2" vertices="$A0 $Bh" fixed filled styleNumber="$styleForRectangle"/>
+      <label anchor="$rect2.vertices[3]" positionFromAnchor="upperright" hide="$nRect2 != $i"><m>\;\;$B2.y{displayDecimals="2"}</m></label>
+    </template>
+    <sources indexAlias="i" alias="v"><sequence length="$nRect2" /></sources>
+  </map>
+</graph>
+<caption>$sideString-handed sum</caption>
+</figure>
+</module>
+
+  
+  <p>
+<answer name="RSL10" allowedErrorInNumbers="$tol" allowedErrorIsAbsolute>
+  <award>
+    <when matchPartial unorderedCompare>
+      <mathlist isResponse name="userRects1">
+        <map>
+        <template>
+          <math simplify>(min($v.vertex1.x, $v.vertex3.x), max($v.vertex1.x, $v.vertex3.x), $v.vertex3.y)</math>
+        </template>
+        <sources alias="v"><collect source="module1" componentTypes="rectangle" /></sources>
+      </map>
+      </mathlist>
+      =<mathlist>
+        <math>(0, 1, $f0)</math>
+        <math>(1, 2, $f1)</math>
+        <math>(2, 3, $f2)</math>
+        <math>(3, 4, $f3)</math>
+        <math>(4, 5, $f4)</math>
+        <math>(5, 6, $f5)</math>
+        <math>(6, 7, $f6)</math>
+        <math>(7, 8, $f7)</math>
+        <math>(8, 9, $f8)</math>
+        <math>(9, 10, $f9)</math>
+      </mathlist>
+    </when>
+  </award>
+  <award credit="0" name="wrongRS10">
+    <when matchPartial unorderedCompare>
+      <copy source="userRects1" isResponse="false" />
+      =<mathlist>
+        <math>(0, 1, $f1_if_f0_different)</math>
+        <math>(1, 2, $f2_if_f1_different)</math>
+        <math>(2, 3, $f3_if_f2_different)</math>
+        <math>(3, 4, $f4_if_f3_different)</math>
+        <math>(4, 5, $f5_if_f4_different)</math>
+        <math>(5, 6, $f6_if_f5_different)</math>
+        <math>(6, 7, $f7_if_f6_different)</math>
+        <math>(7, 8, $f8_if_f7_different)</math>
+        <math>(8, 9, $f9_if_f8_different)</math>
+        <math>(9, 10, $f10_if_f9_different)</math>
+      </mathlist>
+    </when>
+  </award>
+</answer>
+</p>
+
+  
+  <feedback condition="$wrongRS10.fractionSatisfied >0" updateWith="RSL10">
+  <p>Some of the rectangles are for a right-hand Riemann sum. 
+ For the above graph, create a left-hand Riemann sum.</p>
+  </feedback>
+  
+</stack>
+
+<stack>
+
+  <module copySource="module1" name="module2" sideString="Right" />
+
+<p>
+<answer name="RSR10" allowedErrorInNumbers="$tol" allowedErrorIsAbsolute>
+  <award>
+    <when matchPartial unorderedCompare>
+      <mathlist isResponse name="userRects2">
+        <map>
+        <template>
+          <math simplify>(min($v.vertex1.x, $v.vertex3.x), max($v.vertex1.x, $v.vertex3.x), $v.vertex3.y)</math>
+        </template>
+        <sources alias="v"><collect source="module2" componentTypes="rectangle" /></sources>
+      </map>
+      </mathlist>
+      =<mathlist>
+        <math>(0, 1, $f1)</math>
+        <math>(1, 2, $f2)</math>
+        <math>(2, 3, $f3)</math>
+        <math>(3, 4, $f4)</math>
+        <math>(4, 5, $f5)</math>
+        <math>(5, 6, $f6)</math>
+        <math>(6, 7, $f7)</math>
+        <math>(7, 8, $f8)</math>
+        <math>(8, 9, $f9)</math>
+        <math>(9, 10, $f10)</math>
+      </mathlist>
+    </when>
+  </award>
+  <award credit="0" name="wrongLS10">
+    <when matchPartial unorderedCompare>
+      <copy source="userRects2" isResponse="false" />
+      =<mathlist>
+        <math>(0, 1, $f0_if_f1_different)</math>
+        <math>(1, 2, $f1_if_f2_different)</math>
+        <math>(2, 3, $f2_if_f3_different)</math>
+        <math>(3, 4, $f3_if_f4_different)</math>
+        <math>(4, 5, $f4_if_f5_different)</math>
+        <math>(5, 6, $f5_if_f6_different)</math>
+        <math>(6, 7, $f6_if_f7_different)</math>
+        <math>(7, 8, $f7_if_f8_different)</math>
+        <math>(8, 9, $f8_if_f9_different)</math>
+        <math>(9, 10, $f9_if_f10_different)</math>
+      </mathlist>
+    </when>
+  </award>
+</answer>
+</p>
+
+    <feedback condition="$wrongLS10.fractionSatisfied >0" updateWith="RSR10">
+  <p>Some of the rectangles are for a left-hand Riemann sum. 
+ For the above graph, create a right-hand Riemann sum.</p>
+  </feedback>
+
+</stack>
+  </sideBySide>
+
+</exercise>
+
+
+
+ 
+  </script>
+</div></div>
+</body>
+</html>

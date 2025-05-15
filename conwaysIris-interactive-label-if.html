@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/doenet-standalone.min.js"></script><script>function onLoad() {window.renderDoenetToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    <!--************************************************************
+Author: Virginia Mae; based on a video by Mathologer, see reference below
+Reviewed/Remixed by: Mike Weimerskirch
+
+About the activity: Explore a guided geometric proof related to triangle congruence, properties of tangents and chords of circles, centers of triangles and inscribed circles.
+
+Reference: https://www.youtube.com/watch?v=XrTZwPD4O3k
+https://www.geogebra.org/geometry/tyaxbw3c
+
+*************************************************************-->
+
+
+
+<activity><title/>
+<!-- <title hide>Construct Conway's Iris</title> -->
+<paginator name="pgn">
+
+<!--************************************************************
+          Step 1: draw triangle
+*************************************************************-->
+  
+<div>
+<p><alert>Step 1:</alert> Drag the three points in the construction palette out to any locations that form a triangle within the gray circular region.</p>
+
+<graph name="g1" displayXAxis="false" displayYAxis="false" identicalAxisScales ymin="-15" ymax="15" xmin="-12" xmax="12" showNavigation="false" fixAxes>
+  <point name="A" styleNumber="7">(-2,-12)
+    <label><m>A</m></label>
+  </point>
+  <point name="B" styleNumber="9">(0,-12)
+    <label><m>B</m></label>
+  </point>
+  <point name="C" styleNumber="8">(2,-12)
+    <label><m>C</m></label>
+  </point>
+  <circle name="field" radius="4" center="(0,3)"filled styleNumber="6" fixLocation hide="$whiskerA11 != (0,-12)"/>
+  <lineSegment name="AB" endpoints="$A $B" styleNumber="8"/>
+  <lineSegment name="BC" endpoints="$B $C" styleNumber="7"/>
+  <lineSegment name="AC" endpoints="$A $C" styleNumber="9"/>
+
+  
+  <rectangle name="palette" vertices="($g1.xmin + 0.5, $g1.ymin + 0.5) ($g1.xmax - 0.5, $g1.ymin + 5)" styleNumber="5" fixed/>
+  <label anchor="$palette.vertices[1] + (4, 0.55)" fixed>Construction palette</label>
+</graph>
+</div>
+
+
+
+<!--************************************************************
+          Step 2: draw whiskers at A
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 2:</alert> Extend the whiskers for point <m>A</m>.</p>
+  <ul>
+    <li>First, drag the $whiskerA11.styleDescriptionWithNoun that appears in the palette to point <m>A</m>.</li>
+    <li>Next, adjust the $blueWhisker1.styleDescription whiskers if necessary to form the vertical angle to <m>\angle CAB</m>.</li>
+    <li> Can you guess? These $blueWhisker1.styleDescription whiskers are sized to be the same length as 
+    <answer inline>
+      <choice credit="1">side <m>BC</m></choice>
+      <choice>side <m>AB</m></choice>
+      <choice>side <m>AC</m></choice>
+    </answer>
+    </li>
+  </ul>
+
+<graph copySource="g1" name="g2">
+  <line name="constLineAB" styleNumber="6" through="$A $B" fixLocation/>
+  <line name="constLineAC" styleNumber="6" through="$A $C" fixLocation/>
+  <circle name="circBC" styleNumber="6" radius="$BC.length" center="$whiskerA11"/>
+  <point name="whiskerA11" styleNumber="7" layer="2" hideOffGraphIndicator>(0,-12)
+    <constraints>
+      <attractTo>$A</attractTo>
+    </constraints>
+  </point>
+  <point name="whiskerA12" styleNumber="11" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,1)
+    <constraints>
+      <attractTo>$constLineAB $constLineAC</attractTo>
+      <constrainTo>$circBC</constrainTo>
+    </constraints>
+  </point>
+ 
+  <point name="whiskerA22" styleNumber="11" hide="$whiskerA11 != $A" layer="2" hideOffGraphIndicator>(0,-1)
+    <constraints>
+      <attractTo>$constLineAB $constLineAC</attractTo>
+      <constrainTo>$circBC</constrainTo>
+    </constraints>
+  </point>
+    
+  <lineSegment name="blueWhisker1" endpoints="$whiskerA11 $whiskerA12" hide="$whiskerA11 != $A" styleNumber="7"/>
+  <lineSegment name="blueWhisker2" endpoints="$whiskerA11 $whiskerA22" hide="$whiskerA11 != $A" styleNumber="7"/>
+</graph>
+</div>
+
+
+<!--************************************************************
+          Step 3: draw whiskers at B
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 3:</alert> Extend the whiskers for point <m>B</m>.</p>
+  <ul>
+    <li>First, drag the $whiskerB11.styleDescriptionWithNoun that appears in the palette to point <m>B</m>.</li>
+    <li>Next, adjust the $orangeWhisker1.styleDescription whiskers if necessary so that they form the two exterior angles at point <m>B</m></li>
+    <li> These $orangeWhisker1.styleDescription whiskers match the length of: 
+    <answer inline>
+      <choice>side <m>BC</m></choice>
+      <choice>side <m>AB</m></choice>
+      <choice credit="1">side <m>AC</m></choice>
+    </answer>
+    </li>
+  </ul>
+
+<graph copySource="g2" name="g3">
+  <line name="constLineBC" styleNumber="6" through="$B $C" fixLocation/>
+
+  <circle name="circAC" styleNumber="6" radius="$AC.length" center="$whiskerB11"/>
+  <point name="whiskerB11" styleNumber="9" hideOffGraphIndicator>(0,-12)
+    <constraints>
+      <attractTo>$B</attractTo>
+    </constraints>
+  </point>
+  <point name="whiskerB12" styleNumber="11" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,1)
+    <constraints>
+      <attractTo>$constLineAB $constLineBC</attractTo>
+      <constrainTo>$circAC</constrainTo>
+    </constraints>
+  </point>
+ 
+  <point name="whiskerB22" styleNumber="11" hide="$whiskerB11 != $B" layer="2" hideOffGraphIndicator>(0,-1)
+    <constraints>
+      <attractTo>$constLineAB $constLineBC</attractTo>
+      <constrainTo>$circAC</constrainTo>
+    </constraints>
+  </point>
+    
+  <lineSegment name="orangeWhisker1" endpoints="$whiskerB11 $whiskerB12" hide="$whiskerB11 != $B" styleNumber="9"/>
+  <lineSegment name="orangeWhisker2" endpoints="$whiskerB11 $whiskerB22" hide="$whiskerB11 != $B" styleNumber="9"/>
+</graph>
+</div>
+
+
+
+<!--************************************************************
+          Step 4: draw whiskers at C
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 4:</alert> Extend the whiskers for point <m>C</m>.</p>
+  <ul>
+    <li>First, drag the $whiskerC11.styleDescriptionWithNoun that appears in the palette to point <m>C</m>.</li>
+    <li>Next, adjust the $redWhisker1.styleDescription whiskers if necessary so that they form the vertical angle to <m>\angle ACB</m></li>
+    <li> These $redWhisker1.styleDescription whiskers match the length of: 
+    <answer inline>
+      <choice>side <m>BC</m></choice>
+      <choice credit="1">side <m>AB</m></choice>
+      <choice>side <m>AC</m></choice>
+    </answer>
+    </li>
+  </ul>
+
+<graph copySource="g3" name="g4">
+  <circle name="circAB" styleNumber="6" radius="$AB.length" center="$whiskerC11"/>
+  <point name="whiskerC11" styleNumber="8" hideOffGraphIndicator>(0,-12)
+    <constraints>
+      <attractTo>$C</attractTo>
+    </constraints>
+  </point>
+  <point name="whiskerC12" styleNumber="11" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,1)
+    <constraints>
+      <attractTo>$constLineAC $constLineBC</attractTo>
+      <constrainTo>$circAB</constrainTo>
+    </constraints>
+  </point>
+ 
+  <point name="whiskerC22" styleNumber="11" hide="$whiskerC11 != $C" layer="2" hideOffGraphIndicator>(0,-1)
+    <constraints>
+      <attractTo>$constLineAC $constLineBC</attractTo>
+      <constrainTo>$circAB</constrainTo>
+    </constraints>
+  </point>
+    
+  <lineSegment name="redWhisker1" endpoints="$whiskerC11 $whiskerC12" hide="$whiskerC11 != $C" styleNumber="8"/>
+  <lineSegment name="redWhisker2" endpoints="$whiskerC11 $whiskerC22" hide="$whiskerC11 != $C" styleNumber="8"/>
+
+  <group name="innerGeometry" hide>
+      $O
+    <lineSegment name="AO" endpoints="$A $O" styleNumber="5"/>
+    <lineSegment name="BO" endpoints="$B $O" styleNumber="5"/>
+    <lineSegment name="CO" endpoints="$C $O" styleNumber="5"/>
+    <angle name="alpha" through="$O $A $C" styleNumber="7" radius="1"/>
+    <angle name="alpha2" through="$O $A $B" styleNumber="7" radius="0.75"/>
+    <angle name="beta" through="$O $B $C" styleNumber="9" radius="1"/>
+    <angle name="beta2" through="$O $B $A" styleNumber="9" radius="0.75"/>
+    <angle name="gamma" through="$O $C $A" styleNumber="8" radius="1"/>
+    <angle name="gamma2" through="$O $C $B" styleNumber="8" radius="0.75"/>
+    <circle name="pupil" center="$O" radius="$r" styleNumber="6"/>
+  </group>
+</graph>
+
+<!-- calculate the incenter of the triangle, and check to see if all of the ends of the whiskers are the same distance away from the incenter before proceeding -->
+<setup>
+  <number name="perimeter">$BC.length + $AC.length + $AB.length</number>
+  <number name="incenterX">($A.x*$BC.length + $B.x*$AC.length  + $C.x*$AB.length)/$perimeter</number>
+  <number name="incenterY">($A.y*$BC.length + $B.y*$AC.length  + $C.y*$AB.length)/$perimeter</number>
+  <point name="O" styleNumber="5">($incenterX, $incenterY)
+    <label><m>O</m></label>
+  </point>
+  <number name="r">$AO.length sin($alpha.radians) + 0.0000001</number> 
+  <lineSegment name="rA12" endpoints="$O $whiskerA12"/>
+  <lineSegment name="rA22" endpoints="$O $whiskerA22"/>
+  <lineSegment name="rB12" endpoints="$O $whiskerB12"/>
+  <lineSegment name="rB22" endpoints="$O $whiskerB22"/>
+  <lineSegment name="rC12" endpoints="$O $whiskerC12"/>
+  <lineSegment name="rC22" endpoints="$O $whiskerC22"/>
+  <boolean name="whiskersCorrect" allowedErrorInNumbers="0.0001">
+    $rA12.length = $rA22.length and 
+    $rA12.length = $rB12.length and
+    $rA12.length = $rB22.length and
+    $rA12.length = $rC12.length and
+    $rA12.length = $rC22.length
+  </boolean>
+</setup>
+
+<p hide="$whiskerC11 = (0,-12)">Check to see if the whiskers are placed correctly before proceeding to the next step: 
+<answer name="checkWhiskers">
+  <award>
+    <when>$whiskersCorrect</when>
+  </award>
+</answer></p>
+
+<feedback condition="$checkWhiskers.creditAchieved != 1 and $checkWhiskers.responseHasBeenSubmitted">Make sure that none of your whiskers lies on top of any side of the triangle. (All whiskers should extend outward away from the triangle vertices.)</feedback>
+  
+<!-- testing -->
+<!-- <p>alpha = $alpha.radians</p>
+<p>AO = $AO.length</p>
+<p>r = $r</p>
+<p>whiskersCorrect = $whiskersCorrect</p> -->
+<!-- /testing -->
+   
+</div>
+
+
+
+<!--************************************************************
+          Step 5: Complete the iris
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 5:</alert> Drag out the 3 points that appear in the palette to construct a circle that contains the ends of 3 whiskers.</p>
+<p>What do you notice? 
+  <answer name="irisObservation" handGraded type="text">
+    <textInput height="50px" width="300px" expanded/>
+  </answer>
+</p>
+<graph copySource="g4" name="g5">
+  <point name="irisP1" styleNumber="5" layer="3" hideOffGraphIndicator>(-2,-12)
+    <constraints>
+      <attractTo>
+        $whiskerA12 $whiskerA22
+        $whiskerB12 $whiskerB22
+        $whiskerC12 $whiskerC22
+      </attractTo>
+    </constraints>
+  </point>
+  <point name="irisP2" styleNumber="5" layer="3" hideOffGraphIndicator>(0,-12)
+    <constraints>
+      <attractTo>
+        $whiskerA12 $whiskerA22
+        $whiskerB12 $whiskerB22
+        $whiskerC12 $whiskerC22
+      </attractTo>
+    </constraints>
+  </point>
+  <point name="irisP3" styleNumber="5" layer="3" hideOffGraphIndicator>(2,-12)
+    <constraints>
+      <attractTo>
+        $whiskerA12 $whiskerA22
+        $whiskerB12 $whiskerB22
+        $whiskerC12 $whiskerC22
+      </attractTo>
+    </constraints>
+  </point>                
+  <circle name="circIris" styleNumber="5" through="$irisP1 $irisP2 $irisP3"/>
+</graph>
+
+
+<p>What do you wonder? 
+  <answer name="irisQuestion" handGraded type="text" >
+    <textInput height="50px" width="300px" expanded/>
+  </answer>
+</p>
+</div>
+
+
+<!--************************************************************
+          Step 6: Locate the center of the eye part1
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 6:</alert> Let's try and locate the center of the eye. First, a few questions to guide us:</p>
+<p>Each of the three lines that slice through the larger iris circle are 
+  <answer name="lineType" inline>
+    <choice credit="1">chords of the circle</choice>
+    <choice>radii of the circle</choice>
+    <choice>perpendicular bisectors of the circle</choice>
+  </answer>. In addition, we can see that they 
+  <answer name="lengthRelation" inline>
+    <choice>are all different lengths.</choice>
+    <choice>have proportional lengths</choice>
+    <choice credit="1">are all the same length.</choice>
+  </answer>
+  How can you tell? <answer name="lengthReason" handGraded type="text"/></p>
+  <p>Before we proceed to finish the construction, make a guess of where you think the pupil of the eye should occur. Drag out the smaller circle that appears in the palette after you've answered the above questions.</p>
+
+  
+<graph copySource="g5" name="g6"> 
+  <point name="pupilGuessDP" styleNumber="6" hide>(0,-12)
+    <constraints>
+      <attractTo>$O</attractTo>
+    </constraints>
+    <label><m>O</m></label>
+  </point>
+  <circle name="pupilGuess" styleNumber="6" center="$pupilGuessDP" radius="$r" filled hide="$lineType.creditAchieved != 1 or $lengthRelation.creditAchieved != 1 or $lengthReason.responseHasBeenSubmitted = false"/>
+
+</graph>
+  
+</div>
+
+
+
+<!--************************************************************
+          Step 7: Locate the center of the eye part2
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 7:</alert> </p>
+<p>Recall that there are several different "centers" when we are talking about triangles. Can you match them to their definitions?</p>
+<p><alert>A</alert> - Orthocenter  <alert>B</alert> - Incenter <alert>C</alert> - Centroid</p>
+
+<p>The intersection point of all three <em>medians</em>. 
+  <choiceInput name="ci1" inline>
+    <choice>A</choice>
+    <choice>B</choice>
+    <choice>C</choice>
+  </choiceInput>
+</p>
+<p>The intersection point of all three <em>altitudes</em>.
+    <choiceInput name="ci2" inline>
+      <choice>A</choice>
+      <choice>B</choice>
+      <choice>C</choice>
+    </choiceInput>
+</p>
+<p>The intersection point of all three <em>angle bisectors</em>.
+    <choiceInput name="ci3" inline>
+    <choice>A</choice>
+    <choice>B</choice>
+    <choice>C</choice>
+  </choiceInput>
+
+<answer name="centerMatching" matchPartial>
+  <award>
+    <when>$ci1.selectedValues = C and $ci2.selectedValues = A and $ci3.selectedValues = B</when>
+  </award>
+</answer></p>
+<p>It turns out that one of these centers is related to the larger iris circle! Based on your approximate pupil location from earlier, which "center" of the triangle do you think it is?
+  <answer name="centerGuess" inline>
+    <choice>the Orthocenter</choice>
+    <choice credit="1">the Incenter</choice>
+    <choice>the Centroid</choice>
+  </answer></p>
+
+<p>Below, we have a zoomed-in view of the diagram so far, showing mostly the triangle you drew, along with the incircle and the angle bisectors. For each side of this triangle, the sides have been cut into two segments by the radii of the incircle. Three of these segments have been labeled <m>m, n, p</m>.</p>
+
+
+  <triggerSet triggerWhen="$centerGuess.creditAchieved = 1">
+    <updateValue target="constLineAB.hide" newValue="true" type="boolean"/>
+    <updateValue target="constLineBC.hide" newValue="true" type="boolean"/>
+    <updateValue target="constLineAC.hide" newValue="true" type="boolean"/>
+    <updateValue target="circAC.hide" newValue="true" type="boolean"/>
+    <updateValue target="circBC.hide" newValue="true" type="boolean"/>
+    <updateValue target="circAB.hide" newValue="true" type="boolean"/>
+    <updateValue target="AB.hide" newValue="true" type="boolean"/>
+    <updateValue target="AC.hide" newValue="true" type="boolean"/>
+    <updateValue target="BC.hide" newValue="true" type="boolean"/>
+    <updateValue target="whiskerA12.fixLocation" newValue="true" type="boolean"/>
+    <updateValue target="whiskerA22.fixLocation" newValue="true" type="boolean"/>
+    <updateValue target="whiskerB12.fixLocation" newValue="true" type="boolean"/>
+    <updateValue target="whiskerB22.fixLocation" newValue="true" type="boolean"/>
+    <updateValue target="whiskerC12.fixLocation" newValue="true" type="boolean"/>
+    <updateValue target="whiskerC22.fixLocation" newValue="true" type="boolean"/>
+  </triggerSet>
+
+
+<setup>  
+  <intersection name="intsAC">$pupil $AC</intersection>
+  <point name="tpAC" styleNumber="6">($intsAC[1]+$intsAC[2])/2</point>
+  <intersection name="intsBC">$pupil $BC</intersection>
+  <point name="tpBC" styleNumber="6">($intsBC[1]+$intsBC[2])/2</point>
+  <intersection name="intsAB">$pupil $AB</intersection>
+  <point name="tpAB" styleNumber="6">($intsAB[1]+$intsAB[2])/2</point>
+</setup>
+
+<!-- testing -->
+<!-- <p>alpha = $alpha.radians</p>
+<p>AO = $AO.length</p>
+<p>r = $r</p>
+<p>intsAC = $intsAC</p>
+<p>intsAC[1] = $intsAC[1]</p>
+<p>tpAC = $tpAC</p> -->
+<!-- /testing -->
+
+  
+<graph copySource="g6" name="g7" xmin="-6" xmax="6" ymin="-3" ymax="9">
+<group copySource="innerGeometry" hide="false"/>
+$tpAC
+$tpAB
+$tpBC
+  <lineSegment name="rtpAC" styleNumber="6" endpoints="$O $tpAC"/>
+  <lineSegment name="rtpAB" styleNumber="6" endpoints="$O $tpAB"/>
+  <lineSegment name="rtpBC" styleNumber="6" endpoints="$O $tpBC"/>
+
+<lineSegment name="AtpAC" styleNumber="9" endpoints="$A $tpAC">
+  <label>m</label>
+</lineSegment>
+<lineSegment name="CtpAC" styleNumber="15" endpoints="$C $tpAC">
+  <label>$pLabel</label>
+</lineSegment>
+  
+<lineSegment name="AtpAB" styleNumber="14" endpoints="$A $tpAB">
+  <label>$mLabel</label>
+</lineSegment>
+<lineSegment name="BtpAB" styleNumber="8" endpoints="$B $tpAB">
+  <label>n</label>
+</lineSegment>
+  
+<lineSegment name="BtpBC" styleNumber="13" endpoints="$B $tpBC">
+  <label>$nLabel</label>
+</lineSegment>
+<lineSegment name="CtpBC" styleNumber="7" endpoints="$C $tpBC">
+  <label>p</label>
+</lineSegment>
+
+</graph>
+
+<p>Using the variables <m>m, n, p</m>, label the remaining segments of the triangle sides.</p>
+
+
+<p>Missing label between A and B: <textInput name="mLabel" width="12"/></p>  
+<p>Missing label between B and C: <textInput name="nLabel" width="12"/></p>  
+<p>Missing label between A and C: <textInput name="pLabel" width="12"/></p>  
+
+<answer name="checkSegmentLabels" matchPartial type="text">
+  <award>
+    <when>$mLabel = m and $nLabel = n and $pLabel = p</when>
+  </award>
+</answer>
+
+<p>How did you know that each of those pairs of segments were equal?</p>
+  
+<hint>
+  Consider the following questions:
+<ul>
+  <li>When can you know that two triangles are congruent?</li>
+  <li>What is the angle formed between at the intersection of a circle's radius and a tangent line?</li>
+  <li>What do we know about each pair of angles at <m>A</m>, <m>B</m>, and <m>C</m>?</li>
+</ul>
+</hint>
+  <answer name="segmentLabelingExplanation" handGraded type="text">
+    <textInput height="50px" width="300px" expanded/>
+  </answer>
+
+
+  
+</div>
+
+
+<!--************************************************************
+          Step 8: Show that 
+*************************************************************-->  
+<div>
+
+  
+<p><alert>Step 8:</alert> </p>
+<p>Finally, to prove that the incenter is <em>truly</em> the center of the larger circle formed by the whiskers, we need to show that <em>all</em> 6 whisker endpoints are the same distance to the tangent points of the incircle of our triangle. Let's label the tangent points <m>T_1, T_2, T_3</m>, and the whisker endpoints <m>S_1</m> through <m>S_6</m>.</p>
+
+<p>What can you say about the distances from the incenter, <m>O</m>, to the tangent points <m>T_1, T_2, T_3</m>?
+  <answer name="tangentDistances" handGraded type="text">
+    <textInput height="50px" width="300px" expanded/>
+  </answer></p>
+
+<p>How do you know?
+  <answer name="tangentDistExplanation" handGraded type="text">
+    <textInput height="50px" width="300px" expanded/>
+  </answer></p>
+
+<p>Take another look at the graph, now zoomed out to show our new labels</p>
+
+<setup>
+  <number name="xmin">min($whiskerA12.x - 1.25, $whiskerA22.x - 1.25, $whiskerB12.x - 1.25, $whiskerB22.x - 1.25, $whiskerC12.x - 1.25, $whiskerC22.x - 1.25)</number>
+  <number name="xmax">max($whiskerA12.x + 1.25, $whiskerA22.x + 1.25, $whiskerB12.x + 1.25, $whiskerB22.x + 1.25, $whiskerC12.x + 1.25, $whiskerC22.x + 1.25)</number>
+  <number name="ymin">min($whiskerA12.y - 1.25, $whiskerA22.y - 1.25, $whiskerB12.y - 1.25, $whiskerB22.y - 1.25, $whiskerC12.y - 1.25, $whiskerC22.y - 1.25)</number>
+  <number name="ymax">max($whiskerA12.y + 1.25, $whiskerA22.y + 1.25, $whiskerB12.y + 1.25, $whiskerB22.y + 1.25, $whiskerC12.y + 1.25, $whiskerC22.y + 1.25)</number>
+</setup>
+
+<graph copySource="g7" name="g8" xmin="$xmin" xmax="$xmax" ymin="$ymin" ymax="$ymax">
+  <label anchor="$whiskerA12 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_1</m></label>
+  <label anchor="$whiskerA22 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_2</m></label>
+  <label anchor="$whiskerB12 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_3</m></label>
+  <label anchor="$whiskerB22 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_4</m></label>
+  <label anchor="$whiskerC12 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_5</m></label>
+  <label anchor="$whiskerC22 + (0.5,0.5)" positionFromAnchor="upperright"><m>S_6</m></label>
+  
+  <label anchor="$tpAC" positionFromAnchor="lowerleft"><m>T_1</m></label>
+  <label anchor="$tpAB"positionFromAnchor="lowerleft"><m>T_2</m></label>
+  <label anchor="$tpBC" positionFromAnchor="lowerleft"><m>T_3</m></label>
+</graph>
+
+<p>In terms of the variables, <m>m, n, p</m>, what is the length of each of the $blueWhisker1.styleDescription whiskers <m>A S_1</m> and <m>A S_2</m>?
+  <answer name="whiskerlengthAnsA">
+  <mathInput name="lengthAS1"/>
+    <award>n + p</award>
+  </answer>
+</p>
+
+<p>In terms of the variables, <m>m, n, p</m>, what is the length of each of the $orangeWhisker1.styleDescription whiskers <m>B S_3</m> and <m>B S_4</m>?
+  <answer name="whiskerlengthAnsB">
+  <mathInput name="lengthBS3"/>
+    <award>m + p</award>
+  </answer>
+</p>
+
+<p>In terms of the variables, <m>m, n, p</m>, what is the length of each of the $redWhisker1.styleDescription whiskers <m>C S_5</m> and <m>C S_6</m>?
+  <answer name="whiskerlengthAnsC">
+  <mathInput name="lengthCS5"/>
+    <award>m + n</award>
+  </answer>
+</p>
+
+<p>Now, in your own words, finish the proof! Use variable names and labels that we have already used, and be as descriptive as possible.
+  <answer name="finalProof" handGraded type="text" forceFullCheckworkButton>
+    <textInput expanded/>
+  </answer></p>
+
+
+<aside><title>Attribution</title>
+  <p>This activity was inspired by the Mathologer video titled "<ref  uri="https://www.youtube.com/watch?v=XrTZwPD4O3k">Conway's IRIS and the windscreen wiper theorem</ref>". </p>
+</aside>
+</div>
+</paginator>
+<paginatorControls paginator="pgn"/>
+
+</activity>
+
+
+<!--******************************************************
+        Style Definitions
+*******************************************************-->  
+
+<setup>
+<styleDefinitions>
+<!--blue, styleNumber 1 corrolary-->
+<styleDefinition styleNumber="7" fillColor="#648FFF" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#648FFF" lineColorWord="blue" markerColorWord="blue" lineWidth="3"/>
+<!--red, styleNumber 2 corrolary-->
+<styleDefinition styleNumber="8" fillColor="#D4042D" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#D4042D" lineColor="#D4042D" lineOpacity="0.7"  lineWidth="3" lineColorWord="red" markerColorWord="red" />
+<!--orange, styleNumber 3 corrolary-->
+<styleDefinition styleNumber="9" fillColor="#F19143" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#F19143" lineColor="#F19143" lineOpacity="0.7"  lineWidth="3" lineColorWord="orange" markerColorWord="orange" />
+<!--purple, styleNumber 4 corrolary-->
+<styleDefinition styleNumber="10" fillColor="#644CD6" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#644CD6" lineColor="#644CD6" lineOpacity="0.7" lineWidth="3"/>
+<!--black, styleNumber 5 corrolary-->
+<styleDefinition styleNumber="11" fillColor="black" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="black" lineColor="black" lineOpacity="0.7" lineWidth="3"/>
+<!--green, styleNumber 1 but green corrolary-->
+<styleDefinition styleNumber="12" fillColor="#469152" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#469152" lineColor="#469152" lineOpacity="0.7" lineWidth="3"/>
+
+<!--blue, styleNumber 1 corrolary but with dashed line-->
+<styleDefinition styleNumber="13" fillColor="#648FFF" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#648FFF" lineStyle="dashed"  lineWidth="3" lineColorWord="blue" markerColorWord="blue" lineStyleWord="dashed"/>
+
+<!--red, styleNumber 2 corrolary but with dashed line-->
+<styleDefinition styleNumber="14" fillColor="#D4042D" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#D4042D" lineColor="#D4042D" lineOpacity="0.7"  lineWidth="3" lineStyle="dashed" lineColorWord="red" lineStyleWord="dashed"/>
+
+<!--orange, styleNumber 3 corrolary but with dashed line-->
+<styleDefinition styleNumber="15" fillColor="#F19143" fillOpacity="0.1" markerSize="5" markerStyle="circle" markerColor="#F19143" lineColor="#F19143" lineOpacity="0.7"  lineWidth="3" lineStyle="dashed" lineStyleWord="dashed" lineColorWord="orange" markerColorWord="orange"/>
+</styleDefinitions>
+</setup>
+ 
+  </script>
+</div></div>
+</body>
+</html>

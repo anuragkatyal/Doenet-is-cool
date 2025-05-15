@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/doenet-standalone.min.js"></script><script>function onLoad() {window.renderDoenetToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    
+<section><title>Part 1: Label the Diagram</title>
+<p>First, label the classification regions on the graph with the following <alert>bold</alert> terms. You can move the test numbers around the graph for a clue.</p>
+  <ul>
+    <li><alert>Irrational</alert> numbers</li>
+    <li><alert>Imaginary</alert> numbers</li>
+    <li><alert>Rational</alert> numbers</li>
+    <li><alert>Integers</alert></li>
+    <li><alert>Whole</alert> numbers</li>
+    <li><alert>Natural</alert> numbers</li>
+  </ul>
+
+  
+<p><em>Make sure to spell each term correctly. You only need to include the part that is in bold</em>.</p>
+
+<!--testing-->
+<!-- <p>irratLabel @ $irratLabel.anchor</p>
+<p>rationalLabel @ $rationalLabel.anchor</p>
+<p>intLabel @ $intLabel.anchor</p>
+<p>wholeLabel @ $wholeLabel.anchor</p>
+<p>naturalLabel @ $naturalLabel.anchor</p>
+<p>imagLabel @ $imagLabel.anchor</p> -->
+<!--/testing-->
+ 
+<graph name="g1" size="full" displayXAxis="false" displayYAxis="false" fixAxes xmin="-24" xmax="20" ymin="-22" ymax="18" aspectRatio="3/2">
+    
+<group name="background">
+  <rectangle name="numberBank" vertices="(-24,-24) (24,-18)" filled styleNumber="3" fixed/>
+  <circle name="realIrrationalCircle" center="(-4,0)" radius="14" 
+ fixed layer="3"/>
+  <lineSegment name="rationalIrratDivider" endpoints="(-4,-14) (-4,14)" fixed layer="1"/>
+  <rectangle name="irrationalMask" styleNumber="13" vertices="(-3.8,-15) (10,15)" layer="2" filled fixed/>
+  <circle name="realIntegerCircle" center="(-4,0)" radius="11" filled fixed layer="1"/>
+  <circle name="realWholeCircle" center="(-4,0)" radius="8" filled fixed layer="1"/>
+  <circle name="realNaturalCircle" center="(-4,0)" radius="5" filled fixed layer="1"/>
+  <circle name="imagCircle" center="(14,0)" radius="3" styleNumber="2" filled fixed layer="1"/>
+
+  <text name="realLabel" anchor="(-4,14)" fixed layer="1">Real</text>
+  <rectangle name="realLabelMask" height="3" width="7" center="$realLabel.anchor" styleNumber="13" layer="4" filled fixed/>
+  <rectangle copySource="realLabelMask" filled="false" styleNumber="5" layer="4" fixed/>
+
+  <text name="complexLabel" anchor="(10,14)" layer="1" fixed>Complex</text>
+  <rectangle name="complexLabelMask" height="3" width="7" center="$complexLabel.anchor" styleNumber="13" layer="4" filled fixed/>
+  <rectangle copySource="complexLabelMask" filled="false" styleNumber="5" layer="4" fixed/>
+  
+  <textInput name="irratLabel" anchor="(5,0)" fixLocation/>
+  
+  <textInput name="rationalLabel" anchor="(-16.5, 14.7)" fixLocation/>
+  <lineSegment name="rationalPointer" endpoints="$rationalLabel.anchor (-10.7, 10.7)" layer="1" styleNumber="5" fixed/>
+  
+  <textInput name="intLabel" anchor="(-17,10.8)" fixLocation/>
+  <lineSegment name="intPointer" endpoints="$intLabel.anchor (-13.5, 4.3)" layer="1" styleNumber="5" fixed/>
+   
+  <textInput name="wholeLabel" anchor="(-16.8,-12.3)" fixLocation/>
+  <lineSegment name="wholePointer" endpoints="$wholeLabel.anchor (-9.7,-2.8)" layer="4"  styleNumber="5" fixed/>
+  
+  <textInput name="naturalLabel" anchor="(-11.1,-16)" fixLocation/>
+  <lineSegment name="naturalPointer" endpoints="$naturalLabel.anchor (-5.9, -0.2)" layer="4"  styleNumber="5" fixed/>
+  <textInput name="imagLabel" anchor="(15.7,-7.7)" fixLocation/>
+  <lineSegment name="imagPointer" endpoints="$imagLabel.anchor (13.9,-0.4)" layer="1" styleNumber="5" fixed/>
+</group>
+  
+  <group name="irratGroup">
+    <circle name="iGcirc" center="(-15,-20)" styleNumber="$iGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$iGcirc.center">pi</math>
+  </group>
+
+  <group name="ratGroup">
+    <circle name="rGcirc" center="(-10,-20)" styleNumber="$rGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$rGcirc.center">3/7</math>
+  </group>
+
+  <group name="intGroup">
+    <circle name="intGcirc" center="(-5,-20)" styleNumber="$intGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$intGcirc.center">-33</math>
+  </group>
+
+  <group name="wholeGroup">
+    <circle name="wholeGcirc" center="(0,-20)" styleNumber="$wholeGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$wholeGcirc.center">0</math>
+  </group>
+
+  <group name="naturalGroup">
+    <circle name="naturalGcirc" center="(5,-20)" styleNumber="$naturalGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$naturalGcirc.center">57</math>
+  </group>
+
+  <group name="imagGroup">
+    <circle name="imagGcirc" center="(10,-20)" styleNumber="$imagGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$imagGcirc.center">5 i</math>
+  </group>
+
+  <group name="complexGroup">
+    <circle name="complexGcirc" center="(15,-20)" styleNumber="$complexGcolor" filled radius="1.3" layer="6"/>
+    <math anchor="$complexGcirc.center">3 - 2i</math>
+  </group>
+
+  <vector name="viG" tail="$realIrrationalCircle.center" head="$iGcirc.center" hide/>
+  <vector name="vrG" tail="$realIrrationalCircle.center" head="$rGcirc.center" hide/>
+  <vector name="vintG" tail="$realIrrationalCircle.center" head="$intGcirc.center" hide/>
+  <vector name="vwholeG" tail="$realIrrationalCircle.center" head="$wholeGcirc.center" hide/>
+  <vector name="vnaturalG" tail="$realIrrationalCircle.center" head="$naturalGcirc.center" hide/>
+  <vector name="vimagG" tail="$imagCircle.center" head="$imagGcirc.center" hide/>
+  <vector name="vcomplexG1" tail="$imagCircle.center" head="$complexGcirc.center" hide/>
+  <vector name="vcomplexG2" tail="$realIrrationalCircle.center" head="$complexGcirc.center" hide/>
+</graph>
+  
+<number name="complexGcolor" hide>
+  <conditionalContent>
+    <case condition="$vcomplexG1.magnitude > 3 and $vcomplexG2.magnitude > 14 and $vcomplexG1.head[2] > -18">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="iGcolor" hide>
+  <conditionalContent>
+    <case condition="$viG.magnitude < 14 and $viG.head[1] > -4">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="rGcolor" hide>
+  <conditionalContent>
+    <case condition="$vrG.magnitude < 14 and $vrG.head[1] < -4 and $vrG.magnitude > 11">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="intGcolor" hide>
+  <conditionalContent>
+    <case condition="$vintG.magnitude < 11 and $vintG.head[1] < -4 and $vintG.magnitude > 8">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="wholeGcolor" hide>
+  <conditionalContent>
+    <case condition="$vwholeG.magnitude < 8 and $vwholeG.head[1] < -4 and $vwholeG.magnitude > 5">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="naturalGcolor" hide>
+  <conditionalContent>
+    <case condition="$vnaturalG.magnitude < 5 and $vnaturalG.head[1] < -4">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+
+<number name="imagGcolor" hide>
+  <conditionalContent>
+    <case condition="$vimagG.magnitude < 3">
+      14
+    </case>
+    <else>
+      11
+    </else>
+  </conditionalContent>
+</number>
+  
+<boolean name="intLabelCorrect" caseInsensitiveMatch hide>$intLabel = Integer or $intLabel = Integers</boolean>
+  
+<p>Check labels: 
+  <answer name="ans1" matchPartial type="text" caseInsensitiveMatch>
+    <award><when>
+      $irratLabel = Irrational and
+      $rationalLabel = Rational and
+      $intLabelCorrect and
+      $wholeLabel = Whole and
+      $naturalLabel = Natural and
+      $imagLabel = Imaginary
+    </when></award>    
+  </answer></p>
+
+<!-- <p><updateValue target="part2.hide" newValue="false" type="boolean" disabled="$ans1.creditAchieved != 1 or $part2.hide = false">
+  <label>Go to Part 2</label>
+</updateValue></p> -->
+</section>
+
+<conditionalContent condition="$ans1.creditAchieved = 1">
+<section name="part2" ><title>Part 2: Sort Numbers</title>
+<p>Now, drag each number on the diagram below into the smallest possible set to which it belongs. When you have sorted all the numbers into their correct spots, click "Check Work"</p>
+<p>If you want to practice again with a new set of numbers, you can click the "Get numbers" button below.</p>
+<setup>
+  <sampleRandomNumbers name="negIntParam" assignNames="a b c d e" numSamples="5" type="discreteUniform" from="-25" to="-1"/>
+  <sampleRandomNumbers name="posIntParam" assignNames="f g h i j" numSamples="5" type="discreteUniform" from="1" to="25"/>
+  <sampleRandomNumbers name="notSquare" assignNames="k" type="discreteUniform" from="17" to="24"/>
+
+
+<!--choices for complex numbers-->
+  <select name="complexSelect" assignNames="complex1 complex2" numToSelect="2">
+    <option><math simplify="numbersPreserveOrder">$a + $d i</math></option>
+    <option><math simplify="numbersPreserveOrder">$c + $e i</math></option>
+    <option><math simplify="numbersPreserveOrder">$f + $g i</math></option>
+    <option><math simplify="numbersPreserveOrder">$h + $i i</math></option>
+    <option><math simplify="numbersPreserveOrder">$j + $a i</math></option>
+    <option><math simplify="numbersPreserveOrder">$b + $h i</math></option>
+    <option><math simplify="numbersPreserveOrder">$i + $b i</math></option>
+    <option><math simplify="numbersPreserveOrder">$d + $j i</math></option>
+    <option><math simplify="numbersPreserveOrder">$e + $f i</math></option>
+    <option><math simplify="numbersPreserveOrder">$g + $c i</math></option>
+  </select>
+
+<!--choices for imaginary numbers-->
+  <select name="imagSelect" assignNames="imag1 imag2" numToSelect="2">
+    <option><math simplify>$h i</math></option>
+    <option><math simplify>$b i</math></option>
+    <option><math simplify>$d i</math></option>
+    <option><math simplify>$a i</math></option>
+    <option><math simplify>$e i</math></option>
+    <option><math simplify>$g i</math></option>   
+    <option><math simplify>$i i</math></option>
+    <option><math simplify>$c i</math></option>
+    <option><math simplify>$f i</math></option>
+    <option><math simplify>$j i</math></option>
+  </select>
+    
+  
+<!--choices for irrational numbers-->
+  <select name="irrationalSelect" assignNames="irrat1 irrat2" numToSelect="2">
+    <option><math>$a pi</math></option>
+    <option><math>$b e</math></option>
+    <option><math>$c sqrt(2)</math></option>
+    <option><math>$f sqrt(3)</math></option>
+    <option><math>$g sqrt(5)</math></option>
+    <option><math>$h sqrt($k)</math></option>
+    <option><math>$i pi</math></option>
+    <option><math>$j e^$b</math></option>
+    <option><math>pi/ $c</math></option>
+  </select>
+
+<!--choices for rational numbers-->
+  <select name="rationalSelect" assignNames="rational1 rational2" numToSelect="2">
+    <option><math simplify>$f/$e</math></option>
+    <option><number>$a + 0.5</number></option>
+    <option><math simplify>$b/$a</math></option>
+    <option><number>$b - 0.25</number></option>
+    <option><math simplify>$d/$f</math></option>
+    <option><number>$c + 0.2</number></option>
+    <option><math simplify>$c/$b</math></option>
+    <option><number>$d - 0.2</number></option>
+    <option><math simplify>$a/$h</math></option>
+    <option><number displayDecimals="6">$e + 1/3</number></option>
+    <option><number displayDecimals="6">$f - 1/3</number></option>
+    <option><number displayDecimals="3">$g + 1/8</number></option>
+    <option><number displayDecimals="3">$h - 1/8</number></option>
+  </select>
+
+<!--choices for integers-->
+  <select name="intSelect" assignNames="int1 int2" numToSelect="2">
+    <option><math simplify>2 $a</math></option>
+    <option><math simplify>3 $b</math></option>
+    <option><math simplify>4 $c</math></option>
+    <option><math simplify>5 $d</math></option>
+    <option><math simplify>6 $e</math></option>
+    <option><math simplify>5 $a</math></option>
+    <option><math simplify>4 $b</math></option>
+    <option><math simplify>7 $c</math></option>
+    <option><math simplify>3 $d</math></option>
+    <option><math simplify>2 $e</math></option>
+  </select>
+
+<!--always the only choice for the "whole" numbers -->
+<math name="whole">0</math>
+
+<!--choices for natural numbers-->
+<select name="naturalSelect" assignNames="natural1 natural2" numToSelect="2">
+    <option><math simplify>2 $f</math></option>
+    <option><math simplify>3 $g</math></option>
+    <option><math simplify>4 $h</math></option>
+    <option><math simplify>5 $i</math></option>
+    <option><math simplify>6 $j</math></option>
+    <option><math simplify>5 $f</math></option>
+    <option><math simplify>4 $g</math></option>
+    <option><math simplify>7 $h</math></option>
+    <option><math simplify>3 $i</math></option>
+    <option><math simplify>2 $j</math></option>
+  </select>
+
+<!--sample random positions to send the numbers to-->
+  <sampleRandomNumbers name="xSampling" assignNames="x1 x2 x3 x4 x5 x6 x7 x8 x9 x10 x11 x12 x13" numSamples="13" from="-18" to="18"/>
+  <sampleRandomNumbers name="ySampling" assignNames="y1 y2 y3 y4 y5 y6 y7 y8 y9 y10 y11 y12 y13" numSamples="13" from="-21.5" to="-18.5"/>
+
+  <point name="origin" fixed>(0,0)</point>  
+</setup>   
+
+<!--Define the button which will allow students to get a new set of numbers for a different sorting problem-->
+  
+<triggerSet>
+  <callAction actionName="resample" target="negIntParam" />
+  <callAction actionName="resample" target="posIntParam" />
+  <callAction actionName="resample" target="notSquare" />
+  <callAction actionName="resample" target="xSampling"/>
+  <callAction actionName="resample" target="ySampling"/>
+  <label>Get numbers</label>
+</triggerSet>
+
+<!--testing-->
+<!-- <p><m>a = $a</m></p>
+<p><m>b = $b</m></p>
+<p><m>c = $c</m></p>
+<p><m>d = $d</m></p>
+<p><m>e = $e</m></p>
+<p><m>f = $f</m></p>
+<p><m>g = $g</m></p>
+<p><m>h = $h</m></p>
+<p><m>i = $i</m></p>
+<p><m>j = $j</m></p>
+<p><m>k = $k</m></p>
+<p>irrat1 = $irrat1</p>
+<p>irrat2 = $irrat2</p>
+<p>complex1 = $complex1</p>
+<p>complex2 = $complex2</p>
+<p>imag1 = $imag1</p>
+<p>imag2 = $imag2</p>
+<p>rational1 = $rational1</p>
+<p>rational2 = $rational2</p>
+<p>int1 = $int1</p>
+<p>int2 = $int2</p>
+<p>natural1 = $natural1</p>
+<p>natural2 = $natural2</p> -->
+<!--testing-->
+
+<graph name="g2" size="full" displayXAxis="false" displayYAxis="false" fixAxes xmin="-20" xmax="20" ymin="-22" ymax="18" aspectRatio="3/2">
+
+$background
+
+  
+  <math name="irrat1Ans" anchor="($x1, $y1)">$irrat1</math>
+  <math name="irrat2Ans" anchor="($x2, $y2)">$irrat2</math>
+  <math name="complex1Ans" anchor="($x3, $y3)">$complex1</math>
+  <math name="complex2Ans" anchor="($x4, $y4)">$complex2</math>
+  <math name="imag1Ans" anchor="($x5, $y5)">$imag1</math>
+  <math name="imag2Ans" anchor="($x6, $y6)">$imag2</math>
+  <math name="rational1Ans" anchor="($x7, $y7)">$rational1</math>
+  <math name="rational2Ans" anchor="($x8, $y8)">$rational2</math>
+  <math name="int1Ans" anchor="($x9, $y9)">$int1</math>
+  <math name="int2Ans" anchor="($x10, $y10)">$int2</math>
+  <math name="wholeAns" anchor="($x11, $y11)">$whole</math>
+  <math name="natural1Ans" anchor="($x12, $y12)">$natural1</math>
+  <math name="natural2Ans" anchor="($x13, $y13)">$natural2</math>
+
+  <!--define displacement vectors to numbers for validation-->
+  <vector name="irrat1V" tail="$realIrrationalCircle.center" head="$irrat1Ans.anchor" styleNumber="4" hide/>
+  <vector name="irrat2V" tail="$realIrrationalCircle.center" head="$irrat2Ans.anchor" styleNumber="4" hide/>
+
+  <vector name="imag1V" tail="$imagCircle.center" head="$imag1Ans.anchor" styleNumber="2" hide/>
+  <vector name="imag2V" tail="$imagCircle.center" head="$imag2Ans.anchor" styleNumber="2" hide/>
+
+  <vector name="rational1V" tail="$realIrrationalCircle.center" head="$rational1Ans.anchor" styleNumber="2" hide/>
+  <vector name="rational2V" tail="$realIrrationalCircle.center" head="$rational2Ans.anchor" styleNumber="2" hide/>
+
+  <vector name="int1V" tail="$realIrrationalCircle.center" head="$int1Ans.anchor" styleNumber="2" hide/>
+  <vector name="int2V" tail="$realIrrationalCircle.center" head="$int2Ans.anchor" styleNumber="2" hide/>
+
+  <vector name="wholeV" tail="$realIrrationalCircle.center" head="$wholeAns.anchor" styleNumber="2" hide/>
+
+  <vector name="natural1V" tail="$realIrrationalCircle.center" head="$natural1Ans.anchor" styleNumber="2" hide/>
+  <vector name="natural2V" tail="$realIrrationalCircle.center" head="$natural2Ans.anchor" styleNumber="2" hide/>
+
+  <vector name="complex1VRe" tail="$realIrrationalCircle.center" head="$complex1Ans.anchor" styleNumber="3" hide/>
+  <vector name="complex1VIm" tail="$imagCircle.center" head="$complex1Ans.anchor" styleNumber="3" hide/>
+
+  <vector name="complex2VRe" tail="$realIrrationalCircle.center" head="$complex2Ans.anchor" styleNumber="3" hide/>
+  <vector name="complex2VIm" tail="$imagCircle.center" head="$complex2Ans.anchor" styleNumber="3" hide/>
+  
+</graph>
+
+<setup>
+<!--validate graph-->
+<boolean name="irrat1Correct">$irrat1V.magnitude <= 14 and $irrat1V.head[1] > -4</boolean>
+<boolean name="irrat2Correct">$irrat2V.magnitude <= 14 and $irrat2V.head[1] > -4</boolean>
+
+<boolean name="imag1Correct">$imag1V.magnitude <= 3</boolean>
+<boolean name="imag2Correct">$imag2V.magnitude <= 3</boolean>
+
+<boolean name="rational1Correct">$rational1V.magnitude <= 14 and $rational1V.head[1] < -4 and $rational1V.magnitude > 11</boolean>
+<boolean name="rational2Correct">$rational2V.magnitude <= 14 and $rational2V.head[1] < -4 and $rational2V.magnitude > 11</boolean>
+
+<boolean name="int1Correct">$int1V.magnitude <= 11 and $int1V.head[1] < -4 and $int1V.magnitude > 8</boolean>
+<boolean name="int2Correct">$int2V.magnitude <= 11 and $int2V.head[1] < -4 and $int2V.magnitude > 8</boolean>
+
+<boolean name="wholeCorrect">$wholeV.magnitude <= 8 and $wholeV.head[1] < -4 and $wholeV.magnitude > 5</boolean>
+
+<boolean name="natural1Correct">$natural1V.magnitude <= 5 and $natural1V.head[1] < - 4</boolean>
+<boolean name="natural2Correct">$natural2V.magnitude <= 5 and $natural2V.head[1] < - 4</boolean>
+
+<boolean name="complex1Correct">$complex1VRe.magnitude >= 14 and $complex1VIm.magnitude >= 3 and $complex1VRe.head[2] > -18</boolean>
+<boolean name="complex2Correct">$complex2VRe.magnitude >= 14 and $complex2VIm.magnitude >= 3 and $complex2VRe.head[2] > -18</boolean>
+</setup>
+
+<!--testing-->
+<!-- <p>irrat1 / irrat2 = $irrat1Correct , $irrat2Correct</p>
+<p>rational1 / rational2 = $rational1Correct , $rational2Correct</p>
+<p>int1 / int2 = $int1Correct , $int2Correct</p>
+<p>whole = $wholeCorrect </p>
+<p>natural1 / natural2 = $natural1Correct , $natural2Correct</p>
+<p>complex1 / complex2 = $complex1Correct , $complex2Correct</p> -->
+<!--/testing-->
+
+
+<p>Check number sorting: 
+  <answer name="ansSorting" matchPartial>
+    <award>
+      <when>
+        $irrat1Correct and $irrat2Correct and 
+        $imag1Correct and $imag2Correct and 
+        $rational1Correct and $rational2Correct and 
+        $int1Correct and $int2Correct and
+        $wholeCorrect and 
+        $natural1Correct and $natural2Correct and 
+        $complex1Correct and $complex2Correct</when>
+    </award>
+  </answer></p>
+</section>
+ 
+</conditionalContent>
+  
+
+
+<!--******************************************************
+        Style Definitions
+*******************************************************-->  
+<setup>
+<styleDefinitions>
+<!--blue, styleNumber 1 corrolary-->
+<styleDefinition styleNumber="7" fillColor="#648FFF" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="#648FFF"/>
+  
+<!--red, styleNumber 2 corrolary-->
+<styleDefinition styleNumber="8" fillColor="#D4042D" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="#D4042D" lineColor="#D4042D" lineOpacity="0.7"  lineWidth="1"/>
+  
+<!--orange, styleNumber 3 corrolary-->
+<styleDefinition styleNumber="9" fillColor="#F19143" fillOpacity="0.4" markerSize="6" markerStyle="circle" markerColor="#F19143" lineColor="#F19143" lineOpacity="0.7"  lineWidth="4"/>
+  
+<!--purple, styleNumber 4 corrolary-->
+<styleDefinition styleNumber="10" fillColor="#644CD6" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="#644CD6" lineColor="#644CD6" lineOpacity="0.7" lineWidth="4"/>
+  
+<!--opaque white with black border(for litnus)-->
+<styleDefinition styleNumber="11" fillColor="white" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="black" lineColor="black" lineOpacity="0.7" lineWidth="1"/>
+  
+<!--green, styleNumber 1 but green corrolary-->
+<styleDefinition styleNumber="12" fillColor="#469152" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="#469152" lineColor="#469152" lineOpacity="0.7" lineWidth="1"/>
+
+<!--opaque white for masking-->
+<styleDefinition styleNumber="13" fillColor="white" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="black" lineColor="white" lineOpacity="0.7" lineWidth="4" fillColorDarkMode="black" lineColorDarkMode="white" markerColorDarkMode="white"/>
+
+<!--opaque white for litnus (green border)-->
+<styleDefinition styleNumber="14" fillColor="white" fillOpacity="1" markerSize="6" markerStyle="circle" markerColor="black" lineColor="#469152" lineOpacity="0.7" lineWidth="5" fillColorDarkMode="black" lineColorDarkMode="white" markerColorDarkMode="white"/>
+
+
+
+</styleDefinitions>
+</setup> 
+  </script>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/style.css">
+<script onload="onLoad()" type="module" src="https://cdn.jsdelivr.net/npm/doenet-standalone-test@0.6.0/dist/doenet-standalone.min.js"></script><script>function onLoad() {window.renderDoenetToContainer(document.querySelector(".doenetml-applet"))}</script>
+</head>
+<body class="ptx-content ignore-math" id="changeme">
+<div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div style="width:600px; height:2400px; display: block; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;"><div class="doenetml-applet">
+<div class="doenetml-loading" style="text-align:center">
+<p><img src="https://www.doenet.org/Doenet_Logo_Frontpage.png"></p>
+<p>Waiting on the page to load...</p>
+</div>
+<script type="text/doenetml">
+    
+<!-- <title hide>KenKen Puzzle (6x6)</title> -->
+  
+<setup>
+  <numberList name="sols">
+    4 6 1 2 3 2 3 4 5 6 1 3 6 1 2 5 4 1 2 5 4 3 6 6 1 2 3 4 5 4 5 3 6 1 2     
+  </numberList>
+  <numberList name="ans">
+    $ans12 $ans13 $ans14 $ans15 $ans16 $ans21 $ans22 $ans23 $ans24 $ans25 $ans26 $ans31 $ans32 $ans33 $ans34 $ans35 $ans36 $ans41 $ans42 $ans43 $ans44 $ans45 $ans46 $ans51 $ans52 $ans53 $ans54 $ans55 $ans56 $ans61 $ans62 $ans63 $ans64 $ans65 $ans66 
+  </numberList>
+</setup>
+
+<aside><title>Rules of KenKen</title>
+  <ol>
+    <li>A KenKen puzzle is played on a square grid. The numbers you can place depend on the size of the puzzle. For instance, in a 3x3 puzzle with 3 rows and 3 columns, you can use the digits 1, 2, and 3. Similarly, in a 4x4 puzzle, you can use the digits 1, 2, 3, and 4.</li>
+    <li>Numbers placed in heavily outlined regions, called cages, must combine in any order to produce the number in the cage using only the indicated mathematical operation (<m>+, -, \times, \div</m>). </li>
+    <li>Numbers within a cage can be repeated, but no numbers can be repeated in any row or column.</li>
+    <li>Single box cages, freebies, must be filled with the number in the corner.</li>
+  </ol>
+</aside>
+  
+<graph xmin='-0.25' xmax="6.25" ymin='-0.25' ymax="6.25" size="medium" displayXAxis="false" displayYAxis="false" showNavigation="false" showBorder="false">
+  <map name="anchors">
+    <template><point fixed hide>($i, $j)</point></template>
+    <sources alias="i"><sequence from="0.5" to="5.5" step="1"/></sources>
+    <sources alias="j"><sequence from="0.5" to="5.5" step="1"/></sources>
+  </map>
+
+  <rectangle fixed filled center="(3,3)" width="2" height="2" styleNumber="6"/>
+  <rectangle fixed filled center="(3,0.5)" width="2" height="1" styleNumber="3"/>
+  <rectangle fixed filled center="(3,5.5)" width="2" height="1" styleNumber="3"/>
+  <rectangle fixed filled center="(0.5,3)" width="1" height="2" styleNumber="3"/>
+  <rectangle fixed filled center="(5.5,3)" width="1" height="2" styleNumber="3"/>
+  <polygon fixed filled vertices = "(0,0) (2,0) (2,1) (1,1) (1,2) (0,2)" styleNumber="4"/>
+  <polygon fixed filled vertices = "(1,1) (3,1) (3,2) (2,2) (2,3) (1,3)" styleNumber="2"/>
+  <polygon fixed filled vertices = "(4,0) (6,0) (6,2) (5,2) (5,1) (4,1)" styleNumber="2"/>
+  <polygon fixed filled vertices = "(5,1) (5,3) (4,3) (4,2) (3,2) (3,1)" styleNumber="4"/>
+  <polygon fixed filled vertices = "(0,6) (0,4) (1,4) (1,5) (2,5) (2,6)" styleNumber="2"/>
+  <polygon fixed filled vertices = "(1,3) (1,5) (3,5) (3,4) (2,4) (2,3)" styleNumber="4"/>
+  <polygon fixed filled vertices = "(6,6) (6,4) (5,4) (5,5) (4,5) (4,6)" styleNumber="4"/>
+  <polygon fixed filled vertices = "(4,4) (4,3) (5,3) (5,5) (3,5) (3,4)" styleNumber="2"/>
+
+<!--   <textInput name="ans11" anchor="$anchors[1]" width="25"/> -->
+  <textInput name="ans12" anchor="$anchors[7]" width="25"/>
+  <textInput name="ans13" anchor="$anchors[13]" width="25"/>
+  <textInput name="ans14" anchor="$anchors[19]" width="25"/>
+  <textInput name="ans15" anchor="$anchors[25]" width="25"/>
+  <textInput name="ans16" anchor="$anchors[31]" width="25"/>
+  
+  <textInput name="ans21" anchor="$anchors[2]" width="25"/>
+  <textInput name="ans22" anchor="$anchors[8]" width="25"/>
+  <textInput name="ans23" anchor="$anchors[14]" width="25"/>
+  <textInput name="ans24" anchor="$anchors[20]" width="25"/>
+  <textInput name="ans25" anchor="$anchors[26]" width="25"/>
+  <textInput name="ans26" anchor="$anchors[32]" width="25"/>
+  
+  <textInput name="ans31" anchor="$anchors[3]" width="25"/>
+  <textInput name="ans32" anchor="$anchors[9]" width="25"/>
+  <textInput name="ans33" anchor="$anchors[15]" width="25"/>
+  <textInput name="ans34" anchor="$anchors[21]" width="25"/>
+  <textInput name="ans35" anchor="$anchors[27]" width="25"/>
+  <textInput name="ans36" anchor="$anchors[33]" width="25"/>
+  
+  <textInput name="ans41" anchor="$anchors[4]" width="25"/>
+  <textInput name="ans42" anchor="$anchors[10]" width="25"/>
+  <textInput name="ans43" anchor="$anchors[16]" width="25"/>
+  <textInput name="ans44" anchor="$anchors[22]" width="25"/>
+  <textInput name="ans45" anchor="$anchors[28]" width="25"/>
+  <textInput name="ans46" anchor="$anchors[34]" width="25"/>
+  
+  <textInput name="ans51" anchor="$anchors[5]" width="25"/>
+  <textInput name="ans52" anchor="$anchors[11]" width="25"/>
+  <textInput name="ans53" anchor="$anchors[17]" width="25"/>
+  <textInput name="ans54" anchor="$anchors[23]" width="25"/>
+  <textInput name="ans55" anchor="$anchors[29]" width="25"/>
+  <textInput name="ans56" anchor="$anchors[35]" width="25"/>
+  
+  <textInput name="ans61" anchor="$anchors[6]" width="25"/>
+  <textInput name="ans62" anchor="$anchors[12]" width="25"/>
+  <textInput name="ans63" anchor="$anchors[18]" width="25"/>
+  <textInput name="ans64" anchor="$anchors[24]" width="25"/>
+  <textInput name="ans65" anchor="$anchors[30]" width="25"/>
+  <textInput name="ans66" anchor="$anchors[36]" width="25"/>
+
+  <label name="rule11" anchor="$anchors[1]"><m>\Large{5}</m></label>
+  <label name="rule13" anchor="$anchors[13] + (-0.15, 0.3)"><m>\large{5~-}</m></label>
+  <label name="rule51" anchor="$anchors[25] + (-0.15, 0.3)"><m>\large{6~\times}</m></label>
+  <label name="rule21" anchor="$anchors[2] + (-0.15, 0.3)"><m>\large{11~+}</m></label>
+  <label name="rule41" anchor="$anchors[20] + (-0.10, 0.3)"><m>\large{150~\times}</m></label>
+  <label name="rule23" anchor="$anchors[9] + (-0.15, 0.3)"><m>\large{13~+}</m></label>
+  <label name="rule14" anchor="$anchors[4] + (-0.15, 0.3)"><m>\large{4~+}</m></label>
+  <label name="rule34" anchor="$anchors[16] + (-0.15, 0.3)"><m>\large{12~+}</m></label>
+  <label name="rule64" anchor="$anchors[34] + (-0.15, 0.3)"><m>\large{2~-}</m></label>
+  <label name="rule25" anchor="$anchors[11] + (-0.15, 0.3)"><m>\large{4~\times}</m></label>
+  <label name="rule45" anchor="$anchors[23] + (-0.15, 0.3)"><m>\large{36~\times}</m></label>
+  <label name="rule16" anchor="$anchors[6] + (-0.15, 0.3)"><m>\large{15~+}</m></label>
+  <label name="rule36" anchor="$anchors[18] + (-0.15, 0.3)"><m>\large{2~\div}</m></label>
+  <label name="rule56" anchor="$anchors[30] + (-0.15, 0.3)"><m>\large{10~\times}</m></label>
+</graph>
+
+<answer name="check"><award><when>$sols = $ans</when></award></answer>
+
+<!-- <p><ref uri="https://www.doenet.org/portfolioviewer/_VeDrRqQnCHIJ1lYs1FLrJ" >Copy or remix this activity at Doenet.org</ref></p>
+   -->
+
+ 
+  </script>
+</div></div>
+</body>
+</html>
