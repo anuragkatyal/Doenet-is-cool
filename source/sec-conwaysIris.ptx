@@ -25,10 +25,11 @@
   </ul>
 </objectives>
 
+<activity>
 <interactive label="conwaysIris-interactive-label" platform="doenetml" width="100%" aspect="2:8">
   <slate surface="doenetml">
     <xi:include parse="text" href="doenet/conwaysIris.doenetml"/> 
   </slate>
 </interactive>
-
+</activity>
 </section>

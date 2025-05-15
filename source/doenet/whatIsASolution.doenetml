@@ -13,7 +13,7 @@ About the activity: Students often learn to solve various equations in Algebra c
 ********************************************************************** -->
 
 <section boxed><title>What is a solution?</title>
-        <video name="fitvideo" youtube="Xvr-6jIGXpw"/>
+        <!-- <video name="fitvideo" youtube="Xvr-6jIGXpw"/> -->
       <p>Video credit achieved: <number displayDecimals="1">$fitvideo.fractionWatched*100</number>%</p>
     
     <p>Imagine you are trying to unlock a locked door.</p>

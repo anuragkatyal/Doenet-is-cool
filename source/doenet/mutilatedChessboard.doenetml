@@ -1,8 +1,7 @@
-<title>The Mutilated Chessboard</title>
+<!-- <title>The Mutilated Chessboard</title> -->
 <setup>
-  <constraints name="toGrid">
-    <constrainToGrid/>
-  </constraints>
+  <number name="counter">0</number>
+  <number name="counter2">0</number>
 </setup>
 
 <p>You have a chessboard and 32 dominoes. Each domino covers two adjacent squares on the board. The size of a chessboard is 8 squares by 8 squares -- meaning you can perfectly cover it with the 32 dominoes (see "Full Chessboard" below if you don't believe me...)</p>
@@ -17,27 +16,41 @@
 <rectangle vertices="(0,7) (1,8)" styleNumber="9" filled fixed/>
 </graph>
 
+<updateValue target="counter" newValue="$counter + 1" type="number" triggerWhenObjectsClicked="mutilatedChessboard/redCircle"/>
+<updateValue target="counter" newValue="$counter + 1" type="number" triggerWhenObjectsClicked="mutilatedChessboard/blueCircle"/>
+<p>Number of dominoes used: $counter</p>
 
 <callAction actionName="addChildren"  target="mutilatedChessboard" triggerWhenObjectsClicked="mutilatedChessboard/redCircle">
   <group newNameSpace>
-  <point name="vertex1" hide>(10,4) $(/toGrid)</point>
-  <point name="vertex2" hide>(12,5) $(/toGrid)</point>
+  <point name="vertex1" hide>(10,4)
+    <constraints><constrainToGrid/></constraints>
+  </point>
+  <point name="vertex2" hide>(12,5)
+    <constraints><constrainToGrid/></constraints>
+  </point>
   <rectangle name="redDomino" vertices="$vertex1 $vertex2" filled styleNumber="12" verticesDraggable="false"/>
   </group>
 </callAction>
 
+
 <callAction actionName="addChildren"  target="mutilatedChessboard" triggerWhenObjectsClicked="mutilatedChessboard/blueCircle">
   <group newNameSpace>
-  <point name="vertex3" hide>(10,6) $(/toGrid)</point>
-  <point name="vertex4" hide>(11,8) $(/toGrid)</point>
+  <point name="vertex3" hide>(10,6)
+    <constraints><constrainToGrid/></constraints>
+  </point>
+  <point name="vertex4" hide>(11,8)
+    <constraints><constrainToGrid/></constraints>
+  </point>
   <rectangle name="blueDomino" vertices="$vertex3 $vertex4" filled styleNumber="19" verticesDraggable="false"/>
   </group>
 </callAction>
 
 
-<graph xmin="-10" xmax="20" ymin="-10" ymax="15">
+
+
+<!-- <graph xmin="-10" xmax="20" ymin="-10" ymax="15">
   $mutilatedChessboard
-</graph>
+</graph> -->
 
 
 
@@ -69,31 +82,45 @@
     </map>
   </group>
 
+  <!-- <label anchor="(11.25,2.25)">Number of dominoes used: $counter</label> -->
+
   <group name="redButton">
-  <circle name="redCircle" center="(10,1)" radius="0.75" styleNumber="8" filled/>
-  <rectangle name="redDomino" center="(10,1)" width="1" height="0.5" filled styleNumber="12" layer="2" verticesDraggable="false"/>
+  <circle name="redCircle" center="(9.5,1)" radius="0.75" styleNumber="8" filled fixLocation/>
+  <rectangle name="redDomino" center="(9.5,1)" width="1" height="0.5" filled styleNumber="12" layer="2" verticesDraggable="false" fixLocation/>
+  <label anchor="(9.5,-0.25)">Add Red Domino</label>
   </group>
 
   <group name="blueButton">
-  <circle name="blueCircle" center="(12,1)" radius="0.75" styleNumber="8" filled/>
-  <rectangle name="blueDomino" center="(12,1)" width="0.5" height="1" filled styleNumber="19" layer="2" verticesDraggable="false" />
+  <circle name="blueCircle" center="(12.5,1)" radius="0.75" styleNumber="8" filled fixLocation/>
+  <rectangle name="blueDomino" center="(12.5,1)" width="0.5" height="1" filled styleNumber="19" layer="2" verticesDraggable="false" fixLocation/>
+  <label anchor="(12.5,-0.25)">Add Blue Domino</label>
   </group>
 
 </graph>
-
+<updateValue target="counter2" newValue="$counter2 + 1" type="number" triggerWhenObjectsClicked="redDomino"/>
+<updateValue target="counter2" newValue="$counter2 + 1" type="number" triggerWhenObjectsClicked="blueDomino"/>
+<p>Number of dominoes used: $counter2</p>
 
 <callAction actionName="addChildren"  target="fullChessboard" triggerWhenObjectsClicked="redDomino">
   <group newNameSpace>
-  <point name="vertex1" hide>(10,4) $(../toGrid)</point>
-  <point name="vertex2" hide>(12,5) $(../toGrid)</point>
+  <point name="vertex1" hide>(10,4)
+    <constraints><constrainToGrid/></constraints>
+  </point>
+  <point name="vertex2" hide>(12,5)
+    <constraints><constrainToGrid/></constraints>
+  </point>
   <rectangle name="redDomino" vertices="$vertex1 $vertex2" filled styleNumber="12" verticesDraggable="false"/>
   </group>
 </callAction>
 
 <callAction actionName="addChildren"  target="fullChessboard" triggerWhenObjectsClicked="blueDomino">
   <group newNameSpace>
-  <point name="vertex3" hide>(10,6) $(../toGrid)</point>
-  <point name="vertex4" hide>(11,8) $(../toGrid)</point>
+  <point name="vertex3" hide>(10,6)
+    <constraints><constrainToGrid/></constraints>
+  </point>
+  <point name="vertex4" hide>(11,8)
+    <constraints><constrainToGrid/></constraints>
+  </point>
   <rectangle name="blueDomino" vertices="$vertex3 $vertex4" filled styleNumber="19" verticesDraggable="false"/>
   </group>
 </callAction>
